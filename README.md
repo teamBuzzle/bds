@@ -1,7 +1,7 @@
 # BSD (Buzzle Design System)
 
 <p align="center">
-  <img src="https://github.com/STREACT/bds//blob/main/public/logo.svg" alt="BSD 로고" width="200"/>
+  <img src="https://raw.githubusercontent.com/STREACT/bds/main/public/logo.svg" alt="BSD 로고" width="200"/>
 </p>
 
 <p align="center">
