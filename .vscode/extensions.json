@@ -1,0 +1,14 @@
+{
+  "recommendations": [
+    "arcanis.vscode-zipfs",
+    "dbaeumer.vscode-eslint",
+    "aaron-bond.better-comments",
+    "streetsidesoftware.code-spell-checker",
+    "editorconfig.editorconfig",
+    "usernamehw.errorlens",
+    "esbenp.prettier-vscode",
+    "yoavbls.pretty-ts-errors",
+    "pflannery.vscode-versionlens",
+    "unifiedjs.vscode-mdx"
+  ]
+}
