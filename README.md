@@ -1,3 +1,5 @@
+> ⚠️ 주의: BSD는 현재 개발 중인 프로젝트입니다. 일부 기능이 완성되지 않았거나 예고 없이 변경될 수 있습니다. 프로덕션 환경에서의 사용은 권장되지 않습니다.
+
 # BSD (Buzzle Design System)
 
 <p align="center">
@@ -49,8 +51,9 @@ yarn add @buzzle/bsd
 import { Button } from '@buzzle/bsd';
 
 export const App = () => {
-  return <Button>Click me</Button>;
+	return <Button>Click me</Button>;
 };
+```
 
 ### 기여하기
 
@@ -63,4 +66,3 @@ BSD는 모든 기여자의 참여를 환영합니다. 기여하는 방법은 다
 3. 풀 리퀘스트를 제출합니다.
 
 4. 코드 리뷰를 받습니다.
-```
