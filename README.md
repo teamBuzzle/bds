@@ -3,7 +3,10 @@
 # BSD (Buzzle Design System)
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/STREACT/bds/main/public/logo.svg" alt="BSD 로고" width="200"/>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/STREACT/bds/main/public/logoWhite.svg" />
+    <img src="https://raw.githubusercontent.com/STREACT/bds/main/public/logo.svg" alt="BSD 로고" width="200"/>
+  </picture>
 </p>
 
 <p align="center">

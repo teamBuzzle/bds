@@ -7,7 +7,7 @@ import prettier from 'eslint-plugin-prettier';
 import storybook from 'eslint-plugin-storybook';
 
 export default tseslint.config(
-	{ ignores: ['dist', '.pnp.cjs', '.pnp.loader.mjs', '.yarn'] },
+	{ ignores: ['dist', '.pnp.cjs', '.pnp.loader.mjs', '.yarn', 'storybook-static'] },
 	{
 		extends: [js.configs.recommended, ...tseslint.configs.recommended],
 		files: ['**/*.{ts,tsx}'],

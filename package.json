@@ -14,7 +14,7 @@
 	},
 	"scripts": {
 		"build": "tsc -b && vite build && yarn storybook:build",
-		"dev": "storybook dev -p 3000",
+		"dev": "storybook dev -p 3000 --no-open",
 		"storybook:build": "storybook build",
 		"storybook:upgrade": "yarn dlx storybook@latest upgrade",
 		"lint": "eslint .",
