@@ -4,8 +4,8 @@ import { create } from '@storybook/theming';
 const theme = create({
 	base: 'dark',
 	brandTitle: 'BSD Buzzle Design System',
-	brandUrl: 'https://buzzle.tools',
-	brandImage: '/logoWhite.svg',
+	brandUrl: 'https://teambuzzle.github.io/bds',
+	brandImage: 'https://raw.githubusercontent.com/STREACT/bds/main/public/logo.svg',
 	brandTarget: '_self',
 });
 
