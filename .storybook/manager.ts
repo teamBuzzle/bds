@@ -5,7 +5,7 @@ const theme = create({
 	base: 'dark',
 	brandTitle: 'BSD Buzzle Design System',
 	brandUrl: 'https://teambuzzle.github.io/bds',
-	brandImage: 'https://raw.githubusercontent.com/STREACT/bds/main/public/logo.svg',
+	brandImage: 'https://raw.githubusercontent.com/STREACT/bds/main/public/logoWhite.svg',
 	brandTarget: '_self',
 });
 
