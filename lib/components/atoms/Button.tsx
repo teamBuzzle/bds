@@ -62,9 +62,9 @@ const StyledButton = styled.button<PropsWithSign>`
 	${({ $outlined }) =>
 		$outlined &&
 		`
-			border: 1px solid ${bds.color.button.base};
+			border: 1px solid ${bds.color.button.outlined};
 			background-color: transparent;
-			color: ${bds.color.button.base};
+			color: ${bds.color.button.outlined};
 
 			&:hover {
 				background-color: transparent;
@@ -89,7 +89,7 @@ const StyledButton = styled.button<PropsWithSign>`
 		`
 			background-color: transparent;
 			border: none;
-			color: ${bds.color.button.base};
+			color: ${bds.color.button.text};
 
 			&:hover {
 				background-color: transparent;

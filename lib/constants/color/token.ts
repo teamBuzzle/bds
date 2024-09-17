@@ -1,15 +1,15 @@
 export const token = {
 	tint: {
 		main: {
-			indigo005: '#f0f9ff',
-			indigo010: '#e0f2fe',
-			indigo020: '#bae6fd',
-			indigo030: '#7dd3fc',
-			indigo040: '#38bdf8',
-			indigo050: '#0ea5e9',
-			indigo060: '#0284c7',
-			indigo070: '#0369a1',
-			indigo080: '#075985',
+			buzzle005: '#ECEEFF',
+			buzzle010: '#D9DDFF',
+			buzzle020: '#B3BBFF',
+			buzzle030: '#8C99FF',
+			buzzle040: '#6677FF',
+			buzzle050: '#3A4FFF',
+			buzzle060: '#2E3FCC',
+			buzzle070: '#232F99',
+			buzzle080: '#172066',
 			coral005: '#fff7ed',
 			coral010: '#ffedd5',
 			coral020: '#fed7aa',
@@ -22,7 +22,7 @@ export const token = {
 		},
 		sub: {},
 		service: {
-			buzzle: '#0af',
+			buzzle: '#3A4FFF',
 		},
 	},
 	gray: {
@@ -35,6 +35,7 @@ export const token = {
 		gray060: '#525252',
 		gray070: '#404040',
 		gray080: '#262626',
+		gray090: '#191919',
 	},
 	black: '#000000',
 	white: '#ffffff',

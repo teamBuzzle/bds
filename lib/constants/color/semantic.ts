@@ -2,15 +2,17 @@ import { token } from './token';
 
 export const semantic = {
 	background: {
-		base: token.gray.gray080,
-		elevated: token.gray.gray070,
+		base: token.black,
+		elevated: token.gray.gray090,
 	},
 	button: {
 		base: token.tint.service.buzzle,
-		hover: token.tint.main.indigo050,
-		active: token.tint.main.indigo060,
+		outlined: token.tint.main.buzzle040,
+		text: token.tint.main.buzzle040,
+		hover: token.tint.main.buzzle060,
+		active: token.tint.main.buzzle070,
 		disabled: token.gray.gray060,
-		selected: token.tint.main.indigo060,
+		selected: token.tint.main.buzzle070,
 	},
 	text: {
 		title: token.gray.gray005,
@@ -21,11 +23,11 @@ export const semantic = {
 		subSummary: token.gray.gray060,
 		placeholder: token.gray.gray040,
 		disabled: token.gray.gray030,
-		link: token.tint.main.indigo050,
-		linkHover: token.tint.main.indigo060,
-		linkActive: token.tint.main.indigo070,
+		link: token.tint.main.buzzle050,
+		linkHover: token.tint.main.buzzle060,
+		linkActive: token.tint.main.buzzle070,
 		linkDisabled: token.gray.gray060,
-		linkSelected: token.tint.main.indigo060,
+		linkSelected: token.tint.main.buzzle060,
 		linkSub: token.gray.gray005,
 		linkSubHover: token.gray.gray010,
 		linkSubActive: token.gray.gray020,
