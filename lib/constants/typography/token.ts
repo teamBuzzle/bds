@@ -41,3 +41,5 @@ export const token = {
 		main: 0,
 	},
 } as const;
+
+export type Token = typeof token;

@@ -40,3 +40,5 @@ export const token = {
 	black: '#000000',
 	white: '#ffffff',
 } as const;
+
+export type Token = typeof token;

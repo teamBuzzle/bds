@@ -5,7 +5,7 @@ const config: StorybookConfig = {
 		{
 			directory: '../lib',
 			titlePrefix: 'BDS Buzzle Design System',
-			files: '**/*.@(mdx|stories.@(mdx|ts))',
+			files: '**/*.@(mdx|stories.@(mdx|ts|tsx))',
 		},
 	],
 	addons: [

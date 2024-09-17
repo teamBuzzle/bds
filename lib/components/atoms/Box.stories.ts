@@ -24,6 +24,7 @@ const meta = {
 				type: { summary: 'keyof JSX.IntrinsicElements | React.ComponentType' },
 				defaultValue: { summary: 'div' },
 			},
+			options: ['div', 'button', 'a', 'form'],
 			control: {
 				type: 'select',
 			},
@@ -38,7 +39,7 @@ const meta = {
 				defaultValue: 'Button',
 			},
 		},
-		full: {
+		fullWidth: {
 			description: '박스 너비를 화면 너비로 설정',
 			table: {
 				defaultValue: { summary: 'false' },
@@ -48,7 +49,17 @@ const meta = {
 				type: 'boolean',
 			},
 		},
-		background: {
+		fullHeight: {
+			description: '박스 높이를 화면 높이로 설정',
+			table: {
+				defaultValue: { summary: 'false' },
+				type: { summary: 'boolean' },
+			},
+			control: {
+				type: 'boolean',
+			},
+		},
+		useBlack: {
 			description: '배경용 박스 색상 설정',
 			table: {
 				defaultValue: { summary: 'false' },
@@ -58,10 +69,19 @@ const meta = {
 				type: 'boolean',
 			},
 		},
+		css: {
+			description: '박스에 적용할 추가적인 CSS 스타일',
+			table: {
+				type: { summary: 'StyledObject' },
+			},
+			control: {
+				type: 'object',
+			},
+		},
 	},
 	args: {
-		children: 'Basic Box',
-		background: true,
+		children: 'Box',
+		useBlack: 'true',
 	},
 } satisfies Meta<typeof Box>;
 
@@ -115,7 +135,7 @@ export const As: Story = {
 	args: {
 		children: 'Button as Box',
 		as: 'button',
-		background: false,
+		useBlack: 'false',
 		onClick: fn(),
 	},
 	play: async ({ canvasElement, step, args }) => {

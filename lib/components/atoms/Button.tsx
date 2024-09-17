@@ -110,14 +110,14 @@ const StyledButton = styled.button<PropsWithSign>`
 
 /**
  * 버튼 컴포넌트
- * @param dense - 버튼 밀도 설정
- * @param align - 버튼 정렬 설정
- * @param onClick - 버튼 클릭 시 실행될 함수
- * @param outlined - 버튼 테두리 설정
- * @param text - 버튼 텍스트 설정
- * @param disabled - 버튼 비활성화 여부
- * @param children - 버튼 내부에 들어갈 텍스트
- * @param fullWidth - 버튼 너비 설정
+ * @param {boolean} dense - 버튼 밀도 설정
+ * @param {string} align - 버튼 정렬 설정
+ * @param {function} onClick - 버튼 클릭 시 실행될 함수
+ * @param {boolean} outlined - 버튼 테두리 설정
+ * @param {boolean} text - 버튼 텍스트 설정
+ * @param {boolean} disabled - 버튼 비활성화 여부
+ * @param {ReactNode} children - 버튼 내부에 들어갈 텍스트
+ * @param {boolean} fullWidth - 버튼 너비 설정
  */
 export const Button: FC<Props> = ({ children, ...props }) => {
 	return <StyledButton {...buildPropsWithSign(props)}>{children}</StyledButton>;

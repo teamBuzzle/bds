@@ -43,3 +43,5 @@ export const token = {
 		xxSmall: 1,
 	},
 } as const;
+
+export type Token = typeof token;
