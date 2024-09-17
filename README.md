@@ -1,11 +1,11 @@
-> ⚠️ 주의: BSD는 현재 개발 중인 프로젝트입니다. 일부 기능이 완성되지 않았거나 예고 없이 변경될 수 있습니다. 프로덕션 환경에서의 사용은 권장되지 않습니다.
+> ⚠️ 주의: BDS는 현재 개발 중인 프로젝트입니다. 일부 기능이 완성되지 않았거나 예고 없이 변경될 수 있습니다. 프로덕션 환경에서의 사용은 권장되지 않습니다.
 
-# BSD (Buzzle Design System)
+# BDS (Buzzle Design System)
 
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/STREACT/bds/main/public/logoWhite.svg" />
-    <img src="https://raw.githubusercontent.com/STREACT/bds/main/public/logo.svg" alt="BSD 로고" width="200"/>
+    <img src="https://raw.githubusercontent.com/STREACT/bds/main/public/logo.svg" alt="BDS 로고" width="200"/>
   </picture>
 </p>
 
@@ -37,19 +37,19 @@
 npm을 사용하는 경우:
 
 ```bash
-npm install @buzzle/bsd
+npm install @buzzle/bds
 ```
 
 yarn을 사용하는 경우:
 
 ```bash
-yarn add @buzzle/bsd
+yarn add @buzzle/bds
 ```
 
 ### 사용 예시
 
 ```jsx
-import { Button } from '@buzzle/bsd';
+import { Button } from '@buzzle/bds';
 
 export const App = () => {
 	return <Button>Click me</Button>;
@@ -58,7 +58,7 @@ export const App = () => {
 
 ### 기여하기
 
-BSD는 모든 기여자의 참여를 환영합니다. 기여하는 방법은 다음과 같습니다:
+BDS는 모든 기여자의 참여를 환영합니다. 기여하는 방법은 다음과 같습니다:
 
 1. 이슈 또는 기능 요청을 제안합니다.
 

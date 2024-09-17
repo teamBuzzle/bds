@@ -1,15 +1,15 @@
 import type { ButtonHTMLAttributes, PropsWithChildren, FC } from 'react';
 import styled from 'styled-components';
 import { bds } from '@/constants';
-import type { bool, BuildPropsWithSign } from '@/types';
+import type { Bool, BuildPropsWithSign } from '@/types';
 import { buildPropsWithSign } from '@/utils';
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement>, PropsWithChildren {
-	dense?: bool;
+	dense?: Bool;
 	align?: 'left' | 'right' | 'center';
-	outlined?: bool;
-	text?: bool;
-	fullWidth?: bool;
+	outlined?: Bool;
+	text?: Bool;
+	fullWidth?: Bool;
 }
 
 type PropsWithSign = BuildPropsWithSign<Props>;

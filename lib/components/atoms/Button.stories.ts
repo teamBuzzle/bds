@@ -3,6 +3,7 @@ import { userEvent, within, expect, fn } from '@storybook/test';
 import { Button } from './Button';
 import { getCodeToRgb } from '@/utils';
 import { bds } from '@/constants';
+
 /* 메타 */
 const meta = {
 	title: 'Atoms/Button',
@@ -19,7 +20,7 @@ const meta = {
 	tags: ['autodocs'],
 	argTypes: {
 		children: {
-			description: '버튼 내부에 들어갈 텍스트',
+			description: '버튼 내부에 들어갈 요소',
 			table: {
 				type: { summary: 'string | React.ReactNode' },
 			},

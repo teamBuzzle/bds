@@ -24,6 +24,12 @@ export const semantic = {
 			radius: token.radius.innerRadius.medium(),
 		},
 	},
+	box: {
+		spacing: token.spacing.small,
+		radius: token.radius.medium,
+		borderWidth: token.borderWidth.xxSmall,
+		padding: token.spacing.medium,
+	},
 	button: {
 		paddingY: token.spacing.small,
 		paddingX: token.spacing.medium,

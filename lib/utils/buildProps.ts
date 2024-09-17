@@ -13,7 +13,8 @@ export const buildPropsWithSign = <T extends object>(props: T): BuildPropsWithSi
 			key === 'children' ||
 			key === 'className' ||
 			key === 'style' ||
-			key === 'disabled'
+			key === 'disabled' ||
+			key === 'as'
 		) {
 			acc[key] = props[key as keyof T];
 		} else {

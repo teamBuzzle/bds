@@ -4,7 +4,7 @@ const config: StorybookConfig = {
 	stories: [
 		{
 			directory: '../lib',
-			titlePrefix: 'BSD Buzzle Design System',
+			titlePrefix: 'BDS Buzzle Design System',
 			files: '**/*.@(mdx|stories.@(mdx|ts))',
 		},
 	],
