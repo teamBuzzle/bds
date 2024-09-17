@@ -28,6 +28,7 @@ export const semantic = {
 		paddingY: token.spacing.small,
 		paddingX: token.spacing.medium,
 		radius: token.radius.medium,
+		spacing: token.spacing.small,
 	},
 	list: {
 		spacing: token.spacing.small,

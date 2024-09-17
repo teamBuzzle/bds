@@ -6,7 +6,7 @@ export const semantic = {
 		elevated: token.gray.gray070,
 	},
 	button: {
-		base: token.tint.service.buzzleLanding,
+		base: token.tint.service.buzzle,
 		hover: token.tint.main.indigo050,
 		active: token.tint.main.indigo060,
 		disabled: token.gray.gray060,
@@ -20,7 +20,7 @@ export const semantic = {
 		subBase: token.gray.gray080,
 		subSummary: token.gray.gray060,
 		placeholder: token.gray.gray040,
-		disabled: token.gray.gray060,
+		disabled: token.gray.gray030,
 		link: token.tint.main.indigo050,
 		linkHover: token.tint.main.indigo060,
 		linkActive: token.tint.main.indigo070,

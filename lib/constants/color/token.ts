@@ -22,8 +22,7 @@ export const token = {
 		},
 		sub: {},
 		service: {
-			buzzleLanding: '#6174FB',
-			buzzleApp: '#6779FF',
+			buzzle: '#0af',
 		},
 	},
 	gray: {

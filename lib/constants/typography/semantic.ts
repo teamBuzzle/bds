@@ -8,7 +8,6 @@ export const semantic = {
 			letterSpacing: token.letterSpacing.main,
 			fontWeight: token.weight.bold,
 			fontFamily: `${token.family.gMarketSans}, ${token.family.sansSerif}`,
-			fontDisplay: 'swap',
 		},
 	},
 	title: {
@@ -18,7 +17,6 @@ export const semantic = {
 			letterSpacing: token.letterSpacing.main,
 			fontWeight: token.weight.bold,
 			fontFamily: `${token.family.pretendard}, ${token.family.notoSans}, ${token.family.sansSerif}`,
-			fontDisplay: 'swap',
 		},
 		base: {
 			fontSize: token.size.title1,
@@ -26,7 +24,6 @@ export const semantic = {
 			letterSpacing: token.letterSpacing.main,
 			fontWeight: token.weight.bold,
 			fontFamily: `${token.family.pretendard}, ${token.family.notoSans}, ${token.family.sansSerif}`,
-			fontDisplay: 'swap',
 		},
 		small: {
 			fontSize: token.size.title2,
@@ -34,7 +31,6 @@ export const semantic = {
 			letterSpacing: token.letterSpacing.main,
 			fontWeight: token.weight.semibold,
 			fontFamily: `${token.family.pretendard}, ${token.family.notoSans}, ${token.family.sansSerif}`,
-			fontDisplay: 'swap',
 		},
 	},
 	text: {
@@ -44,7 +40,6 @@ export const semantic = {
 			letterSpacing: token.letterSpacing.main,
 			fontWeight: token.weight.regular,
 			fontFamily: `${token.family.pretendard}, ${token.family.notoSans}, ${token.family.sansSerif}`,
-			fontDisplay: 'swap',
 		},
 		small: {
 			fontSize: token.size.subhead,
@@ -52,7 +47,6 @@ export const semantic = {
 			letterSpacing: token.letterSpacing.main,
 			fontWeight: token.weight.regular,
 			fontFamily: `${token.family.pretendard}, ${token.family.notoSans}, ${token.family.sansSerif}`,
-			fontDisplay: 'swap',
 		},
 	},
 	caption: {
@@ -62,7 +56,6 @@ export const semantic = {
 			letterSpacing: token.letterSpacing.main,
 			fontWeight: token.weight.regular,
 			fontFamily: `${token.family.pretendard}, ${token.family.notoSans}, ${token.family.sansSerif}`,
-			fontDisplay: 'swap',
 		},
 		small: {
 			fontSize: token.size.caption2,
@@ -70,7 +63,6 @@ export const semantic = {
 			letterSpacing: token.letterSpacing.main,
 			fontWeight: token.weight.regular,
 			fontFamily: `${token.family.pretendard}, ${token.family.notoSans}, ${token.family.sansSerif}`,
-			fontDisplay: 'swap',
 		},
 	},
 	button: {
@@ -80,7 +72,6 @@ export const semantic = {
 			letterSpacing: token.letterSpacing.main,
 			fontWeight: token.weight.medium,
 			fontFamily: `${token.family.pretendard}, ${token.family.notoSans}, ${token.family.sansSerif}`,
-			fontDisplay: 'swap',
 		},
 	},
 	label: {
@@ -90,7 +81,6 @@ export const semantic = {
 			letterSpacing: token.letterSpacing.main,
 			fontWeight: token.weight.medium,
 			fontFamily: `${token.family.pretendard}, ${token.family.notoSans}, ${token.family.sansSerif}`,
-			fontDisplay: 'swap',
 		},
 	},
 	link: {
@@ -101,7 +91,6 @@ export const semantic = {
 			fontWeight: token.weight.medium,
 			fontFamily: `${token.family.pretendard}, ${token.family.notoSans}, ${token.family.sansSerif}`,
 			textDecoration: 'none',
-			fontDisplay: 'swap',
 		},
 	},
 	headline: {
@@ -111,7 +100,6 @@ export const semantic = {
 			letterSpacing: token.letterSpacing.main,
 			fontWeight: token.weight.semibold,
 			fontFamily: `${token.family.pretendard}, ${token.family.notoSans}, ${token.family.sansSerif}`,
-			fontDisplay: 'swap',
 		},
 	},
 	callout: {
@@ -121,7 +109,6 @@ export const semantic = {
 			letterSpacing: token.letterSpacing.main,
 			fontWeight: token.weight.medium,
 			fontFamily: `${token.family.pretendard}, ${token.family.notoSans}, ${token.family.sansSerif}`,
-			fontDisplay: 'swap',
 		},
 	},
 	footnote: {
@@ -131,7 +118,6 @@ export const semantic = {
 			letterSpacing: token.letterSpacing.main,
 			fontWeight: token.weight.regular,
 			fontFamily: `${token.family.pretendard}, ${token.family.notoSans}, ${token.family.sansSerif}`,
-			fontDisplay: 'swap',
 		},
 	},
 	input: {
@@ -141,7 +127,6 @@ export const semantic = {
 			letterSpacing: token.letterSpacing.main,
 			fontWeight: token.weight.regular,
 			fontFamily: `${token.family.pretendard}, ${token.family.notoSans}, ${token.family.sansSerif}`,
-			fontDisplay: 'swap',
 		},
 	},
 } as const;
