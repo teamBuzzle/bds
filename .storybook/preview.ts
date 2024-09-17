@@ -11,10 +11,6 @@ const preview: Preview = {
 					name: 'dark',
 					value: bds.color.background.elevated,
 				},
-				{
-					name: 'light',
-					value: bds.color.background.elevated,
-				},
 			],
 		},
 		controls: {
