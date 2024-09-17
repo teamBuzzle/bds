@@ -41,7 +41,7 @@ const meta = {
 				type: { summary: 'row | column' },
 			},
 			control: {
-				type: 'select',
+				type: 'radio',
 				options: ['row', 'column'],
 				defaultValue: 'column',
 			},
