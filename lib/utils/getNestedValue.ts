@@ -1,5 +1,11 @@
+/**
+ * 문자열을 구분자로 나눕니다.
+ */
 type Split<S extends string, D extends string = '.'> = S extends `${infer T}${D}${infer U}` ? [T, ...Split<U, D>] : [S];
 
+/**
+ * path로 지정된 속성의 값의 타입을 가져옵니다.
+ */
 type PathValue<T, P extends string[]> = P extends [infer K, ...infer Rest]
 	? K extends keyof T
 		? Rest extends string[]

@@ -7,175 +7,102 @@ import { bds } from './constants';
   <div className='sb-section-title'>
     <h1 className="gradient-text">🎨 BDS (Buzzle Design System)</h1>
 
-      BDS는 Buzzle의 디자인 시스템으로, 사용자 경험의 일관성과 개발 효율성을 극대화하기 위해 철저히 계획되고 구현된 체계입니다. 이 시스템은 단순한 디자인 가이드라인을 넘어서, Buzzle의 브랜드 정체성과 사용자 중심 철학을 구현하는 핵심 도구입니다.
-
-
-    <h2 className="section-title">🌟 핵심 철학과 원칙</h2>
-
-    <div className="principle-grid">
-      <div className="principle-card">
-        ### 일관성의 힘
-        모든 제품과 플랫폼에서 일관된 디자인 언어를 사용하여 예측 가능하고 신뢰할 수 있는 경험을 제공합니다.
-      </div>
-      <div className="principle-card">
-        ### 포용적 접근성
-        모든 사용자가 쉽게 이용할 수 있는 universal design의 철학을 반영합니다.
-      </div>
-      <div className="principle-card">
-        ### 효율성의 극대화
-        개발자와 디자이너 간의 원활한 협업을 촉진하고, 창의적인 문제 해결에 더 많은 시간을 할애할 수 있게 합니다.
-      </div>
-      <div className="principle-card">
-        ### 유연한 확장성
-        다양한 상황과 요구사항에 적응할 수 있는 컴포넌트와 패턴을 제공합니다.
-      </div>
-    </div>
-
-    <h2 className="section-title">💻 기술 철학</h2>
-
-    <div className="tech-stack">
-      <div className="tech-item">
-        <span className="tech-icon">⚛️</span>
-        ### React
-        컴포넌트 기반 아키텍처로 재사용성과 유지보수성 극대화
-      </div>
-      <div className="tech-item">
-        <span className="tech-icon">📘</span>
-        ### TypeScript
-        정적 타입 검사로 개발 과정의 안정성과 예측 가능성 향상
-      </div>
-      <div className="tech-item">
-        <span className="tech-icon">💅</span>
-        ### Styled Components
-        CSS-in-JS 방식으로 컴포넌트와 스타일의 결합도 향상
-      </div>
-      <div className="tech-item">
-        <span className="tech-icon">📚</span>
-        ### Storybook
-        컴포넌트 중심의 개발 방법론 지원 및 시각적 테스트와 문서화 통합
-      </div>
-    </div>
-
-    <h2 className="section-title">🎨 디자인 토큰 철학</h2>
-
-    <div className="design-token-grid">
-      <div className="design-token-card">
-        ### 🌈 색상 이론
-        BDS의 색상 팔레트는 심리학적 영향, 접근성 기준, 그리고 브랜드 개성을 고려하여 신중하게 선택되었습니다. 각 색상은 특정한 감정과 메시지를 전달하도록 설계되었습니다:
-        <ul>
-          <li>🖼️ 배경 ({bds.color.background.base}): 안정감과 신뢰를 주는 톤으로, 콘텐츠를 돋보이게 합니다.</li>
-          <li>🔘 버튼 ({bds.color.button.base}): 행동을 유도하는 생동감 있는 색상으로, 사용자의 주의를 끕니다.</li>
-          <li>🖼️ 테두리 ({bds.color.border.base}): 요소 간의 구분을 명확히 하면서도 시각적 조화를 이룹니다.</li>
-          <li>🔣 아이콘 ({bds.color.icon.base}): 직관적인 인식을 돕는 색상으로, 정보의 빠른 전달을 지원합니다.</li>
-          <li>👥 그림자 ({bds.color.shadow.base}): 깊이감을 더해 UI의 계층 구조를 강화합니다.</li>
-          <li>➖ 선 ({bds.color.line.base}): 미묘한 구분을 통해 레이아웃의 구조를 명확히 합니다.</li>
-        </ul>
-      </div>
-      <div className="design-token-card">
-        ### ✍️ 타이포그래피 철학
-        BDS의 타이포그래피 시스템은 가독성, 계층 구조, 그리고 브랜드 개성을 균형 있게 반영합니다:
-        <ul>
-          <li>기본 텍스트 ({bds.typography.text.base.fontSize}px / {bds.typography.text.base.lineHeight}px): 읽기 쉽고 명확한 본문 텍스트를 제공합니다.</li>
-          <li>로고 ({bds.typography.logo.base.fontSize}px / {bds.typography.logo.base.lineHeight}px): Buzzle의 독특한 브랜드 개성을 시각적으로 표현합니다.</li>
-        </ul>
-        제목 스타일은 정보의 계층 구조를 명확히 하고, 사용자의 주의를 효과적으로 가이드합니다:
-        <ul>
-          <li>📢 큰 제목 ({bds.typography.title.largeTitle.fontSize}px / {bds.typography.title.largeTitle.lineHeight}px): 주요 섹션을 강조하여 페이지의 구조를 명확히 합니다.</li>
-          <li>🗣️ 기본 제목 ({bds.typography.title.base.fontSize}px / {bds.typography.title.base.lineHeight}px): 중요한 하위 섹션을 구분하여 정보의 흐름을 안내합니다.</li>
-          <li>💬 작은 제목 ({bds.typography.title.small.fontSize}px / {bds.typography.title.small.lineHeight}px): 세부 정보를 효과적으로 분류하여 스캔 가능성을 높입니다.</li>
-        </ul>
-      </div>
-      <div className="design-token-card">
-        ### 📏 간격과 크기 이론
-        BDS의 간격과 크기 시스템은 일관된 사용자 경험을 제공하고 시각적 리듬을 창출합니다:
-        <ul>
-          <li>🐜 작은 크기 : 세밀한 조정이 필요한 요소에 사용됩니다.</li>
-          <li>🐝 중간 크기 : 대부분의 일반적인 UI 요소에 적용됩니다.</li>
-          <li>🦋 큰 크기 : 강조가 필요한 요소나 넓은 공간에 사용됩니다.</li>
-          <li>📏 기본 간격 : 요소 간의 기본적인 여백을 제공합니다.</li>
-          <li>🔳 기본 테두리 두께 : 요소의 경계를 명확히 하면서도 과하지 않은 두께입니다.</li>
-          <li>🔲 기본 테두리 반경 : 부드러운 모서리로 현대적인 느낌을 줍니다.</li>
-        </ul>
-      </div>
-    </div>
-
-    <h2 className="section-title">🧩 컴포넌트 철학</h2>
-
-    <div className="component-grid">
-      <div className="component-card">
-        ### 🔘 Button
-        사용자 행동을 유도하는 핵심 요소로, 다양한 상황에 적응 가능한 변형을 제공합니다.
-      </div>
-      <div className="component-card">
-        ### ✏️ Input
-        사용자 데이터 입력의 효율성과 정확성을 극대화하도록 설계되었습니다.
-      </div>
-      <div className="component-card">
-        ### 🃏 Card
-        정보를 구조화하고 시각적으로 구분하여 콘텐츠의 스캔 가능성을 높입니다.
-      </div>
-      <div className="component-card">
-        ### 🖼️ Modal
-        사용자의 주의를 효과적으로 집중시키면서도 기존 컨텍스트를 유지합니다.
-      </div>
-      <div className="component-card">
-        ### 🧭 Navigation
-        직관적이고 일관된 탐색 경험을 제공하여 사용자의 정보 접근성을 향상시킵니다.
-      </div>
-    </div>
+    BDS는 Buzzle의 디자인 시스템으로, 사용자 경험의 일관성과 개발 효율성을 극대화하기 위해 철저히 계획되고 구현된 체계입니다. 이 시스템은 단순한 디자인 가이드라인을 넘어서, Buzzle의 브랜드 정체성과 사용자 중심 철학을 구현하는 핵심 도구입니다.
 
     <h2 className="section-title">🚀 시작하기</h2>
 
-    BDS를 프로젝트에 통합하는 것은 단순한 라이브러리 추가 이상의 의미를 갖습니다. 이는 Buzzle의 디자인 철학과 사용자 경험 원칙을 여러분의 프로젝트에 녹여내는 과정입니다.
+    <h3>Next.js</h3>
 
-    <div className="start-guide">
-      <div className="start-step">
-        ### 1. 설치
+    Next.js 플러그인을 dev dependency로 설치하세요:
 
-          ```
-            npm install bds
-          ```
+    ```bash
+    yarn add -D @pigment-css/nextjs-plugin
+    ```
 
-        또는
+    그런 다음 Next.js 설정 파일을 열고 플러그인을 추가하세요:
 
-          ```
-            yarn add bds
-          ```
+    ```javascript
+    import { withPigment } from '@pigment-css/nextjs-plugin';
 
-      </div>
-      <div className="start-step">
-        ### 2. 사용 예시
+    const nextConfig = {
+      // ...Your nextjs config.
+    };
 
-```tsx
-import type { FC } from 'react';
-import { Button } from 'bds';
+    /**
+     * @type {import('@pigment-css/nextjs-plugin').PigmentOptions}
+     */
+    const pigmentConfig = {
+      transformLibraries: ['@mui/material'],
+    };
 
-const App: FC = () => {
-	return <Button>클릭하세요</Button>;
-};
-```
+    export default withPigment(nextConfig, pigmentConfig);
+    ```
 
-</div>
-</div>
+    마지막으로 레이아웃 파일 상단에 스타일시트를 import 하세요:
 
-    이 간단한 예시는 BDS의 강력함을 보여줍니다. 단 몇 줄의 코드로, 여러분은 Buzzle의 디자인 철학이 녹아든, 접근성과 사용성이 보장된 버튼을 구현할 수 있습니다.
+    ```typescript
+    import type { Metadata } from 'next';
+    import { Inter } from 'next/font/google';
 
-    <h2 className="section-title">🤝 기여하기</h2>
+    import '@mui/material-pigment-css/styles.css';
 
-    BDS는 지속적인 발전과 개선을 추구합니다. 여러분의 통찰력 있는 피드백과 기여는 BDS를 더욱 강력하고 유용한 도구로 만드는 데 큰 역할을 합니다. GitHub 저장소를 통해 이슈를 제기하거나 풀 리퀘스트를 보내주세요. 모든 기여는 BDS와 Buzzle 생태계를 풍성하게 만드는 소중한 자산이 됩니다.
+    export default function RootLayout(props) {
+      return (
+        <html lang="en">
+          <body className={`${inter.className}`}>
+            {props.children}
+          </body>
+        </html>
+      );
+    }
+    ```
 
-    <h2 className="section-title">📞 문의</h2>
+    <h3>Vite</h3>
 
-    BDS 팀은 여러분의 의견을 소중히 여깁니다. 질문, 제안, 또는 피드백이 있다면 주저하지 마시고 연락해 주세요:
+    Vite 플러그인을 dev dependency로 설치하세요:
 
-    <ul>
-      <li>이메일: <a href="mailto:coolman555@naver.com">coolman555@naver.com</a></li>
-      <li>GitHub Issues: <a href="https://github.com/STREACT/bds/issues">https://github.com/STREACT/bds/issues</a></li>
-    </ul>
+    ```bash
+    yarn add -D @pigment-css/vite-plugin
+    ```
 
-    여러분의 의견은 BDS의 미래를 형성하는 데 중요한 역할을 합니다. 함께 더 나은 디자인 시스템을 만들어 갑시다.
+    그런 다음 Vite 설정 파일(일반적으로 vite.config.mjs 또는 vite.config.js)을 열고 플러그인을 추가하세요:
 
-</div>
+    ```javascript
+    import { defineConfig } from 'vite';
+    import { pigment } from '@pigment-css/vite-plugin';
+
+    /**
+     * @type {import('@pigment-css/vite-plugin').PigmentOptions}
+     */
+    const pigmentConfig = {
+      transformLibraries: ['@mui/material'],
+    };
+
+    export default defineConfig({
+      plugins: [
+        pigment(pigmentConfig),
+        // ... Your other plugins.
+      ],
+    });
+    ```
+
+    현재 pnpm과 관련된 알려진 문제로 인해 플러그인이 이 패키지 매니저에서 제대로 작동하지 않습니다. 해결될 때까지 npm이나 yarn을 대신 사용해야 합니다.
+
+    마지막으로 메인 파일 상단에 Pigment CSS 스타일시트를 추가하세요:
+
+    ```typescript
+    import * as React from 'react';
+    import '@mui/material-pigment-css/styles.css';
+    import App from './App';
+
+    ReactDOM.createRoot(document.getElementById('root')).render(
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>,
+    );
+    ```
+
+  </div>
 </div>
 
 <style>
@@ -188,13 +115,6 @@ const App: FC = () => {
       margin-bottom: ${bds.value.container.spacing}px;
     }
 
-    .intro-text {
-      font-size: ${bds.typography.text.base.fontSize}px;
-      line-height: ${bds.typography.text.base.lineHeight}px;
-      color: ${bds.color.text.base};
-      margin-bottom: ${bds.value.container.spacing}px;
-    }
-
     .section-title {
       color: ${bds.color.text.title};
       font-size: ${bds.typography.title.base.fontSize}px;
@@ -202,133 +122,6 @@ const App: FC = () => {
       margin-bottom: ${bds.value.container.spacing}px;
       border-bottom: 2px solid ${bds.color.border.base};
       padding-bottom: ${bds.value.container.spacing}px;
-    }
-
-    .principle-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: ${bds.value.container.spacing}px;
-      margin-bottom: 48px;
-    }
-
-    .principle-card {
-      background: ${bds.color.background.elevated};
-      padding: ${bds.value.card.paddingY}px ${bds.value.card.paddingX}px;
-      border-radius: ${bds.value.card.radius}px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
-    }
-
-    .principle-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .principle-card h3 {
-      color: ${bds.color.text.title};
-      margin-bottom: ${bds.value.container.spacing}px;
-    }
-
-    .tech-stack {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: ${bds.value.container.spacing}px;
-      margin-bottom: ${bds.value.container.spacing}px;
-    }
-
-    .tech-item {
-      flex: 1;
-      min-width: 200px;
-      background: ${bds.color.background.elevated};
-      padding: ${bds.value.card.paddingY}px ${bds.value.card.paddingX}px;
-      border-radius: ${bds.value.card.radius}px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      text-align: center;
-    }
-
-    .tech-icon {
-      font-size: ${bds.typography.title.largeTitle.fontSize}px;
-      margin-bottom: ${bds.value.container.spacing}px;
-      display: block;
-    }
-
-    .tech-item h3 {
-      color: ${bds.color.text.title};
-      margin-bottom: ${bds.value.container.spacing}px;
-    }
-
-    .design-token-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: ${bds.value.container.spacing}px;
-      margin-bottom: ${bds.value.container.spacing}px;
-    }
-
-    .design-token-card {
-      background: ${bds.color.background.elevated};
-      padding: ${bds.value.card.paddingY}px ${bds.value.card.paddingX}px;
-      border-radius: ${bds.value.card.radius}px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
-    }
-
-    .design-token-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .design-token-card h3 {
-      color: ${bds.color.text.title};
-      margin-bottom: ${bds.value.container.spacing}px;
-    }
-
-    .component-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: ${bds.value.container.spacing}px;
-      margin-bottom: ${bds.value.container.spacing}px;
-    }
-
-    .component-card {
-      background: ${bds.color.background.elevated};
-      padding: ${bds.value.card.paddingY}px ${bds.value.card.paddingX}px;
-      border-radius: ${bds.value.card.radius}px;
-      transition: transform 0.3s ease;
-    }
-
-    .component-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .component-card h3 {
-      color: ${bds.color.text.title};
-      margin-bottom: ${bds.value.container.spacing}px;
-    }
-
-    .start-guide {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: ${bds.value.container.spacing}px;
-      margin-bottom: ${bds.value.container.spacing}px;
-    }
-
-    .start-step {
-      flex: 1;
-      min-width: 200px;
-      background: ${bds.color.background.elevated};
-      padding: ${bds.value.container.paddingX}px ${bds.value.container.paddingY}px;
-      border-radius: ${bds.value.card.radius}px;
-    }
-
-    .start-step h3 {
-      color: ${bds.color.text.title};
-      margin-bottom: ${bds.value.container.spacing}px;
-    }
-
-    code {
-      padding: 2px 4px;
-      border-radius: ${bds.value.card.paper.radius}px;
-      font-family: ${bds.typography.text.base.fontFamily};
     }
   `}
 </style>
