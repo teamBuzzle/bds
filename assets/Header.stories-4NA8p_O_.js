@@ -1,0 +1,8 @@
+import{j as t}from"./jsx-runtime-CfatFE5O.js";import{T as c}from"./Text-BqbwCITv.js";import{B as d}from"./Button-BYpSSY4l.js";import"./index-ClcD9ViR.js";import"./_commonjsHelpers-Cpj98o6Y.js";import"./Typography-lzik__qm.js";import"./createTheme-6hCvPVGf.js";import"./index-Bvp1bzdA.js";import"./DefaultPropsProvider-Bg0xjppw.js";import"./useTheme-Ck1BHKKz.js";import"./emotion-react.browser.esm-Bdj7olV6.js";import"./extendSxProp-Dig3Tbhh.js";import"./memoTheme-CVjaAQbI.js";import"./createSimplePaletteValueFilter-bm0fmN_7.js";import"./ButtonBase-B0Rbp6a5.js";import"./TransitionGroupContext-DYXo4IH-.js";import"./useEventCallback-I9tDrlGm.js";import"./isFocusVisible-B8k4qzLc.js";const p=()=>t.jsxs("header",{children:[t.jsx(c,{variant:"h1",children:"Welcome to Our Application"}),t.jsx(d,{variant:"contained",children:"Get Started"})]});p.__docgenInfo={description:"",methods:[],displayName:"Header"};const T={title:"Organisms/Header",component:p,parameters:{layout:"centered"},args:{user:{customer:!0,admin:!1}},tags:["autodocs"]},r={},e={args:{user:{customer:!1,admin:!0}}};var o,a,s;r.parameters={...r.parameters,docs:{...(o=r.parameters)==null?void 0:o.docs,source:{originalSource:"{}",...(s=(a=r.parameters)==null?void 0:a.docs)==null?void 0:s.source}}};var m,i,n;e.parameters={...e.parameters,docs:{...(m=e.parameters)==null?void 0:m.docs,source:{originalSource:`{
+  args: {
+    user: {
+      customer: false,
+      admin: true
+    }
+  }
+}`,...(n=(i=e.parameters)==null?void 0:i.docs)==null?void 0:n.source}}};const V=["Default","AdminView"];export{e as AdminView,r as Default,V as __namedExportsOrder,T as default};
