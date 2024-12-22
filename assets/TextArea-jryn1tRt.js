@@ -1,1 +1,0 @@
-import{j as r}from"./jsx-runtime-DPRcWr2C.js";import{T as s}from"./TextField-C1dWMfRQ.js";const o=({maxLength:e,...t})=>r.jsx(s,{multiline:!0,inputProps:{maxLength:e},...t});o.__docgenInfo={description:"",methods:[],displayName:"TextArea",props:{maxLength:{required:!1,tsType:{name:"number"},description:""}},composes:["Omit"]};export{o as T};
