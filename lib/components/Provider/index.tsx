@@ -12,7 +12,7 @@ const palette = {
 	buzzle: {
 		main: '#6174fb',
 	},
-};
+} as const;
 
 const buzzle = {
 	borderRadius: {
@@ -21,7 +21,7 @@ const buzzle = {
 	transitions: {
 		hover: 'all 0.2s ease-in-out',
 	},
-};
+} as const;
 
 const components = {
 	MuiCssBaseline: {
@@ -187,6 +187,7 @@ const theme = createTheme({
 declare module '@mui/material/styles' {
 	interface Theme {
 		palette: typeof palette;
+		buzzle: typeof buzzle;
 	}
 	interface ThemeOptions {
 		buzzle?: typeof buzzle;

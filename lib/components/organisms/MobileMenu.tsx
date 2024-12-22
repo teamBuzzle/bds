@@ -1,8 +1,7 @@
-import { Box, Drawer, IconButton } from '@mui/material';
+import { Box, Drawer, IconButton, Button } from '@mui/material';
 import { FC, useState } from 'react';
 import { Logo } from '../atoms/Logo';
 import { MenuBar } from '../molecules/MenuBar';
-import { Button } from '../atoms/Button';
 
 interface Props {
 	menuItems: Array<{

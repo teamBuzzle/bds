@@ -1,7 +1,6 @@
-import { Stack } from '@mui/material';
+import { Stack, Button } from '@mui/material';
 import { FC, useState } from 'react';
 import { TextArea } from '../atoms/TextArea';
-import { Button } from '../atoms/Button';
 import { Text } from '../atoms/Text';
 
 interface Props {
