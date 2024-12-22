@@ -20,10 +20,10 @@ export const Default: Story = {
 	},
 };
 
-export const Disabled: Story = {
+export const CTA: Story = {
 	args: {
 		href: '#',
-		children: '비활성화 링크',
-		color: 'text.disabled',
+		children: 'CTA 링크',
+		cta: true,
 	},
 };

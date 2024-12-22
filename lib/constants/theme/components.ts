@@ -163,4 +163,19 @@ export const components = {
 			},
 		},
 	},
+	MuiLink: {
+		styleOverrides: {
+			root: {
+				color: 'rgba(255, 255, 255, 1)',
+				cursor: 'pointer',
+				textDecoration: 'none',
+				'&.buzzle-cta': {
+					color: 'rgba(97, 116, 251, 1)',
+				},
+				'&:hover': {
+					opacity: 0.6,
+				},
+			},
+		},
+	},
 };
