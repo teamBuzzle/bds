@@ -1,27 +1,4 @@
-import { createTheme } from '@mui/material/styles';
-
-const palette = {
-	primary: {
-		main: '#6174fb',
-	},
-	secondary: {
-		main: '#f9f9f9',
-	},
-	buzzle: {
-		main: '#6174fb',
-	},
-} as const;
-
-const buzzle = {
-	borderRadius: {
-		card: 8,
-	},
-	transitions: {
-		hover: 'all 0.2s ease-in-out',
-	},
-} as const;
-
-const components = {
+export const components = {
 	MuiCssBaseline: {
 		styleOverrides: {
 			body: {
@@ -32,24 +9,15 @@ const components = {
 	MuiTextField: {
 		styleOverrides: {
 			root: {
-				width: '100%',
-				height: 'auto',
-				display: 'flex',
-				alignItems: 'flex-start',
-				gap: '7px',
 				'& .MuiOutlinedInput-root': {
-					width: '547px',
-					height: '52px',
 					display: 'flex',
 					alignItems: 'center',
-					gap: '10px',
 					padding: '0 20px',
 					flexShrink: 0,
 					borderRadius: '30px',
 					backgroundColor: 'rgba(85, 85, 85, 0.13)',
 					fontFamily: 'Pretendard, sans-serif',
 					fontSize: '16px',
-					lineHeight: '36px',
 					color: 'rgba(255, 255, 255, 1)',
 					'& fieldset': {
 						border: 'none',
@@ -60,23 +28,49 @@ const components = {
 					'&.Mui-focused fieldset': {
 						border: 'none',
 					},
+
+					'&.Mui-error': {
+						border: '1px solid #F34541 !important',
+					},
+				},
+				'& .MuiFormHelperText-root': {
+					marginLeft: 0,
+					fontSize: '14px',
+					fontFamily: 'Pretendard, sans-serif',
+					color: 'rgba(255, 255, 255, 1)',
+					'&.Mui-error': {
+						color: '#F34541 !important',
+					},
+					'&.Mui-success': {
+						color: '#4CAF50 !important',
+					},
 				},
 				'& .MuiInputLabel-root': {
 					fontFamily: 'Pretendard, sans-serif',
 					fontSize: '16px',
 					fontWeight: 700,
-					lineHeight: '36px',
 					color: 'rgba(255, 255, 255, 1)',
+					padding: '0 7px',
 					'&.Mui-focused': {
-						color: 'rgba(255, 255, 255, 1)',
+						color: '#6174fb',
+						transform: 'translate(14px, -9px) scale(0.75)',
+						backgroundColor: '#1A1A1A',
+						border: '1px solid #6174fb',
+						borderRadius: '10px',
+						padding: '0 10px',
+					},
+					'&:not(.Mui-focused).MuiFormLabel-filled': {
+						color: 'rgba(255, 255, 255, 0.5)',
+						transform: 'translate(14px, -9px) scale(0.75)',
+						backgroundColor: '#1A1A1A',
+						border: '1px solid rgba(255, 255, 255, 0.5)',
+						borderRadius: '10px',
+						padding: '0 10px',
 					},
 				},
 				'& .MuiInputBase-input': {
-					padding: 0,
-					height: 'auto',
-					flexGrow: 1,
 					'&::placeholder': {
-						color: 'rgba(255, 255, 255, 1)',
+						color: 'rgba(255, 255, 255, 0.5)',
 						opacity: 1,
 						fontFamily: 'Pretendard, sans-serif',
 						fontSize: '16px',
@@ -85,8 +79,6 @@ const components = {
 					},
 				},
 				'& .MuiInputAdornment-root': {
-					width: '24px',
-					height: '24px',
 					display: 'flex',
 					alignItems: 'flex-start',
 					flexShrink: 0,
@@ -172,22 +164,3 @@ const components = {
 		},
 	},
 };
-
-export const bdsTheme = createTheme({
-	palette,
-	buzzle,
-	components,
-	typography: {
-		fontFamily: 'Pretendard, sans-serif',
-	},
-});
-
-declare module '@mui/material/styles' {
-	interface Theme {
-		palette: typeof palette;
-		buzzle: typeof buzzle;
-	}
-	interface ThemeOptions {
-		buzzle?: typeof buzzle;
-	}
-}
