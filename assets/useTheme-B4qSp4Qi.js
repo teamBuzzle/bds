@@ -1,0 +1,1 @@
+import{c as r}from"./createTheme-C-zWfE2d.js";import{r as n}from"./index-B6-Y_Zgq.js";import{a as o}from"./emotion-element-5486c51c.browser.esm-BrRU5PSG.js";function s(e){return Object.keys(e).length===0}function m(e=null){const t=n.useContext(o);return!t||s(t)?e:t}const u=r();function h(e=u){return m(e)}export{m as a,h as u};
