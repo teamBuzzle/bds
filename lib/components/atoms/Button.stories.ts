@@ -1,7 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Button } from '@mui/material';
-import { BDSProvider } from '../Provider';
-import React from 'react';
 
 const meta = {
 	title: 'Atoms/Button',
@@ -10,7 +8,6 @@ const meta = {
 		layout: 'centered',
 	},
 	tags: ['autodocs'],
-	decorators: [(Story) => React.createElement(BDSProvider, null, React.createElement(Story))],
 } satisfies Meta<typeof Button>;
 
 export default meta;

@@ -1,7 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Box } from './Box';
-import { BDSProvider } from '../Provider';
-import React from 'react';
 
 const meta = {
 	title: 'Atoms/Box',
@@ -10,7 +8,6 @@ const meta = {
 		layout: 'centered',
 	},
 	tags: ['autodocs'],
-	decorators: [(Story) => React.createElement(BDSProvider, null, React.createElement(Story))],
 } satisfies Meta<typeof Box>;
 
 export default meta;

@@ -1,12 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { CommentBox } from './CommentBox';
-import { BDSProvider } from '../Provider';
-import React from 'react';
 
 const meta = {
 	title: 'Molecules/CommentBox',
 	component: CommentBox,
-	decorators: [(Story) => React.createElement(BDSProvider, null, React.createElement(Story))],
 	parameters: {
 		layout: 'centered',
 	},

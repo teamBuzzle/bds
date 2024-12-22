@@ -1,18 +1,42 @@
 import React from 'react';
-import { BDSProvider } from '../lib/components/Provider';
 import type { Preview } from '@storybook/react';
+import { themes } from '@storybook/theming';
+import { ThemeProvider, CssBaseline } from '@mui/material';
+import { createElement } from 'react';
+import { bdsTheme } from '../lib/constants';
+import { bds } from '../lib/constants';
 
 const preview: Preview = {
 	parameters: {
-		actions: { argTypesRegex: '^on[A-Z].*' },
+		backgrounds: {
+			default: 'dark',
+			values: [
+				{
+					name: 'dark',
+					value: bds.color.background.elevated,
+				},
+			],
+		},
 		controls: {
 			matchers: {
 				color: /(background|color)$/i,
-				date: /Date$/,
+				date: /Date$/i,
 			},
+			disableSaveFromUI: true,
+		},
+		docs: {
+			theme: themes.dark,
 		},
 	},
-	decorators: [(Story) => React.createElement(BDSProvider, null, React.createElement(Story))],
+	tags: ['autodocs'],
+	decorators: [
+		(Story) => (
+			<ThemeProvider theme={bdsTheme}>
+				<CssBaseline />
+				{createElement(Story)}
+			</ThemeProvider>
+		),
+	],
 };
 
 export default preview;

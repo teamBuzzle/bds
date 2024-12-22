@@ -1,12 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { FaqItem } from './FaqItem';
-import { BDSProvider } from '../Provider';
-import React from 'react';
 
 const meta = {
 	title: 'Molecules/FaqItem',
 	component: FaqItem,
-	decorators: [(Story) => React.createElement(BDSProvider, null, React.createElement(Story))],
 	parameters: {
 		layout: 'centered',
 	},

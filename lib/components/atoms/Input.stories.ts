@@ -1,8 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Input } from './Input';
 import { InputAdornment } from '@mui/material';
-import { BDSProvider } from '../Provider';
-import React from 'react';
+import { createElement } from 'react';
 
 const meta = {
 	title: 'Atoms/Input',
@@ -17,7 +16,6 @@ const meta = {
 			],
 		},
 	},
-	decorators: [(Story) => React.createElement(BDSProvider, null, React.createElement(Story))],
 	tags: ['autodocs'],
 } satisfies Meta<typeof Input>;
 
@@ -25,10 +23,10 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 const createEndAdornment = () => {
-	return React.createElement(
+	return createElement(
 		InputAdornment,
 		{ position: 'end' },
-		React.createElement('img', {
+		createElement('img', {
 			src: '/images/eye_off_icon.svg',
 			alt: '비밀번호 숨기기',
 			width: 24,
