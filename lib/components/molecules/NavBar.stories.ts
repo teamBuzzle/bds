@@ -10,6 +10,20 @@ const meta = {
 			default: 'dark',
 		},
 	},
+	argTypes: {
+		items: {
+			description: '네비게이션 아이템 목록',
+			control: 'object',
+		},
+		onItemClick: {
+			description: '아이템 클릭 핸들러',
+			control: 'object',
+		},
+		sx: {
+			description: '스타일 오버라이드',
+			control: 'object',
+		},
+	},
 	tags: ['autodocs'],
 } satisfies Meta<typeof NavBar>;
 
