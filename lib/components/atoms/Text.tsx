@@ -1,17 +1,28 @@
+import type { FC } from 'react';
 import { Typography, TypographyProps } from '@mui/material';
-import { FC } from 'react';
+import { bds } from '@/constants';
 
 interface Props extends TypographyProps {
-	gradient?: 'primary' | 'secondary' | 'tertiary';
+	gradient?: boolean;
+	fontWeight?: keyof typeof bds.token.typography.weight;
+	fontSize?: keyof typeof bds.token.typography.size;
+	color?: keyof typeof bds.color.text;
 }
 
-export const Text: FC<Props> = ({ gradient, ...props }) => {
+export const Text: FC<Props> = ({ gradient, fontWeight = 'regular', fontSize = 'body', color = 'base', ...props }) => {
 	return (
 		<Typography
 			className={gradient ? 'gradient-text' : undefined}
 			sx={{
+				fontFamily: bds.token.typography.family.pretendard,
+				fontWeight: bds.token.typography.weight[fontWeight],
+				fontSize: bds.token.typography.size[fontSize],
+				color: bds.color.text[color],
 				...(gradient && {
-					background: (theme) => theme.palette.primary.main,
+					background: 'linear-gradient(180deg, #6778ff 0%, #4cc8ff 42.38%, #9f45ef 100%)',
+					WebkitBackgroundClip: 'text',
+					WebkitTextFillColor: 'transparent',
+					backgroundClip: 'text',
 				}),
 				...props.sx,
 			}}

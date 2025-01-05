@@ -7,9 +7,9 @@ export const token = {
 	},
 	size: {
 		largeTitle: 32,
-		title1: 26,
-		title2: 20,
-		title3: 18,
+		title1: 31,
+		title2: 29,
+		title3: 27,
 		headline: 16,
 		body: 16,
 		callout: 15,

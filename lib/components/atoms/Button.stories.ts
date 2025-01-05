@@ -8,6 +8,35 @@ const meta = {
 		layout: 'centered',
 	},
 	tags: ['autodocs'],
+	argTypes: {
+		variant: {
+			description: '버튼의 스타일 변형',
+			control: 'select',
+			options: ['contained', 'outlined'],
+			defaultValue: 'contained',
+		},
+		size: {
+			description: '버튼의 크기',
+			control: 'select',
+			options: ['small', 'medium', 'large'],
+			defaultValue: 'medium',
+		},
+		children: {
+			description: '버튼의 텍스트',
+			control: 'text',
+			defaultValue: '버튼',
+		},
+		fullWidth: {
+			description: '전체 너비 적용 여부',
+			control: 'boolean',
+			defaultValue: false,
+		},
+		disabled: {
+			description: '비활성화 여부',
+			control: 'boolean',
+			defaultValue: false,
+		},
+	},
 } satisfies Meta<typeof Button>;
 
 export default meta;

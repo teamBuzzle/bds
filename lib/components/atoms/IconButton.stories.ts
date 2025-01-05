@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { IconButton } from './IconButton';
+import { IconButton } from '@mui/material';
 
 const meta = {
 	title: 'Atoms/IconButton',
@@ -8,6 +8,22 @@ const meta = {
 		layout: 'centered',
 	},
 	tags: ['autodocs'],
+	argTypes: {
+		children: {
+			description: '아이콘 버튼의 내용',
+			control: 'text',
+			defaultValue: '메뉴',
+		},
+		disabled: {
+			description: '비활성화 여부',
+			control: 'boolean',
+			defaultValue: false,
+		},
+		onClick: {
+			description: '클릭 이벤트 핸들러',
+			action: 'clicked',
+		},
+	},
 } satisfies Meta<typeof IconButton>;
 
 export default meta;

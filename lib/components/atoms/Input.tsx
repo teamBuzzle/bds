@@ -9,7 +9,7 @@ interface Props extends Omit<TextFieldProps, 'helperText'> {
 
 export const Input: FC<Props> = ({ type, helperText, errorMessage, successMessage, ...props }) => {
 	const isPassword = useMemo(() => type === 'password', [type]);
-	const [isPasswordVisible, setIsPasswordVisible] = useState(isPassword);
+	const [isPasswordVisible, setIsPasswordVisible] = useState(!isPassword);
 
 	const handleTogglePasswordVisibility = useCallback(() => {
 		setIsPasswordVisible(!isPasswordVisible);

@@ -8,6 +8,20 @@ const meta = {
 		layout: 'centered',
 	},
 	tags: ['autodocs'],
+	argTypes: {
+		href: {
+			control: 'text',
+			description: '링크 주소',
+		},
+		children: {
+			control: 'text',
+			description: '링크 텍스트',
+		},
+		cta: {
+			control: 'boolean',
+			description: 'CTA 스타일 적용 여부',
+		},
+	},
 } satisfies Meta<typeof Link>;
 
 export default meta;

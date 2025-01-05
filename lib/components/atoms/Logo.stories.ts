@@ -10,6 +10,17 @@ const meta = {
 			default: 'dark',
 		},
 	},
+	argTypes: {
+		size: {
+			control: 'select',
+			options: ['small', 'medium', 'large'],
+			description: '로고 크기',
+		},
+		image: {
+			control: 'boolean',
+			description: '이미지 표시 여부',
+		},
+	},
 	tags: ['autodocs'],
 } satisfies Meta<typeof Logo>;
 
@@ -31,5 +42,12 @@ export const Medium: Story = {
 export const Large: Story = {
 	args: {
 		size: 'large',
+	},
+};
+
+export const WithImage: Story = {
+	args: {
+		size: 'large',
+		image: true,
 	},
 };

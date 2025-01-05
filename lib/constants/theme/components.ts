@@ -126,6 +126,11 @@ export const components = {
 							'&:hover': {
 								background: 'rgba(97, 116, 251, 1)',
 							},
+							'&:disabled': {
+								background: 'rgba(97, 116, 251, 0.5)',
+								color: 'rgba(242, 242, 242, 0.5)',
+								cursor: 'not-allowed',
+							},
 						},
 					},
 					{
@@ -137,6 +142,12 @@ export const components = {
 							'&:hover': {
 								background: 'transparent',
 								border: '1px solid rgba(97, 116, 251, 1)',
+							},
+							'&:disabled': {
+								background: 'transparent',
+								border: '1px solid rgba(97, 116, 251, 0.5)',
+								color: 'rgba(97, 116, 251, 0.5)',
+								cursor: 'not-allowed',
 							},
 						},
 					},
@@ -174,6 +185,16 @@ export const components = {
 				},
 				'&:hover': {
 					opacity: 0.6,
+				},
+			},
+		},
+	},
+	MuiIconButton: {
+		styleOverrides: {
+			root: {
+				'&:hover': {
+					opacity: 0.5,
+					backgroundColor: 'transparent',
 				},
 			},
 		},

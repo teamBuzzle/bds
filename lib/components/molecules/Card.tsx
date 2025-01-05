@@ -1,5 +1,5 @@
+import type { FC } from 'react';
 import { Card as MuiCard, CardProps } from '@mui/material';
-import { FC } from 'react';
 
 interface Props extends CardProps {
 	selected?: boolean;

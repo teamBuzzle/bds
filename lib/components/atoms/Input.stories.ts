@@ -15,6 +15,44 @@ const meta = {
 		},
 	},
 	tags: ['autodocs'],
+	argTypes: {
+		label: {
+			description: '입력 필드의 레이블',
+			control: 'text',
+			defaultValue: '레이블',
+		},
+		placeholder: {
+			description: '입력 필드의 플레이스홀더',
+			control: 'text',
+			defaultValue: '입력해주세요',
+		},
+		type: {
+			description: '입력 필드의 타입',
+			control: 'select',
+			options: ['text', 'password', 'email', 'number'],
+			defaultValue: 'text',
+		},
+		helperText: {
+			description: '도움말 텍스트',
+			control: 'text',
+			defaultValue: '',
+		},
+		errorMessage: {
+			description: '에러 메시지',
+			control: 'text',
+			defaultValue: '',
+		},
+		successMessage: {
+			description: '성공 메시지',
+			control: 'text',
+			defaultValue: '',
+		},
+		disabled: {
+			description: '비활성화 여부',
+			control: 'boolean',
+			defaultValue: false,
+		},
+	},
 } satisfies Meta<typeof Input>;
 
 export default meta;
