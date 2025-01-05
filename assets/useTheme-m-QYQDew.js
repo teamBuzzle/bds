@@ -1,1 +1,0 @@
-import"./index-B6-Y_Zgq.js";import{d as m}from"./DefaultPropsProvider-doerhS6B.js";import{T as o}from"./emotion-element-5486c51c.browser.esm-BrRU5PSG.js";import{u as r}from"./useTheme-B4qSp4Qi.js";function f(){const e=r(m);return e[o]||e}export{f as u};
