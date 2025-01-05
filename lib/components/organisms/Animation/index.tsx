@@ -1,7 +1,6 @@
+import { type FC, useEffect, useRef } from 'react';
 import { Box } from '@mui/material';
 import { animate } from 'motion';
-import { FC, useEffect, useRef } from 'react';
-import React from 'react';
 
 interface Props {
 	isAnimate: boolean;

@@ -1,7 +1,7 @@
-import { animate, MotionValue } from 'motion';
 import { type FC, useRef } from 'react';
-import { Box } from '../../atoms/Box';
-import { Text } from '../../atoms/Text';
+import { animate, MotionValue } from 'motion';
+import { Box } from '@mui/material';
+import { Text } from '@/components/atoms/Text';
 
 interface Props {
 	viewSize: {
@@ -11,7 +11,8 @@ interface Props {
 }
 
 export const ColorPicker: FC<Props> = ({ viewSize }) => {
-	const motionValue = new MotionValue(viewSize.width <= 750 ? 0 : 870);
+	const motionValue = new MotionValue();
+	motionValue.set(viewSize.width <= 750 ? 0 : 870);
 	const colorRef = useRef<HTMLDivElement>(null);
 	const sliderRef = useRef<HTMLDivElement>(null);
 

@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import { Link as MuiLink, LinkProps } from '@mui/material';
+import { Link as MuiLink, type LinkProps } from '@mui/material';
 
 interface Props extends LinkProps {
 	href: string;

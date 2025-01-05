@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import { Typography, TypographyProps } from '@mui/material';
+import { Typography, type TypographyProps } from '@mui/material';
 import { bds } from '@/constants';
 
 interface Props extends TypographyProps {

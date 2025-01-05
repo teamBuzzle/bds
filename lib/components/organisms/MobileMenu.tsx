@@ -1,18 +1,13 @@
+import { type FC, useState } from 'react';
 import { Box, Drawer, IconButton, Button } from '@mui/material';
-import { FC, useState } from 'react';
-import { Logo } from '../atoms/Logo';
-import { MenuBar } from '../molecules/MenuBar';
+import { Logo } from '@/components/atoms/Logo';
 
 interface Props {
-	menuItems: Array<{
-		label: string;
-		href: string;
-	}>;
 	isLoggedIn?: boolean;
 	onLogout?: () => void;
 }
 
-export const MobileMenu: FC<Props> = ({ menuItems, isLoggedIn, onLogout }) => {
+export const MobileMenu: FC<Props> = ({ isLoggedIn, onLogout }) => {
 	const [isOpen, setIsOpen] = useState(false);
 
 	return (
@@ -38,13 +33,6 @@ export const MobileMenu: FC<Props> = ({ menuItems, isLoggedIn, onLogout }) => {
 							<img src="/images/close_icon.svg" alt="닫기" width={36} height={36} />
 						</IconButton>
 					</Box>
-					<MenuBar
-						items={menuItems}
-						sx={{
-							flexDirection: 'column',
-							gap: 3,
-						}}
-					/>
 					<Box sx={{ mt: 4 }}>
 						{isLoggedIn ? (
 							<>

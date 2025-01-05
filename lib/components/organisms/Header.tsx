@@ -1,6 +1,6 @@
-import { FC } from 'react';
+import type { FC } from 'react';
 import { Button } from '@mui/material';
-import { Text } from '../atoms/Text';
+import { Text } from '@/components/atoms/Text';
 
 export const Header: FC = () => {
 	return (

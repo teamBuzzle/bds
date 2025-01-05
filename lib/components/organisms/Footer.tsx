@@ -1,9 +1,8 @@
-import { Box, Container, Stack } from '@mui/material';
-import { FC } from 'react';
-import { Logo } from '../atoms/Logo';
-import { Text } from '../atoms/Text';
-import { Link } from '../atoms/Link';
-import { Divider } from '../atoms/Divider';
+import type { FC } from 'react';
+import { Box, Container, Stack, Divider } from '@mui/material';
+import { Logo } from '@/components/atoms/Logo';
+import { Text } from '@/components/atoms/Text';
+import { Link } from '@/components/atoms/Link';
 
 export const Footer: FC = () => {
 	return (
@@ -26,7 +25,7 @@ export const Footer: FC = () => {
 				}}
 			>
 				<Logo size="small" />
-				<Text color="text.secondary">버즐과 함께 즐겁게 서비스를 만드세요</Text>
+				<Text color="base">버즐과 함께 즐겁게 서비스를 만드세요</Text>
 				<Stack direction="row" spacing={1} alignItems="center">
 					<Link href="/privacy" color="text.disabled">
 						개인정보처리방침

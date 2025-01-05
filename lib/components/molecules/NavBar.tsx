@@ -1,6 +1,6 @@
-import { Stack, StackProps } from '@mui/material';
-import { FC } from 'react';
-import { Link } from '../atoms/Link';
+import type { FC } from 'react';
+import { Stack, type StackProps } from '@mui/material';
+import { Link } from '@/components/atoms/Link';
 
 interface Props extends StackProps {
 	items: Array<{

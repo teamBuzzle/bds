@@ -1,6 +1,6 @@
+import { type FC, useState } from 'react';
 import { Box, Collapse } from '@mui/material';
-import { FC, useState } from 'react';
-import { Text } from '../atoms/Text';
+import { Text } from '@/components/atoms/Text';
 
 interface Props {
 	title: string;
