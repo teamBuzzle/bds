@@ -4,13 +4,14 @@ import{j as i}from"./jsx-runtime-DPRcWr2C.js";import{L as k}from"./Link-CGVOWZqt
 }`,signature:{properties:[{key:"label",value:{name:"string",required:!0}},{key:"href",value:{name:"string",required:!0}}]}}],raw:`Array<{
 	label: string;
 	href: string;
-}>`},description:""},onItemClick:{required:!1,tsType:{name:"signature",type:"function",raw:"(href: string) => void",signature:{arguments:[{type:{name:"string"},name:"href"}],return:{name:"void"}}},description:""}},composes:["StackProps"]};const W={title:"Molecules/NavBar",component:x,parameters:{layout:"centered",backgrounds:{default:"dark"}},argTypes:{items:{description:"네비게이션 아이템 목록",control:"object"},onItemClick:{description:"아이템 클릭 핸들러",control:"object"},sx:{description:"스타일 오버라이드",control:"object"}},tags:["autodocs"]},o=[{label:"주요기능",href:"/feature"},{label:"템플릿",href:"/template"},{label:"요금",href:"/price"},{label:"고객센터",href:"/customer"}],e={args:{items:o}},r={args:{items:o,onItemClick:a=>alert(`이동할 경로: ${a}`)}},t={args:{items:o,sx:{flexDirection:"column",alignItems:"flex-start",gap:3}}};var c,m,p;e.parameters={...e.parameters,docs:{...(c=e.parameters)==null?void 0:c.docs,source:{originalSource:`{
+}>`},description:""},onItemClick:{required:!1,tsType:{name:"signature",type:"function",raw:"(href: string) => void",signature:{arguments:[{type:{name:"string"},name:"href"}],return:{name:"void"}}},description:""}},composes:["StackProps"]};const W={title:"Molecules/NavBar",component:x,parameters:{layout:"centered",backgrounds:{default:"dark"}},argTypes:{items:{description:"네비게이션 아이템 목록",control:"object"},onItemClick:{description:"아이템 클릭 핸들러",control:"object"},sx:{description:"스타일 오버라이드",control:"object"}},tags:["autodocs"]},o=[{label:"주요기능",href:"/feature"},{label:"템플릿",href:"/template"},{label:"요금",href:"/price"},{label:"고객센터",href:"/customer"}],e={args:{items:o}},r={args:{items:o,onItemClick:a=>alert(`이동할 경로: ${a}`)}},t={args:{items:o,sx:{flexDirection:"column",alignItems:"flex-start",gap:3}}};var c,m,l;e.parameters={...e.parameters,docs:{...(c=e.parameters)==null?void 0:c.docs,source:{originalSource:`{
   args: {
     items
   }
-}`,...(p=(m=e.parameters)==null?void 0:m.docs)==null?void 0:p.source}}};var l,u,d;r.parameters={...r.parameters,docs:{...(l=r.parameters)==null?void 0:l.docs,source:{originalSource:`{
+}`,...(l=(m=e.parameters)==null?void 0:m.docs)==null?void 0:l.source}}};var p,u,d;r.parameters={...r.parameters,docs:{...(p=r.parameters)==null?void 0:p.docs,source:{originalSource:`{
   args: {
     items,
+    // eslint-disable-next-line no-alert
     onItemClick: href => alert(\`이동할 경로: \${href}\`)
   }
 }`,...(d=(u=r.parameters)==null?void 0:u.docs)==null?void 0:d.source}}};var g,f,h;t.parameters={...t.parameters,docs:{...(g=t.parameters)==null?void 0:g.docs,source:{originalSource:`{
