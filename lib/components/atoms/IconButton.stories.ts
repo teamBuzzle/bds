@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/react';
 import { IconButton } from '@mui/material';
+import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
 	title: 'Atoms/IconButton',
@@ -32,6 +32,7 @@ type Story = StoryObj<typeof IconButton>;
 export const Default: Story = {
 	args: {
 		children: '메뉴',
+		// eslint-disable-next-line no-alert
 		onClick: () => alert('클릭'),
 	},
 };

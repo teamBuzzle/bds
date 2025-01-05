@@ -1,10 +1,8 @@
-import React from 'react';
-import type { Preview } from '@storybook/react';
-import { themes } from '@storybook/theming';
+import React, { createElement } from 'react';
 import { ThemeProvider, CssBaseline } from '@mui/material';
-import { createElement } from 'react';
-import { bdsTheme } from '../lib/constants';
-import { bds } from '../lib/constants';
+import { themes } from '@storybook/theming';
+import { bdsTheme, bds } from '../lib/constants';
+import type { Preview } from '@storybook/react';
 
 const preview: Preview = {
 	parameters: {

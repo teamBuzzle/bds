@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/react';
 import { NavBar } from './NavBar';
+import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
 	title: 'Molecules/NavBar',
@@ -46,6 +46,7 @@ export const Default: Story = {
 export const WithClickHandler: Story = {
 	args: {
 		items,
+		// eslint-disable-next-line no-alert
 		onItemClick: (href) => alert(`이동할 경로: ${href}`),
 	},
 };

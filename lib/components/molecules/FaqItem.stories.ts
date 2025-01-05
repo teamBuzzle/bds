@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/react';
 import { FaqItem } from './FaqItem';
+import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
 	title: 'Molecules/FaqItem',

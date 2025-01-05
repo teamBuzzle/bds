@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { Text } from './Text';
 import { bds } from '@/constants';
+import { Text } from './Text';
+import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
 	title: 'Atoms/Text',

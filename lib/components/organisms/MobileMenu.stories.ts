@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/react';
 import { MobileMenu } from './MobileMenu';
+import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
 	title: 'Organisms/MobileMenu',
@@ -13,24 +13,16 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const menuItems = [
-	{ label: '주요기능', href: '/feature' },
-	{ label: '템플릿', href: '/template' },
-	{ label: '요금', href: '/price' },
-	{ label: '고객센터', href: '/customer' },
-];
-
 export const LoggedOut: Story = {
 	args: {
-		menuItems,
 		isLoggedIn: false,
 	},
 };
 
 export const LoggedIn: Story = {
 	args: {
-		menuItems,
 		isLoggedIn: true,
+		// eslint-disable-next-line no-alert
 		onLogout: () => alert('로그아웃'),
 	},
 };

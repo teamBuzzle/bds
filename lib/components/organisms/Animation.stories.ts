@@ -1,5 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react';
+/* eslint-disable no-console */
 import { Animation } from './Animation';
+import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
 	title: 'Organisms/Animation',

@@ -1,8 +1,8 @@
 import type { FC } from 'react';
 import { Box, Container, Stack, Divider } from '@mui/material';
+import { Link } from '@/components/atoms/Link';
 import { Logo } from '@/components/atoms/Logo';
 import { Text } from '@/components/atoms/Text';
-import { Link } from '@/components/atoms/Link';
 
 export const Footer: FC = () => {
 	return (

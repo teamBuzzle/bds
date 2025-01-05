@@ -1,7 +1,7 @@
 import { createTheme } from '@mui/material/styles';
-import { palette } from './palette';
 import { buzzle } from './buzzle';
 import { components } from './components';
+import { palette } from './palette';
 
 export const bdsTheme = createTheme({
 	palette,

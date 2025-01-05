@@ -7,9 +7,14 @@ interface Props extends Omit<TextFieldProps, 'helperText'> {
 	successMessage?: string;
 }
 
+const getInputType = (isPassword: boolean, isPasswordVisible: boolean, type: string | undefined) => {
+	if (!isPassword) return type;
+	return isPasswordVisible ? 'password' : 'text';
+};
+
 export const Input: FC<Props> = ({ type, helperText, errorMessage, successMessage, ...props }) => {
 	const isPassword = useMemo(() => type === 'password', [type]);
-	const [isPasswordVisible, setIsPasswordVisible] = useState(!isPassword);
+	const [isPasswordVisible, setIsPasswordVisible] = useState(isPassword);
 
 	const handleTogglePasswordVisibility = useCallback(() => {
 		setIsPasswordVisible(!isPasswordVisible);
@@ -17,12 +22,16 @@ export const Input: FC<Props> = ({ type, helperText, errorMessage, successMessag
 
 	return (
 		<TextField
-			type={isPassword ? (isPasswordVisible ? 'password' : 'text') : type}
+			type={getInputType(isPassword, isPasswordVisible, type)}
 			error={!!errorMessage}
 			helperText={errorMessage || successMessage || helperText}
 			slotProps={{
 				formHelperText: {
-					color: errorMessage ? 'error.main' : successMessage ? '#4CAF50' : '#727272',
+					color: (() => {
+						if (errorMessage) return 'error.main';
+						if (successMessage) return '#4CAF50';
+						return '#727272';
+					})(),
 				},
 				input: {
 					endAdornment: isPassword && (

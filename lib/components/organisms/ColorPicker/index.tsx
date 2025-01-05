@@ -1,6 +1,6 @@
 import { type FC, useRef } from 'react';
-import { animate, MotionValue } from 'motion';
 import { Box } from '@mui/material';
+import { animate, MotionValue } from 'motion';
 import { Text } from '@/components/atoms/Text';
 
 interface Props {
@@ -34,7 +34,7 @@ export const ColorPicker: FC<Props> = ({ viewSize }) => {
 
 		// Find the two closest stops
 		let i = 0;
-		while (i < stops.length - 1 && stops[i + 1] < x) i++;
+		while (i < stops.length - 1 && stops[i + 1] < x) i += 1;
 
 		const t = (x - stops[i]) / (stops[i + 1] - stops[i]);
 		const color = interpolateColor(colors[i], colors[i + 1], t);
