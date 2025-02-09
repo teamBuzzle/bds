@@ -1,4 +1,4 @@
-import { dirname, join } from 'path';
+import { mergeConfig } from 'vite';
 import type { StorybookConfig } from '@storybook/react-vite';
 
 const config: StorybookConfig = {
@@ -10,25 +10,38 @@ const config: StorybookConfig = {
 		},
 	],
 	addons: [
-		getAbsolutePath('@storybook/addon-links'),
-		getAbsolutePath('@storybook/addon-essentials'),
-		getAbsolutePath('@storybook/addon-interactions'),
-		getAbsolutePath('@storybook/addon-a11y'),
-		getAbsolutePath('@storybook/addon-viewport'),
+		'@storybook/addon-links',
+		'@storybook/addon-essentials',
+		'@storybook/addon-interactions',
+		'@storybook/addon-a11y',
+		'@storybook/addon-viewport',
 	],
 	framework: {
-		name: getAbsolutePath('@storybook/react-vite'),
+		name: '@storybook/react-vite',
 		options: {},
 	},
 	docs: {},
 	core: {
+		builder: {
+			name: '@storybook/builder-vite',
+			options: {
+				viteConfigPath: 'vite.config.ts',
+			},
+		},
 		disableTelemetry: true,
 	},
+	typescript: {
+		reactDocgen: 'react-docgen-typescript',
+	},
 	staticDirs: ['../public'],
+	async viteFinal(config) {
+		// TODO: https://github.com/storybookjs/storybook/issues/30480 vite:import-analysis 이슈 해결해야함.
+		return mergeConfig(config, {
+			optimizeDeps: {
+				exclude: [...(config.optimizeDeps?.exclude ?? []), '@storybook/builder-vite'],
+			},
+		});
+	},
 };
 
 export default config;
-
-function getAbsolutePath(value: string) {
-	return dirname(require.resolve(join(value, 'package.json')));
-}
