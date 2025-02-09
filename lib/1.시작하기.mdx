@@ -1,0 +1,211 @@
+import { Meta } from '@storybook/blocks';
+import { bds } from './constants';
+
+<Meta title="시작하기" />
+
+<div className='sb-section-title'>
+  <h1 className="gradient-text">🎨 BDS (Buzzle Design System)</h1>
+
+### BDS의 탄생 배경
+
+Buzzle에서는 다음과 같은 핵심 문제들을 해결하기 위해 BDS를 개발했습니다:
+
+<div className="table-container">
+	<table>
+		<thead>
+			<tr>
+				<th>문제점</th>
+				<th>BDS 솔루션</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>비일관적인 UI/UX</td>
+				<td>통합된 디자인 언어 제공</td>
+			</tr>
+			<tr>
+				<td>반복적인 디자인 작업</td>
+				<td>재사용 가능한 컴포넌트</td>
+			</tr>
+			<tr>
+				<td>개발 생산성 저하</td>
+				<td>표준화된 개발 컴포넌트</td>
+			</tr>
+			<tr>
+				<td>브랜드 아이덴티티 불일치</td>
+				<td>일관된 브랜드 경험</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+## 디자인 시스템 소개
+
+BDS(Buzzle Design System)는 일관된 Buzzle 브랜드 경험을 위해 설계된 포괄적인 디자인 생태계입니다.   
+MUI를 기반으로 버즐의 가치관을 반영하는 커스텀 스타일과 추가 컴포넌트를 제공합니다.   
+버즐의 디자인은 '화면에 글자가 없어도 이해할 수 있도록 하는 것'을 목표로 하고 있습니다.   
+
+### 🛠 기술 스택
+
+<div className="table-container">
+	<table>
+		<thead>
+			<tr>
+				<th>기술</th>
+				<th>버전</th>
+				<th>목적</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>React</td>
+				<td>17/18</td>
+				<td>UI 라이브러리</td>
+			</tr>
+			<tr>
+				<td>Material-UI</td>
+				<td>v6</td>
+				<td>컴포넌트 프레임워크</td>
+			</tr>
+			<tr>
+				<td>Emotion CSS</td>
+				<td>최신</td>
+				<td>스타일링</td>
+			</tr>
+			<tr>
+				<td>TypeScript</td>
+				<td>최신</td>
+				<td>정적 타이핑</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+## 시작하기
+
+### 필수 패키지 설치
+
+```bash
+npm install @buzzle/bds @mui/material @emotion/react @emotion/styled
+```
+
+### 피어 디펜던시 요구사항
+
+```typescript
+{
+  "peerDependencies": {
+    "react": "^17.0.0 || ^18.0.0",
+    "@emotion/react": "^11.13.5",
+    "@emotion/styled": "^11.13.5",
+    "@mui/material": "^6.1.9"
+  }
+}
+```
+
+### 기본 사용법
+
+```typescript
+import { Button, Input, Text } from '@buzzle/bds';
+import { CssBaseline } from '@mui/material';
+import { ThemeProvider } from '@mui/material/styles';
+import { bdsTheme } from '@buzzle/bds';
+
+function App() {
+  return (
+    <ThemeProvider theme={bdsTheme}>
+      <CssBaseline />
+      <div>
+        <Text variant="h1">환영합니다</Text>
+        <Input
+          label="이메일"
+          placeholder="이메일을 입력해주세요"
+        />
+        <Button variant="contained">
+          시작하기
+        </Button>
+      </div>
+    </ThemeProvider>
+  );
+}
+```
+
+## 문의 및 지원
+
+버그 리포트, 기능 제안은 [GitHub 이슈 트래커](https://github.com/teamBuzzle/bds/issues)를 통해 접수해주세요.
+
+## 라이선스
+
+MIT 라이선스 - 상업용 및 개인 프로젝트 모두 자유롭게 사용 가능
+
+</div>
+
+<style>
+	{`
+    .gradient-text {
+      background: linear-gradient(45deg, ${bds.color.text.title}, ${bds.color.text.subtitle});
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: ${bds.typography.title.largeTitle.fontSize}px;
+      margin-bottom: ${bds.value.container.spacing}px;
+    }
+
+    .section-title {
+      color: ${bds.color.text.title};
+      font-size: ${bds.typography.title.base.fontSize}px;
+      margin-top: ${bds.value.container.spacing}px;
+      margin-bottom: ${bds.value.container.spacing}px;
+      border-bottom: 2px solid ${bds.color.border.base};
+      padding-bottom: ${bds.value.container.spacing}px;
+    }
+
+    .table-container {
+      width: 100%;
+      overflow-x: auto;
+      margin-bottom: 2rem;
+    }
+
+    table {
+      width: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border-collapse: separate;
+      border-spacing: 0;
+    }
+
+    table thead {
+      background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+      color: white;
+    }
+
+    table th, 
+    table td {
+      padding: 15px;
+      text-align: left;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    table th {
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-size: 0.9rem;
+    }
+
+    table tbody tr {
+      transition: background-color 0.3s ease;
+    }
+
+    table tbody tr:hover {
+      background-color: rgba(37, 117, 252, 0.05);
+    }
+
+    table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    table tbody tr:nth-child(even) {
+      background-color: rgba(0, 0, 0, 0.02);
+    }
+  `}
+</style>
