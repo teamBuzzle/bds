@@ -19,5 +19,5 @@
 			"@/*": ["./lib/*"]
 		}
 	},
-	"include": ["vite.config.ts"]
+	"include": ["vite.config.ts", "lib", ".storybook"]
 }
