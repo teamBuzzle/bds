@@ -1,1 +1,0 @@
-import"./index-B6-Y_Zgq.js";import{d as m}from"./DefaultPropsProvider-BO4dxBej.js";import{T as o}from"./emotion-element-5486c51c.browser.esm-BQ8bDspF.js";import{u as r}from"./extendSxProp-B5Q85D5w.js";function f(){const e=r(m);return e[o]||e}export{f as u};
