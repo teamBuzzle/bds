@@ -113,7 +113,7 @@ export const token = {
 			1: '#1A1A1A',
 			2: '#434343',
 			3: '#767676',
-		}
+		},
 	},
 	gray: {
 		gray005: '#fafafa',
