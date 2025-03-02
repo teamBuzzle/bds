@@ -1,5 +1,5 @@
 {
-	"name": "bds",
+	"name": "@buzzle/bds",
 	"version": "0.1.1",
 	"type": "module",
 	"license": "MIT",
