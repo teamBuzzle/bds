@@ -3,6 +3,7 @@
 	"version": "0.1.2",
 	"type": "module",
 	"license": "MIT",
+	"private": false,
 	"author": {
 		"name": "Buzzle",
 		"email": "coolman555@me.com"
