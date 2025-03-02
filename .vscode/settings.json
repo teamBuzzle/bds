@@ -21,6 +21,8 @@
     "srcset",
     "thumbsup",
     "tseslint",
+    "vite",
+    "vitest",
     "WCAG",
     "yarnpkg"
   ],
