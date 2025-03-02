@@ -32,3 +32,4 @@ import{d as Y}from"./index-DrFu-skq.js";const{useEffect:_,useMemo:h}=__STORYBOOK
          linear-gradient(90deg, rgba(130, 130, 130, ${s/2}) 1px, transparent 1px) !important;
       }
     `},[n]);return _(()=>{let m=e.viewMode==="docs"?`addon-backgrounds-grid-docs-${e.id}`:"addon-backgrounds-grid";if(!o){A(m);return}z(m,f)},[o,f,e]),r()},V=FEATURES!=null&&FEATURES.backgroundsStoryGlobals?[N]:[J,q],ee={[g]:{grid:{cellSize:20,opacity:.5,cellAmount:5},disable:!1,...!(FEATURES!=null&&FEATURES.backgroundsStoryGlobals)&&{values:Object.values(C)}}},Q={[g]:{value:void 0,grid:!1}},re=FEATURES!=null&&FEATURES.backgroundsStoryGlobals?Q:{[g]:null};export{V as decorators,re as initialGlobals,ee as parameters};
+//# sourceMappingURL=preview-D77C14du.js.map
