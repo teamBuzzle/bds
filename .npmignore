@@ -1,0 +1,49 @@
+# 소스 코드
+lib/
+src/
+
+# 개발 환경 설정
+.storybook/
+.husky/
+.github/
+.vscode/
+.idea/
+.eslintrc.js
+.eslintignore
+.prettierrc
+.prettierignore
+.editorconfig
+tsconfig.json
+tsconfig.*.json
+vite.config.mts
+vitest.config.ts
+vitest.setup.ts
+
+# 테스트 파일
+**/*.test.ts
+**/*.test.tsx
+**/*.spec.ts
+**/*.spec.tsx
+**/*.stories.ts
+**/*.stories.tsx
+
+# 문서 및 예제
+docs/
+examples/
+storybook-static/
+
+# 빌드 관련
+node_modules/
+coverage/
+.nyc_output/
+.cache/
+.yarn/
+
+# 기타
+.DS_Store
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.env
+.env.* 

@@ -16,6 +16,11 @@
 	"main": "dist/index.es.js",
 	"module": "dist/index.es.js",
 	"types": "dist/main.d.ts",
+	"files": [
+		"dist",
+		"README.md",
+		"LICENSE"
+	],
 	"exports": {
 		".": {
 			"types": "./dist/main.d.ts",
@@ -34,6 +39,7 @@
 		"prettier": "prettier --write .",
 		"type-check": "tsc --noEmit",
 		"type-check:watch": "tsc --noEmit --watch",
+		"prepublishOnly": "yarn lint && yarn type-check && yarn build",
 		"release": "standard-version && git push --follow-tags && npm publish",
 		"release:major": "standard-version -- --release-as minor",
 		"postinstall": "husky",
@@ -121,5 +127,8 @@
 	"volta": {
 		"node": "20.13.1",
 		"yarn": "4.4.1"
+	},
+	"publishConfig": {
+		"access": "public"
 	}
 }
