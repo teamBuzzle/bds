@@ -21,6 +21,7 @@
     "srcset",
     "thumbsup",
     "tseslint",
+    "WCAG",
     "yarnpkg"
   ],
   "prettier.prettierPath": ".yarn/sdks/prettier/index.cjs",
