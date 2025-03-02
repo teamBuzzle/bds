@@ -10,7 +10,7 @@ export const semantic = {
 		paddingY: token.spacing.medium,
 		paddingX: token.spacing.medium,
 		radius: token.radius.medium,
-		borderWidth: token.borderWidth.xxSmall,
+		borderWidth: token.borderWidth.thin,
 		spacing: token.spacing.small,
 		img: {
 			radius: token.radius.innerRadius.medium(),
@@ -27,7 +27,7 @@ export const semantic = {
 	box: {
 		spacing: token.spacing.small,
 		radius: token.radius.medium,
-		borderWidth: token.borderWidth.xxSmall,
+		borderWidth: token.borderWidth.thin,
 		padding: token.spacing.medium,
 	},
 	button: {
@@ -39,7 +39,7 @@ export const semantic = {
 	list: {
 		spacing: token.spacing.small,
 		radius: token.radius.medium,
-		borderWidth: token.borderWidth.xxSmall,
+		borderWidth: token.borderWidth.thin,
 	},
 	inputForm: {
 		spacing: token.spacing.xLarge,
@@ -50,7 +50,7 @@ export const semantic = {
 	modal: {
 		spacing: token.spacing.medium,
 		radius: token.radius.medium,
-		borderWidth: token.borderWidth.xxSmall,
+		borderWidth: token.borderWidth.thin,
 		img: {
 			radius: token.radius.innerRadius.medium(),
 		},
