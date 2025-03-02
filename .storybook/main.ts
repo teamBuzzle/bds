@@ -14,7 +14,6 @@ const config: StorybookConfig = {
 		'@storybook/addon-essentials',
 		'@storybook/addon-interactions',
 		'@storybook/addon-a11y',
-		'@storybook/addon-viewport',
 	],
 	framework: {
 		name: '@storybook/react-vite',
@@ -25,7 +24,7 @@ const config: StorybookConfig = {
 		builder: {
 			name: '@storybook/builder-vite',
 			options: {
-				viteConfigPath: 'vite.config.ts',
+				viteConfigPath: 'vite.config.mts',
 			},
 		},
 		disableTelemetry: true,

@@ -1821,7 +1821,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-viewport@npm:8.5.3, @storybook/addon-viewport@npm:^8.5.3":
+"@storybook/addon-viewport@npm:8.5.3":
   version: 8.5.3
   resolution: "@storybook/addon-viewport@npm:8.5.3"
   dependencies:
@@ -3108,7 +3108,6 @@ __metadata:
     "@storybook/addon-essentials": "npm:^8.5.3"
     "@storybook/addon-interactions": "npm:^8.5.3"
     "@storybook/addon-links": "npm:^8.5.3"
-    "@storybook/addon-viewport": "npm:^8.5.3"
     "@storybook/blocks": "npm:^8.5.3"
     "@storybook/builder-vite": "npm:^8.5.3"
     "@storybook/manager-api": "npm:^8.5.3"

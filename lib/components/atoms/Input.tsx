@@ -1,7 +1,7 @@
 import { type FC, useState, useMemo, useCallback } from 'react';
 import { TextField, type TextFieldProps, IconButton } from '@mui/material';
 
-interface Props extends Omit<TextFieldProps, 'helperText'> {
+export interface Props extends Omit<TextFieldProps, 'helperText'> {
 	helperText?: string;
 	errorMessage?: string;
 	successMessage?: string;

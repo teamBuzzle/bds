@@ -2,7 +2,7 @@ import type { FC } from 'react';
 import { Typography, type TypographyProps } from '@mui/material';
 import { bds } from '@/constants';
 
-interface Props extends TypographyProps {
+export interface Props extends TypographyProps {
 	gradient?: boolean;
 	fontWeight?: keyof typeof bds.token.typography.weight;
 	fontSize?: keyof typeof bds.token.typography.size;

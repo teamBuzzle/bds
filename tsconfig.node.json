@@ -1,23 +1,29 @@
 {
 	"compilerOptions": {
 		"target": "ES2022",
-		"lib": ["ES2023", "DOM"], // Node.js용 DOM 관련 라이브러리도 추가
+		"lib": ["ES2023", "DOM"],
 		"module": "ESNext",
 		"skipLibCheck": true,
-		"moduleResolution": "bundler",
-		"allowImportingTsExtensions": true,
-		"isolatedModules": true,
+		"moduleResolution": "Node",
+		"isolatedModules": false,
 		"moduleDetection": "force",
-		"noEmit": true,
+		"noEmit": false,
+		"emitDeclarationOnly": true,
 		"strict": true,
-		"noUnusedLocals": true,
-		"noUnusedParameters": true,
+		"jsx": "react-jsx",
+		"noUnusedLocals": false,
+		"noUnusedParameters": false,
 		"noFallthroughCasesInSwitch": true,
-		"outDir": "./dist", // 컴파일 결과 출력 디렉토리 설정
+		"declaration": true,
+		"declarationDir": "./dist",
+		"outDir": "./dist",
 		"baseUrl": "./",
 		"paths": {
 			"@/*": ["./lib/*"]
-		}
+		},
+		"allowSyntheticDefaultImports": true,
+		"esModuleInterop": true
 	},
-	"include": ["vite.config.ts", "lib", ".storybook"]
+	"include": ["lib/**/*.ts", "lib/**/*.tsx"],
+	"exclude": ["node_modules", "**/*.stories.tsx", "**/*.test.tsx", "**/*.spec.ts", ".storybook", "storybook-static"]
 }
