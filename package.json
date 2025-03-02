@@ -23,9 +23,10 @@
 		}
 	},
 	"scripts": {
-		"build": "rm -rf dist && tsc -p tsconfig.node.json && VITE_CJS_TRACE=true vite build && yarn storybook:build",
+		"build": "rm -rf dist && tsc -p tsconfig.node.json && VITE_CJS_TRACE=true vite build && yarn build:storybook",
+		"build:storybook": "NODE_ENV=production VITE_DISABLE_ESLINT=true NODE_OPTIONS=--no-warnings storybook build --quiet",
 		"dev": "storybook dev -p 3000 --no-open",
-		"storybook:build": "storybook build",
+		"storybook:build": "NODE_ENV=production VITE_DISABLE_ESLINT=true NODE_OPTIONS=--no-warnings storybook build --quiet",
 		"storybook:upgrade": "yarn dlx storybook@latest upgrade",
 		"lint": "eslint .",
 		"lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",

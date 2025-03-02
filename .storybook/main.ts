@@ -31,6 +31,7 @@ const config: StorybookConfig = {
 	},
 	typescript: {
 		reactDocgen: 'react-docgen-typescript',
+		check: false,
 	},
 	staticDirs: ['../public'],
 	async viteFinal(config) {
@@ -39,6 +40,22 @@ const config: StorybookConfig = {
 			optimizeDeps: {
 				exclude: [...(config.optimizeDeps?.exclude ?? []), '@storybook/builder-vite'],
 			},
+			build: {
+				minify: 'esbuild',
+				sourcemap: true,
+				commonjsOptions: {
+					transformMixedEsModules: true,
+				},
+				chunkSizeWarningLimit: 1000,
+			},
+			esbuild: {
+				logOverride: {
+					'this-is-undefined-in-esm': 'silent',
+					'unsupported-jsx-comment': 'silent',
+					'use-of-eval': 'silent',
+				},
+			},
+			logLevel: 'silent',
 		});
 	},
 };

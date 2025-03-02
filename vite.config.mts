@@ -16,8 +16,8 @@ export default defineConfig({
 	],
 	resolve: {
 		alias: {
-			'@': resolve(__dirname, './lib')
-		}
+			'@': resolve(__dirname, './lib'),
+		},
 	},
 	build: {
 		lib: {
@@ -35,9 +35,25 @@ export default defineConfig({
 					'@emotion/react': 'emotionReact',
 					'@emotion/styled': 'emotionStyled',
 					'@mui/material': 'mui',
-					'motion': 'motion'
+					motion: 'motion',
 				},
 			},
+		},
+		minify: 'esbuild',
+		sourcemap: true,
+		commonjsOptions: {
+			transformMixedEsModules: true,
+		},
+		chunkSizeWarningLimit: 1000,
+	},
+	optimizeDeps: {
+		include: ['@storybook/core'],
+	},
+	esbuild: {
+		logOverride: {
+			'this-is-undefined-in-esm': 'silent',
+			'unsupported-jsx-comment': 'silent',
+			'use-of-eval': 'silent',
 		},
 	},
 });
