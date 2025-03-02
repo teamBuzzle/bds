@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import { Link as MuiLink, type LinkProps } from '@mui/material';
 
-interface Props extends LinkProps {
+export interface Props extends LinkProps {
 	href: string;
 	cta?: boolean;
 	disabled?: boolean;

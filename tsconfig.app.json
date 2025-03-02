@@ -14,6 +14,7 @@
 		"strict": true,
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
+		"declaration": true,
 		"noFallthroughCasesInSwitch": true,
 		"allowSyntheticDefaultImports": true, // synthetic default import 허용
 		"esModuleInterop": true, // CommonJS 호환성 추가

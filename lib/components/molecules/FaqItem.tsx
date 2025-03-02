@@ -2,7 +2,7 @@ import { type FC, useState } from 'react';
 import { Box, Collapse } from '@mui/material';
 import { Text } from '@/components/atoms/Text';
 
-interface Props {
+export interface Props {
 	title: string;
 	subtitle: string;
 	content: string;

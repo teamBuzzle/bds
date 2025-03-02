@@ -2,7 +2,7 @@ import type { FC } from 'react';
 import { Stack, type StackProps } from '@mui/material';
 import { Link } from '@/components/atoms/Link';
 
-interface Props extends StackProps {
+export interface Props extends StackProps {
 	items: Array<{
 		label: string;
 		href: string;

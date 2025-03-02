@@ -12,10 +12,21 @@
 		"type": "git",
 		"url": "https://github.com/teamBuzzle/bds.git"
 	},
+	"main": "dist/index.es.js",
+	"module": "dist/index.es.js",
+	"types": "dist/main.d.ts",
+	"exports": {
+		".": {
+			"types": "./dist/main.d.ts",
+			"require": "./dist/index.es.js",
+			"default": "./dist/index.es.js"
+		}
+	},
 	"scripts": {
-		"build": "tsc -b && vite build && yarn storybook:build",
+		"build": "rm -rf dist && tsc -p tsconfig.node.json && VITE_CJS_TRACE=true vite build && yarn build:storybook",
+		"build:storybook": "NODE_ENV=production VITE_DISABLE_ESLINT=true NODE_OPTIONS=--no-warnings storybook build --quiet",
 		"dev": "storybook dev -p 3000 --no-open",
-		"storybook:build": "storybook build",
+		"storybook:build": "NODE_ENV=production VITE_DISABLE_ESLINT=true NODE_OPTIONS=--no-warnings storybook build --quiet",
 		"storybook:upgrade": "yarn dlx storybook@latest upgrade",
 		"lint": "eslint .",
 		"lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
@@ -49,7 +60,6 @@
 		"@storybook/addon-essentials": "^8.5.3",
 		"@storybook/addon-interactions": "^8.5.3",
 		"@storybook/addon-links": "^8.5.3",
-		"@storybook/addon-viewport": "^8.5.3",
 		"@storybook/blocks": "^8.5.3",
 		"@storybook/builder-vite": "^8.5.3",
 		"@storybook/manager-api": "^8.5.3",

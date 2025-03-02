@@ -8,7 +8,7 @@ const sizes = {
 	large: { logo: { width: 369, height: 120 }, text: bds.token.typography.size.title1 },
 } as const;
 
-interface Props extends LinkProps {
+export interface Props extends LinkProps {
 	image?: boolean;
 	size?: keyof typeof sizes;
 }
