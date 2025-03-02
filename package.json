@@ -33,7 +33,7 @@
 		"prettier": "prettier --write .",
 		"type-check": "tsc --noEmit",
 		"type-check:watch": "tsc --noEmit --watch",
-		"release": "standard-version",
+		"release": "standard-version && git push --follow-tags && npm publish",
 		"release:major": "standard-version -- --release-as minor",
 		"postinstall": "husky",
 		"preinstall": "npx only-allow yarn",
