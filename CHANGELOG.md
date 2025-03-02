@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.2](https://github.com/teamBuzzle/bds/compare/v0.1.1...v0.1.2) (2025-03-02)
+
+### 🐛 Bug Fixes
+
+- fix project name ([5b24da7](https://github.com/teamBuzzle/bds/commits/5b24da7606482044d92466e0d0d1a0e2ff18def9))
+
 ### 0.1.1 (2025-03-02)
 
 ### 💫 Continuous Integration
