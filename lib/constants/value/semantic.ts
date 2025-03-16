@@ -13,15 +13,15 @@ export const semantic = {
 		borderWidth: token.borderWidth.thin,
 		spacing: token.spacing.small,
 		img: {
-			radius: token.radius.innerRadius.medium(),
+			radius: token.radius.innerRadius.medium,
 		},
 		button: {
 			paddingY: token.spacing.small,
 			paddingX: token.spacing.medium,
-			radius: token.radius.innerRadius.medium(),
+			radius: token.radius.innerRadius.medium,
 		},
 		paper: {
-			radius: token.radius.innerRadius.medium(),
+			radius: token.radius.innerRadius.medium,
 		},
 	},
 	box: {
@@ -52,12 +52,12 @@ export const semantic = {
 		radius: token.radius.medium,
 		borderWidth: token.borderWidth.thin,
 		img: {
-			radius: token.radius.innerRadius.medium(),
+			radius: token.radius.innerRadius.medium,
 		},
 		button: {
 			paddingY: token.spacing.small,
 			paddingX: token.spacing.medium,
-			radius: token.radius.innerRadius.medium(),
+			radius: token.radius.innerRadius.medium,
 		},
 	},
 } as const;

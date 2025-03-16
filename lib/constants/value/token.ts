@@ -1,8 +1,3 @@
-const extraLarge = () => token.radius.extraLarge - token.spacing.xLarge;
-const large = () => token.radius.large - token.spacing.large;
-const medium = () => token.radius.medium - token.spacing.medium;
-const small = () => token.radius.small - token.spacing.small;
-
 export const token = {
 	spacing: {
 		xxLarge: 48,
@@ -15,10 +10,10 @@ export const token = {
 	},
 	radius: {
 		innerRadius: {
-			extraLarge,
-			medium,
-			large,
-			small,
+			extraLarge: 30,
+			medium: 15,
+			large: 8,
+			small: 4,
 		},
 		extraLarge: 30,
 		large: 15,
