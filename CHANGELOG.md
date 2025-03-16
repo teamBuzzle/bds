@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.6](https://github.com/teamBuzzle/bds/compare/v0.1.5...v0.1.6) (2025-03-16)
+
+### 🐛 Bug Fixes
+
+- **semantic:** nextjs Functions cannot be passed directly to Client Components ([7471711](https://github.com/teamBuzzle/bds/commits/74717117f49e733b370ac2052bb4b3280f2bc395))
+
 ### [0.1.5](https://github.com/teamBuzzle/bds/compare/v0.1.4...v0.1.5) (2025-03-02)
 
 ### 🐛 Bug Fixes
