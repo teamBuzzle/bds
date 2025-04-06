@@ -1,10 +1,10 @@
 import { useEffect, useRef } from 'react';
 import { Box } from '@mui/material';
-import * as d3 from 'd3';
+import { select, pie, arc, interpolate, PieArcDatum } from 'd3';
 import { bds } from '@/constants';
 
-// 데이터 타입 정의
 interface dataItem {
+	id: string;
 	label: string;
 	value: number;
 	color: string;
@@ -23,7 +23,6 @@ const pieColors = [
 	bds.token.color.dark.success.normal,
 	bds.token.color.dark.warning.normal,
 	bds.token.color.dark.information.normal,
-	// bds.token.color.dark.danger.normal,
 ];
 
 export const DonutGraph = ({ data, legends, width = 350, height = 350 }: Props) => {
@@ -34,55 +33,45 @@ export const DonutGraph = ({ data, legends, width = 350, height = 350 }: Props) 
 	useEffect(() => {
 		if (!svgRef.current) return;
 
-		// 파이 생성기
-		const pie = d3
-			.pie<dataItem>()
+		const donutPie = pie<dataItem>()
 			.value((d) => d.value)
 			.sort((a, b) => b.value - a.value);
 
-		// 아크 생성기
-		const arc = d3
-			.arc<d3.PieArcDatum<dataItem>>()
+		const donutArc = arc<PieArcDatum<dataItem>>()
 			.outerRadius(outerRadius)
 			.innerRadius(innerRadius)
 			.cornerRadius(3)
 			.padAngle(0.015);
 
-		// 이전 SVG 내용 지우기
-		d3.select(svgRef.current).selectAll('*').remove();
+		select(svgRef.current).selectAll('*').remove();
 
-		// SVG 생성
-		const svg = d3
-			.select(svgRef.current)
+		const svg = select(svgRef.current)
 			.attr('width', width)
 			.attr('height', height)
 			.append('g')
 			.attr('transform', `translate(${width / 2},${height / 2})`);
 
-		// 경로 생성
 		const paths = svg
 			.selectAll('path')
-			.data(pie(data))
+			.data(donutPie(data))
 			.enter()
 			.append('path')
 			.attr('fill', (_, i) => pieColors[i % pieColors.length]);
 
-		// 애니메이션
 		paths
 			.transition()
 			.duration(1000)
 			.attrTween('d', (d) => {
-				const interpolate = d3.interpolate({ startAngle: 0, endAngle: 0 }, d);
-				return (t: number) => arc(interpolate(t)) || '';
+				const donutInterpolate = interpolate({ startAngle: 0, endAngle: 0 }, d);
+				return (t: number) => donutArc(donutInterpolate(t)) || '';
 			});
 
-		// 텍스트 라벨 추가
 		const addLabels = () => {
 			svg.selectAll('text')
-				.data(pie(data))
+				.data(donutPie(data))
 				.enter()
 				.append('text')
-				.attr('transform', (d) => `translate(${arc.centroid(d)})`)
+				.attr('transform', (d) => `translate(${donutArc.centroid(d)})`)
 				.attr('dy', '.4em')
 				.attr('text-anchor', 'middle')
 				.text((d) => `${d.data.value}%`)
@@ -99,8 +88,7 @@ export const DonutGraph = ({ data, legends, width = 350, height = 350 }: Props) 
 			{legends && (
 				<Box sx={{ mt: 2, display: 'flex', flexDirection: 'row', flexWrap: 'wrap', gap: 2 }}>
 					{data.map((item, i) => (
-						// eslint-disable-next-line react/no-array-index-key
-						<Box key={i} sx={{ display: 'flex', alignItems: 'center' }}>
+						<Box key={item.id} sx={{ display: 'flex', alignItems: 'center' }}>
 							<Box
 								sx={{
 									width: 20,

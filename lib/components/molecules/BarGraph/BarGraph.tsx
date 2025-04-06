@@ -42,10 +42,9 @@ export const BarGraph = ({
 	// 축 생성 로직을 useEffect로 분리
 	useEffect(() => {
 		const svg = svgRef.current;
-		if (!svg) return;
-
-		createAxis(select(svg), scales, layout, height);
-		// eslint-disable-next-line consistent-return
+		if (svg) {
+			createAxis(select(svg), scales, layout, height);
+		}
 		return () => {
 			select(svg).selectAll('.axes-container').remove();
 		};

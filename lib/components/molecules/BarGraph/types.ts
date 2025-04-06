@@ -1,4 +1,4 @@
-import { ScaleBand, ScaleLinear } from 'd3';
+import type { ScaleBand, ScaleLinear } from 'd3';
 
 export type sortedType = 'basic' | 'ascending' | 'descending' | 'alphabetical';
 
