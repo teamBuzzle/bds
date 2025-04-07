@@ -124,13 +124,13 @@
 			"bash -c 'yarn prettier'"
 		]
 	},
-	"packageManager": "yarn@4.5.3",
+	"packageManager": "yarn@4.8.1",
 	"engines": {
-		"node": "20.13.1"
+		"node": "22.14.0"
 	},
 	"volta": {
-		"node": "20.13.1",
-		"yarn": "4.4.1"
+		"node": "22.14.0",
+		"yarn": "4.8.1"
 	},
 	"publishConfig": {
 		"access": "public"
