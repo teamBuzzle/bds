@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.15](https://github.com/teamBuzzle/bds/compare/v0.1.14...v0.1.15) (2025-04-07)
+
+### 🐛 Bug Fixes
+
+- remove styled ([3fa9e5b](https://github.com/teamBuzzle/bds/commits/3fa9e5bc8abda7912ae29028c65ae78726e9723d))
+
 ### [0.1.14](https://github.com/teamBuzzle/bds/compare/v0.1.6...v0.1.14) (2025-04-07)
 
 ### 🎫 Chores
