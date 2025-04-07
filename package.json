@@ -12,8 +12,8 @@
 		"type": "git",
 		"url": "https://github.com/teamBuzzle/bds.git"
 	},
-	"main": "dist/index.es.js",
-	"module": "dist/index.es.js",
+	"main": "dist/main.js",
+	"module": "dist/main.js",
 	"types": "dist/main.d.ts",
 	"files": [
 		"dist",
@@ -23,8 +23,8 @@
 	"exports": {
 		".": {
 			"types": "./dist/main.d.ts",
-			"require": "./dist/index.es.js",
-			"default": "./dist/index.es.js"
+			"require": "./dist/main.js",
+			"default": "./dist/main.js"
 		}
 	},
 	"scripts": {
