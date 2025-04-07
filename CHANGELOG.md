@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.16](https://github.com/teamBuzzle/bds/compare/v0.1.15...v0.1.16) (2025-04-07)
+
+### 🎫 Chores
+
+- **yarmrc:** yarnrc 패키지 메니저 정보 변경 ([f17f6b1](https://github.com/teamBuzzle/bds/commits/f17f6b18d01cf1ee2637186f9bc409415281ec4a))
+- yarn install ([a79f31c](https://github.com/teamBuzzle/bds/commits/a79f31cdb459731d708f1404b4ff905c19da0e37))
+- yarn, node 버전 상향 ([aad2244](https://github.com/teamBuzzle/bds/commits/aad224497038b75f95b268d74f39ad18f8a822d1))
+
+### 🐛 Bug Fixes
+
+- 서버사이드 렌더링 오류 수정 ([38ee795](https://github.com/teamBuzzle/bds/commits/38ee795e5fcf299baf6979069ad831cb26a31647))
+- entry point fix ([3557619](https://github.com/teamBuzzle/bds/commits/355761934e3df756ced02d85c30aab4851d39686))
+- **package:** mui version fix ([d77c748](https://github.com/teamBuzzle/bds/commits/d77c7485e598c38a575991dabe1dd3b92e5385e2))
+
 ### [0.1.15](https://github.com/teamBuzzle/bds/compare/v0.1.14...v0.1.15) (2025-04-07)
 
 ### 🐛 Bug Fixes
