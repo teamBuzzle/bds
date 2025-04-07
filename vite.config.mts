@@ -22,9 +22,7 @@ export default defineConfig({
 	build: {
 		lib: {
 			entry: resolve(__dirname, 'lib/main.ts'),
-			name: 'bds',
 			formats: ['es'],
-			fileName: (format) => `index.${format}.js`,
 		},
 		rollupOptions: {
 			external: ['react', 'react-dom', '@emotion/react', '@emotion/styled', '@mui/material', 'motion'],
@@ -37,14 +35,14 @@ export default defineConfig({
 					'@mui/material': 'mui',
 					motion: 'motion',
 				},
+				preserveModules: true,
+				preserveModulesRoot: 'lib',
+				entryFileNames: (chunk) => `${chunk.name.replace(/^lib\//, '')}.js`,
+				dir: 'dist',
 			},
 		},
 		minify: 'esbuild',
 		sourcemap: true,
-		commonjsOptions: {
-			transformMixedEsModules: true,
-		},
-		chunkSizeWarningLimit: 1000,
 	},
 	optimizeDeps: {
 		include: ['@storybook/core'],
