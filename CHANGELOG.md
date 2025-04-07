@@ -2,6 +2,33 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.7](https://github.com/teamBuzzle/bds/compare/v0.1.6...v0.1.7) (2025-04-07)
+
+### ✨ Features
+
+- **component:** table ([94dc7a5](https://github.com/teamBuzzle/bds/commits/94dc7a5628c3d3bbff11f0eb046018f774fbd68b))
+- **component:** table ([3d52934](https://github.com/teamBuzzle/bds/commits/3d52934749ec900c4c8309bc5faeddf913b0de83))
+- **graph:** bar graph ([520dd71](https://github.com/teamBuzzle/bds/commits/520dd719899f6204a1a38a4838380c5c077b51ff))
+- **graph:** bar graph ([84e3e2f](https://github.com/teamBuzzle/bds/commits/84e3e2fba0b17a1edb7681cb2110e960259fe03f))
+- **graph:** donut graph ([ba4f65b](https://github.com/teamBuzzle/bds/commits/ba4f65bee78f92f8fddbc95f6a7674fe46041122))
+- **graph:** donut graph ([f395218](https://github.com/teamBuzzle/bds/commits/f395218bc45e2e647bb929e7f4735c4ccfe53e5d))
+- **graph:** line graph ([97a634c](https://github.com/teamBuzzle/bds/commits/97a634c0b10d2062c0a730991417e46fd38d1109))
+- **graph:** line graph ([a6b5e57](https://github.com/teamBuzzle/bds/commits/a6b5e574d7a211de05dd22e75d5c1b1421dc7deb))
+- **graph:** pie graph ([1c2c4e5](https://github.com/teamBuzzle/bds/commits/1c2c4e51c495ccba49c0ed242287df9db2fed62b))
+- **graph:** pie graph ([cfe6b2f](https://github.com/teamBuzzle/bds/commits/cfe6b2f68ed238e36ed732ea99bb5d536fcb4614))
+
+### 🎫 Chores
+
+- update dependencies ([4c07b8a](https://github.com/teamBuzzle/bds/commits/4c07b8a854b2c18909fa42a81e4f51c4726dfb8d))
+- **yarmrc:** yarnrc 패키지 메니저 정보 변경 ([4bd4f27](https://github.com/teamBuzzle/bds/commits/4bd4f27289095ae11c11596bd77bca6018a5264c))
+- yarn install ([7043aaa](https://github.com/teamBuzzle/bds/commits/7043aaaf1a888fcddc0ff7695e3b3cbbce368ce9))
+- yarn, node 버전 상향 ([064080a](https://github.com/teamBuzzle/bds/commits/064080a2a07de5db2fdb3a2c94e43c865d0df3ae))
+
+### 🐛 Bug Fixes
+
+- 서버사이드 렌더링 오류 수정 ([50f9395](https://github.com/teamBuzzle/bds/commits/50f939542042980441e2a0d66730645e8e8ca6d7))
+- **package:** mui version fix ([88af7e7](https://github.com/teamBuzzle/bds/commits/88af7e72521d98e091aa4c04cbb3ce85250c62cd))
+
 ### [0.1.6](https://github.com/teamBuzzle/bds/compare/v0.1.5...v0.1.6) (2025-03-16)
 
 ### 🐛 Bug Fixes
