@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { Box, styled } from '@mui/material';
+import { Box } from '@mui/material';
 import { select } from 'd3';
 import { GridLines } from './components/GridLines';
 import { HorizontalBarRect } from './components/HorizontalBarRect';
@@ -9,14 +9,6 @@ import { useBarChart } from './hooks/useBarChart';
 import { BarGraphProps, HorizontalScales, VerticalScales } from './types';
 import { createAxis } from './utils/createAxis';
 import { bds } from '../../../constants';
-
-const S = {
-	Box: styled(Box)({
-		p: 2,
-		backgroundColor: bds.token.color.dark.background[1],
-		borderRadius: 3,
-	}),
-};
 
 export const BarGraph = ({
 	data,
@@ -51,7 +43,7 @@ export const BarGraph = ({
 	}, [scales, height]);
 
 	return (
-		<S.Box>
+		<Box sx={{ p: 2, backgroundColor: bds.token.color.dark.background[1], borderRadius: 3 }}>
 			<svg ref={svgRef} width={width} height={height}>
 				{grid && (
 					<GridLines
@@ -83,6 +75,6 @@ export const BarGraph = ({
 					),
 				)}
 			</svg>
-		</S.Box>
+		</Box>
 	);
 };

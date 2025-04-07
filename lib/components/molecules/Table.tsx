@@ -8,7 +8,6 @@ import {
 	TableRow,
 	Paper,
 	TablePagination,
-	styled,
 } from '@mui/material';
 import {
 	useReactTable,
@@ -18,13 +17,6 @@ import {
 	getPaginationRowModel,
 } from '@tanstack/react-table';
 import { bds } from '@/constants';
-
-const S = {
-	TableCell: styled(TableCell)({
-		fontWeight: 'bold',
-		backgroundColor: bds.token.color.gray.gray005,
-	}),
-};
 
 interface Props<TData> {
 	data: TData[];
@@ -55,15 +47,16 @@ export const Table = <TData,>({ data, columns }: Props<TData>) => {
 			<MuiTable>
 				<TableHead>
 					<TableRow>
-						{table
-							.getHeaderGroups()
-							.map((headerGroup) =>
-								headerGroup.headers.map((header) => (
-									<S.TableCell key={header.id}>
-										{flexRender(header.column.columnDef.header, header.getContext())}
-									</S.TableCell>
-								)),
-							)}
+						{table.getHeaderGroups().map((headerGroup) =>
+							headerGroup.headers.map((header) => (
+								<TableCell
+									key={header.id}
+									sx={{ fontWeight: 'bold', backgroundColor: bds.token.color.gray.gray005 }}
+								>
+									{flexRender(header.column.columnDef.header, header.getContext())}
+								</TableCell>
+							)),
+						)}
 					</TableRow>
 				</TableHead>
 				<TableBody>
