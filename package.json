@@ -42,7 +42,7 @@
 		"prepublishOnly": "yarn lint && yarn type-check && yarn build",
 		"release": "standard-version && git push --follow-tags && npm publish",
 		"release:major": "standard-version -- --release-as minor",
-		"postinstall": "husky",
+		"prepare": "node .husky/install.mjs",
 		"preinstall": "npx only-allow yarn",
 		"sdks": "yarn dlx @yarnpkg/sdks vscode"
 	},
