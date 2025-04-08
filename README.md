@@ -23,11 +23,9 @@
 
 ## 핵심 특징
 
-🎨 **MUI 확장 컴포넌트**: Material UI v6를 기반으로 Buzzle 브랜드 아이덴티티에 맞게 확장된 컴포넌트 제공
+🎨 **MUI 확장 컴포넌트**: Material UI를 기반으로 Buzzle 브랜드 아이덴티티에 맞게 확장된 컴포넌트 제공
 
 🧩 **모듈화된 설계**: 필요한 컴포넌트만 선택적으로 가져와 사용 가능한 구조
-
-🌓 **다크/라이트 테마**: 자동 및 수동 테마 전환을 지원하는 완전한 테마 시스템
 
 📱 **반응형 디자인**: 모든 화면 크기에 최적화된 컴포넌트 제공
 
@@ -43,35 +41,42 @@ npm install @buzzle/bds @mui/material @emotion/react @emotion/styled
 
 # yarn 사용
 yarn add @buzzle/bds @mui/material @emotion/react @emotion/styled
+
+# pnpm 사용
+pnpm add @buzzle/bds @mui/material @emotion/react @emotion/styled
+
+# bun 사용
+bun add @buzzle/bds @mui/material @emotion/react @emotion/styled
+
 ```
 
 ## 사용 예시
 
 ```jsx
 import { ThemeProvider } from '@mui/material/styles';
-import { CssBaseline } from '@mui/material';
+import { CssBaseline, Container } from '@mui/material';
 import { bdsTheme, Button, Text, Input } from '@buzzle/bds';
 
-function App() {
+const App = () => {
 	return (
 		<ThemeProvider theme={bdsTheme}>
 			<CssBaseline />
-			<div>
+			<Container>
 				<Text variant="h1" gradient>
 					Buzzle Design System
 				</Text>
 				<Input label="이메일" placeholder="이메일을 입력해주세요" />
 				<Button variant="contained">시작하기</Button>
-			</div>
+			</Container>
 		</ThemeProvider>
 	);
-}
+};
 ```
 
 ## 기술 스택
 
-- **React**: 17/18 버전 지원
-- **Material UI**: v6 기반 컴포넌트 확장
+- **React**: 17/18/19 버전 지원
+- **Material UI**: MUI 기반 컴포넌트 확장
 - **Emotion**: CSS-in-JS 스타일링
 - **TypeScript**: 정적 타입 시스템
 - **Vite**: 빠른 빌드 및 개발 환경
@@ -81,21 +86,24 @@ function App() {
 
 BDS는 다음과 같은 목표를 가지고 개발되었습니다:
 
-1. **디자인 일관성 확보**: 모든 Buzzle 제품에서 일관된 사용자 경험 제공
-2. **개발 효율성 향상**: 재사용 가능한 컴포넌트로 개발 시간 단축
-3. **브랜드 아이덴티티 강화**: Buzzle만의 고유한 시각적 언어 구축
-4. **접근성 및 사용성 개선**: 모든 사용자를 위한 포용적 디자인 구현
-5. **학습 및 실험**: MUI 기반 디자인 시스템 구축 경험 공유
+- 아토믹 디자인 시스템 구축
+- 높은 DX 컴포넌트
 
 ## 기여하기
 
 BDS는 오픈소스 프로젝트로, 모든 형태의 기여를 환영합니다:
 
-1. 이슈 또는 기능 제안하기
-2. 코드 개선 및 버그 수정하기
-3. 문서 개선하기
-4. 사용 사례 공유하기
+- [이슈 또는 기능 제안하기](https://github.com/teamBuzzle/bds/issues/new?template=%EA%B8%B0%EB%8A%A5%EC%A0%9C%EC%95%88.md)
+- [코드 개선 및 버그 수정하기](https://github.com/teamBuzzle/bds/issues/new?template=%EB%B2%84%EA%B7%B8%EC%A0%9C%EB%B3%B4.md)
+- [문서 개선하기](https://github.com/teamBuzzle/bds/issues/new?template=%EB%AC%B8%EC%84%9C-%EC%98%A4%EB%A5%98-%EB%98%90%EB%8A%94-%EB%AC%B8%EC%9D%98.md)
+- [사용 사례 공유하기](https://github.com/teamBuzzle/bds/issues/new?template=%EC%82%AC%EC%9A%A9%EC%82%AC%EB%A1%80.md)
+
+## 링크
+
+레포지토리 : https://github.com/teamBuzzle/bds  
+문서 : https://teambuzzle.github.io/bds  
+npm : https://www.npmjs.com/package/@buzzle/bds
 
 ## 라이선스
 
-MIT 라이선스 © Buzzle
+MIT License
