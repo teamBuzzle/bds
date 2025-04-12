@@ -2,7 +2,7 @@ import { LineGraph } from './LineGraph';
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof LineGraph> = {
-	title: 'Molecules/LineGraph',
+	title: '컴포넌트/Molecules/LineGraph',
 	component: LineGraph,
 	parameters: {
 		layout: 'centered',

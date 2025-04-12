@@ -3,7 +3,7 @@ import { PieGraph } from './PieGraph';
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof PieGraph> = {
-	title: 'Molecules/PieGraph',
+	title: '컴포넌트/Molecules/PieGraph',
 	component: PieGraph,
 	parameters: {
 		layout: 'centered',

@@ -2,7 +2,7 @@ import { Input } from './Input';
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
-	title: 'Atoms/Input',
+	title: '컴포넌트/Atoms/Input',
 	component: Input,
 	parameters: {
 		layout: 'centered',

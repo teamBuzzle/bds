@@ -2,7 +2,7 @@ import { FaqItem } from './FaqItem';
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
-	title: 'Molecules/FaqItem',
+	title: '컴포넌트/Molecules/FaqItem',
 	component: FaqItem,
 	parameters: {
 		layout: 'centered',

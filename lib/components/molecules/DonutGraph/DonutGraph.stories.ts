@@ -3,7 +3,7 @@ import { DonutGraph } from './DonutGraph';
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof DonutGraph> = {
-	title: 'Molecules/DonutGraph',
+	title: '컴포넌트/Molecules/DonutGraph',
 	component: DonutGraph,
 	parameters: {
 		layout: 'centered',
