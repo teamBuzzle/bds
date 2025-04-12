@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.20](https://github.com/teamBuzzle/bds/compare/v0.1.19...v0.1.20) (2025-04-12)
+
+### 🐛 Bug Fixes
+
+- **husky:** husky가 프로덕션에서 실행되던 문제 수정 ([a9559bd](https://github.com/teamBuzzle/bds/commits/a9559bdfc142fd0e63328a1713fa777e5cb6e666))
+- **husky:** installl.mjs 추가 ([8f6d1e9](https://github.com/teamBuzzle/bds/commits/8f6d1e9148bc87e6232c8868c3fdbf3efb071348))
+
+### 📝 Documentation
+
+- 문서 내용 고도화 ([65a8e86](https://github.com/teamBuzzle/bds/commits/65a8e867aa6af366fd0da0be38171b74e533a9c2))
+- 잘못된 문서 개선 ([ce0ebdc](https://github.com/teamBuzzle/bds/commits/ce0ebdc3dec456a3ddde7de088d9b282906009e8))
+- **github:** template 추가 ([1106d3c](https://github.com/teamBuzzle/bds/commits/1106d3c226ab91d833f843efb4580b1ad99b00b0))
+
 ### [0.1.19](https://github.com/teamBuzzle/bds/compare/v0.1.18...v0.1.19) (2025-04-07)
 
 ### 🐛 Bug Fixes
