@@ -1,6 +1,6 @@
 {
 	"name": "@buzzle/bds",
-	"version": "0.1.21",
+	"version": "0.1.22",
 	"type": "module",
 	"license": "MIT",
 	"description": "Buzzle Design System (based on MUI)",
