@@ -109,5 +109,5 @@ npm : [https://www.npmjs.com/package/@buzzle/bds](https://www.npmjs.com/package/
 
 ## 라이선스
 
-MIT 라이선스 - 상업용 및 개인 프로젝트 모두 자유롭게 사용 가능
+MIT 라이선스 - 상업용 및 개인 프로젝트 모두 자유롭게 사용 가능  
 MUI 라이센스 - [https://github.com/mui/material-ui/blob/master/LICENSE](https://github.com/mui/material-ui/blob/master/LICENSE)
