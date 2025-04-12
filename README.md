@@ -8,10 +8,10 @@
 </p>
 
 <p align="center">
-  <strong>MUI 기반의 확장 가능한 디자인 시스템으로 Buzzle의 일관된 사용자 경험을 구축합니다.</strong>
+  <strong>MUI 기반의 확장 가능한 디자인 시스템으로 Buzzle의 일관된 사용자 경험을 구축해요.</strong>
 </p>
 
-> ⚠️ **주의사항**: BDS는 사이드 프로젝트로 개발 중인 실험적 디자인 시스템입니다. 실제 서비스 환경에 적용하기에는 적합하지 않으며, API가 예고 없이 변경될 수 있습니다. 학습 및 실험 목적으로만 사용해주세요.
+> ⚠️ **주의사항**: BDS는 사이드 프로젝트로 개발 중인 실험적 디자인 시스템 이에요. 실제 서비스 환경에 적용하기에는 적합하지 않으며, API가 예고 없이 변경될 수 있어요. 학습 및 실험 목적으로만 사용해주세요.
 
 <p align="center">
   <a href="#핵심-특징">핵심 특징</a> •
@@ -52,6 +52,9 @@ bun add @buzzle/bds @mui/material @emotion/react @emotion/styled
 
 ## 사용 예시
 
+다음은 BDS를 사용하는 기본적인 예제에요.  
+별도의 Provider.tsx 파일을 만들어서 사용해도 좋아요.
+
 ```jsx
 import { ThemeProvider } from '@mui/material/styles';
 import { CssBaseline, Container } from '@mui/material';
@@ -84,7 +87,7 @@ const App = () => {
 
 ## 프로젝트 목표
 
-BDS는 다음과 같은 목표를 가지고 개발되었습니다:
+BDS는 다음과 같은 목표를 가지고 개발되었어요:
 
 - 아토믹 디자인 시스템 구축
 - 높은 DX 컴포넌트
@@ -100,10 +103,11 @@ BDS는 오픈소스 프로젝트로, 모든 형태의 기여를 환영합니다:
 
 ## 링크
 
-레포지토리 : https://github.com/teamBuzzle/bds  
-문서 : https://teambuzzle.github.io/bds  
-npm : https://www.npmjs.com/package/@buzzle/bds
+레포지토리 : [https://github.com/teamBuzzle/bds](https://github.com/teamBuzzle/bds)  
+문서 : [https://teambuzzle.github.io/bds](https://teambuzzle.github.io/bds)  
+npm : [https://www.npmjs.com/package/@buzzle/bds](https://www.npmjs.com/package/@buzzle/bds)
 
 ## 라이선스
 
-MIT License
+MIT 라이선스 - 상업용 및 개인 프로젝트 모두 자유롭게 사용 가능
+MUI 라이센스 - [https://github.com/mui/material-ui/blob/master/LICENSE](https://github.com/mui/material-ui/blob/master/LICENSE)
