@@ -4,8 +4,8 @@
     {
       "label": "Build",
       "dependsOn": [
-        "프로젝트 실행",
-        "타입체크"
+        "타입체크",
+        "프로젝트 실행"
       ],
       "group": {
         "kind": "build",

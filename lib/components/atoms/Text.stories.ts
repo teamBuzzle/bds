@@ -3,7 +3,7 @@ import { Text } from './Text';
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
-	title: 'Atoms/Text',
+	title: '컴포넌트/Atoms/Text',
 	component: Text,
 	parameters: {
 		layout: 'centered',

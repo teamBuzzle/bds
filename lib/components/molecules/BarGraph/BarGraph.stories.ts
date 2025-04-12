@@ -2,7 +2,7 @@ import { BarGraph } from './BarGraph';
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof BarGraph> = {
-	title: 'Molecules/BarGraph',
+	title: '컴포넌트/Molecules/BarGraph',
 	component: BarGraph,
 	parameters: {
 		layout: 'centered',

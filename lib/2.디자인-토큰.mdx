@@ -1,0 +1,622 @@
+import { Meta } from '@storybook/blocks';
+import { bds } from './constants';
+
+<Meta title="디자인 토큰" />
+
+# 디자인 토큰 시스템
+
+<div
+	style={{
+		padding: '20px',
+		background: 'linear-gradient(to right, #f8f9fa, #e9ecef)',
+		borderRadius: '8px',
+		marginBottom: '24px',
+		borderLeft: '4px solid #0A6EBD',
+	}}
+>
+	<p style={{ margin: 0, fontSize: '16px', lineHeight: 1.6, color: '#212121' }}>디자인 토큰은 <strong>BDS</strong>의 시각적 일관성을 유지하는 핵심 구성 요소입니다. 이 가이드를 통해<strong>브랜드 아이덴티티</strong>를 일관되게 구현하는 데 필요한 모든 디자인 요소를 확인하세요.</p>
+</div>
+
+## 색상 시스템
+
+BDS의 색상 시스템은 의미론적으로 구성되어 있으며, 다양한 UI 컨텍스트에 쉽게 적용할 수 있어요.
+색상 시스템은 크게 **기본 컬러 팔레트**와 **시멘틱 색상 시스템**으로 구분되요.
+
+<div style={{ display: 'flex', justifyContent: 'space-between', gap: '24px', margin: '24px 0', flexWrap: 'wrap' }}>
+	<div style={{ flex: 1, minWidth: '280px' }}>
+		<div
+			style={{
+				padding: '16px',
+				backgroundColor: 'white',
+				borderRadius: '8px',
+				boxShadow: '0 4px 6px rgba(0,0,0,0.05)',
+			}}
+		>
+			<h3 style={{ marginTop: 0, borderBottom: '1px solid #f0f0f0', paddingBottom: '8px', color: '#212121' }}>✨ 기본 컬러 팔레트</h3>
+			<p style={{ color: '#212121' }}>체계적인 디자인 시스템을 위한 기본 색상 모음</p>
+		</div>
+	</div>
+	<div style={{ flex: 1, minWidth: '280px' }}>
+		<div
+			style={{
+				padding: '16px',
+				backgroundColor: 'white',
+				borderRadius: '8px',
+				boxShadow: '0 4px 6px rgba(0,0,0,0.05)',
+			}}
+		>
+			<h3 style={{ marginTop: 0, borderBottom: '1px solid #f0f0f0', paddingBottom: '8px', color: '#212121' }}>🔄 시멘틱 색상 시스템</h3>
+			<p style={{ color: '#212121' }}>상태와 의미를 전달하는 목적 기반 색상 시스템</p>
+		</div>
+	</div>
+</div>
+
+### 기본 컬러 팔레트
+
+
+#### 라이트 모드
+<div
+	style={{
+		display: 'grid',
+		gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))',
+		gap: '16px',
+		margin: '24px 0',
+	}}
+>
+    <div
+    	style={{
+    		background: bds.token.color.light.primary.normal,
+    		borderRadius: '8px',
+    		padding: '20px',
+    		color: 'white',
+    	}}
+    >
+    	<div style={{ fontWeight: 'bold', fontSize: '16px' }}>Primary</div>
+    	<div style={{ marginTop: '6px', fontFamily: 'monospace', fontSize: '14px' }}>#6174FB</div>
+    	<div style={{ marginTop: '4px', fontSize: '12px', opacity: 0.8 }}>bds.token.color.light.primary.normal</div>
+    </div>
+
+    <div
+    	style={{
+    		background: bds.token.color.light.secondary.normal,
+    		borderRadius: '8px',
+    		padding: '20px',
+    		color: 'white',
+    	}}
+    >
+    	<div style={{ fontWeight: 'bold', fontSize: '16px' }}>Secondary</div>
+    	<div style={{ marginTop: '6px', fontFamily: 'monospace', fontSize: '14px' }}>#F34541</div>
+    	<div style={{ marginTop: '4px', fontSize: '12px', opacity: 0.8 }}>bds.token.color.light.secondary.normal</div>
+    </div>
+
+     <div
+    	style={{
+    		background: bds.token.color.light.success.normal,
+    		borderRadius: '8px',
+    		padding: '20px',
+    		color: 'white',
+    	}}
+    >
+    	<div style={{ fontWeight: 'bold', fontSize: '16px' }}>Success</div>
+    	<div style={{ marginTop: '6px', fontFamily: 'monospace', fontSize: '14px' }}>#15D267</div>
+    	<div style={{ marginTop: '4px', fontSize: '12px', opacity: 0.8 }}>bds.token.color.light.success.normal</div>
+    </div>
+
+    <div 
+    	style={{
+    		background: bds.token.color.light.information.normal,
+    		borderRadius: '8px',
+    		padding: '20px',
+    		color: 'white',
+    	}}
+    >
+    	<div style={{ fontWeight: 'bold', fontSize: '16px' }}>Information</div>
+    	<div style={{ marginTop: '6px', fontFamily: 'monospace', fontSize: '14px' }}>#3272FF</div>
+    	<div style={{ marginTop: '4px', fontSize: '12px', opacity: 0.8 }}>bds.token.color.light.information.normal</div>
+    </div>
+
+     <div 
+    	style={{
+    		background: bds.token.color.light.warning.normal,
+    		borderRadius: '8px',
+    		padding: '20px',
+    		color: 'white',
+    	}}
+    >
+    	<div style={{ fontWeight: 'bold', fontSize: '16px' }}>Warning</div>
+    	<div style={{ marginTop: '6px', fontFamily: 'monospace', fontSize: '14px' }}>#FF8210</div>
+    	<div style={{ marginTop: '4px', fontSize: '12px', opacity: 0.8 }}>bds.token.color.light.warning.normal</div>
+    </div>
+
+    <div 
+    	style={{
+    		background: bds.token.color.light.danger.normal,
+    		borderRadius: '8px',
+    		padding: '20px',
+    		color: 'white',
+    	}}
+    >
+    	<div style={{ fontWeight: 'bold', fontSize: '16px' }}>Danger</div>
+    	<div style={{ marginTop: '6px', fontFamily: 'monospace', fontSize: '14px' }}>#FC2B1C</div>
+    	<div style={{ marginTop: '4px', fontSize: '12px', opacity: 0.8 }}>bds.token.color.light.danger.normal</div>
+    </div>
+
+    <div 
+    	style={{
+    		background: bds.token.color.light.text.title,
+    		borderRadius: '8px',
+    		padding: '20px',
+    		color: 'white',
+    	}}
+    >
+    	<div style={{ fontWeight: 'bold', fontSize: '16px' }}>Text</div>
+    	<div style={{ marginTop: '6px', fontFamily: 'monospace', fontSize: '14px' }}>#0A0A0A</div>
+    	<div style={{ marginTop: '4px', fontSize: '12px', opacity: 0.8 }}>bds.token.color.light.text.title</div>
+    </div>
+
+    <div 
+    	style={{
+    		background: bds.token.color.light.text.body,
+    		borderRadius: '8px',
+    		padding: '20px',
+    		color: 'white',
+    	}}
+    >
+    	<div style={{ fontWeight: 'bold', fontSize: '16px' }}>Body</div>
+    	<div style={{ marginTop: '6px', fontFamily: 'monospace', fontSize: '14px' }}>#292929</div>
+    	<div style={{ marginTop: '4px', fontSize: '12px', opacity: 0.8 }}>bds.token.color.light.text.body</div>
+    </div>
+
+    <div 
+    	style={{
+    		background: bds.token.color.light.text.bodySubtle,
+    		borderRadius: '8px',
+    		padding: '20px',
+    		color: 'white',
+    	}}
+    >
+    	<div style={{ fontWeight: 'bold', fontSize: '16px' }}>Body Subtle</div>
+    	<div style={{ marginTop: '6px', fontFamily: 'monospace', fontSize: '14px' }}>#575757</div>
+    	<div style={{ marginTop: '4px', fontSize: '12px', opacity: 0.8 }}>bds.token.color.light.text.bodySubtle</div>
+    </div>
+
+    <div 
+    	style={{
+    		background: bds.token.color.light.text.caption,
+    		borderRadius: '8px',
+    		padding: '20px',
+    		color: 'white',
+    	}}
+    >
+    	<div style={{ fontWeight: 'bold', fontSize: '16px' }}>Caption</div>
+    	<div style={{ marginTop: '6px', fontFamily: 'monospace', fontSize: '14px' }}>#A5A5A5</div>
+    	<div style={{ marginTop: '4px', fontSize: '12px', opacity: 0.8 }}>bds.token.color.light.text.caption</div>
+    </div>
+
+    <div 
+    	style={{
+    		background: bds.token.color.light.background[1],
+    		borderRadius: '8px',
+    		padding: '20px',
+    		color: 'black',
+    	}}
+    >
+    	<div style={{ fontWeight: 'bold', fontSize: '16px' }}>Background</div>
+    	<div style={{ marginTop: '6px', fontFamily: 'monospace', fontSize: '14px' }}>#FAFAFA</div>
+    	<div style={{ marginTop: '4px', fontSize: '12px', opacity: 0.8 }}>bds.token.color.light.background[1]</div>
+    </div>
+
+    <div 
+    	style={{
+    		background: bds.token.color.light.stroke[1],
+    		borderRadius: '8px',
+    		padding: '20px',
+    		color: 'black',
+    	}}
+    >
+    	<div style={{ fontWeight: 'bold', fontSize: '16px' }}>Stroke</div>
+    	<div style={{ marginTop: '6px', fontFamily: 'monospace', fontSize: '14px' }}>#F2F2F2</div>
+    	<div style={{ marginTop: '4px', fontSize: '12px', opacity: 0.8 }}>bds.token.color.light.stroke[1]</div>
+    </div>
+</div>
+
+#### 다크모드
+
+<div
+	style={{
+		display: 'grid',
+		gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))',
+		gap: '16px',
+		margin: '24px 0',
+	}}
+>
+    <div
+    	style={{
+    		background: bds.token.color.dark.primary.normal,
+    		borderRadius: '8px',
+    		padding: '20px',
+    		color: 'white',
+    	}}
+    >
+    	<div style={{ fontWeight: 'bold', fontSize: '16px' }}>Primary</div>
+    	<div style={{ marginTop: '6px', fontFamily: 'monospace', fontSize: '14px' }}>#6174FB</div>
+    	<div style={{ marginTop: '4px', fontSize: '12px', opacity: 0.8 }}>bds.token.color.dark.primary.normal</div>
+    </div>
+
+    <div
+    	style={{
+    		background: bds.token.color.dark.secondary.normal,
+    		borderRadius: '8px',
+    		padding: '20px',
+    		color: 'white',
+    	}}
+    >
+    	<div style={{ fontWeight: 'bold', fontSize: '16px' }}>Secondary</div>
+    	<div style={{ marginTop: '6px', fontFamily: 'monospace', fontSize: '14px' }}>#F34541</div>
+    	<div style={{ marginTop: '4px', fontSize: '12px', opacity: 0.8 }}>bds.token.color.dark.secondary.normal</div>
+    </div>
+
+     <div
+    	style={{
+    		background: bds.token.color.dark.success.normal,
+    		borderRadius: '8px',
+    		padding: '20px',
+    		color: 'white',
+    	}}
+    >
+    	<div style={{ fontWeight: 'bold', fontSize: '16px' }}>Success</div>
+    	<div style={{ marginTop: '6px', fontFamily: 'monospace', fontSize: '14px' }}>#15D267</div>
+    	<div style={{ marginTop: '4px', fontSize: '12px', opacity: 0.8 }}>bds.token.color.dark.success.normal</div>
+    </div>
+
+    <div 
+    	style={{
+    		background: bds.token.color.dark.information.normal,
+    		borderRadius: '8px',
+    		padding: '20px',
+    		color: 'white',
+    	}}
+    >
+    	<div style={{ fontWeight: 'bold', fontSize: '16px' }}>Information</div>
+    	<div style={{ marginTop: '6px', fontFamily: 'monospace', fontSize: '14px' }}>#3272FF</div>
+    	<div style={{ marginTop: '4px', fontSize: '12px', opacity: 0.8 }}>bds.token.color.dark.information.normal</div>
+    </div>
+
+     <div 
+    	style={{
+    		background: bds.token.color.dark.warning.normal,
+    		borderRadius: '8px',
+    		padding: '20px',
+    		color: 'white',
+    	}}
+    >
+    	<div style={{ fontWeight: 'bold', fontSize: '16px' }}>Warning</div>
+    	<div style={{ marginTop: '6px', fontFamily: 'monospace', fontSize: '14px' }}>#FF8210</div>
+    	<div style={{ marginTop: '4px', fontSize: '12px', opacity: 0.8 }}>bds.token.color.dark.warning.normal</div>
+    </div>
+
+    <div 
+    	style={{
+    		background: bds.token.color.dark.danger.normal,
+    		borderRadius: '8px',
+    		padding: '20px',
+    		color: 'white',
+    	}}
+    >
+    	<div style={{ fontWeight: 'bold', fontSize: '16px' }}>Danger</div>
+    	<div style={{ marginTop: '6px', fontFamily: 'monospace', fontSize: '14px' }}>#FC2B1C</div>
+    	<div style={{ marginTop: '4px', fontSize: '12px', opacity: 0.8 }}>bds.token.color.dark.danger.normal</div>
+    </div>
+
+    <div 
+    	style={{
+    		background: bds.token.color.dark.text.title,
+    		borderRadius: '8px',
+    		padding: '20px',
+    		color: 'black',
+    	}}
+    >
+    	<div style={{ fontWeight: 'bold', fontSize: '16px' }}>Text</div>
+    	<div style={{ marginTop: '6px', fontFamily: 'monospace', fontSize: '14px' }}>#FAFAFA</div>
+    	<div style={{ marginTop: '4px', fontSize: '12px', opacity: 0.8 }}>bds.token.color.dark.text.title</div>
+    </div>
+
+    <div 
+    	style={{
+    		background: bds.token.color.dark.text.body,
+    		borderRadius: '8px',
+    		padding: '20px',
+    		color: 'black',
+    	}}
+    >
+    	<div style={{ fontWeight: 'bold', fontSize: '16px' }}>Body</div>
+    	<div style={{ marginTop: '6px', fontFamily: 'monospace', fontSize: '14px' }}>#E6E6E6</div>
+    	<div style={{ marginTop: '4px', fontSize: '12px', opacity: 0.8 }}>bds.token.color.dark.text.body</div>
+    </div>
+
+    <div 
+    	style={{
+    		background: bds.token.color.dark.text.bodySubtle,
+    		borderRadius: '8px',
+    		padding: '20px',
+    		color: 'white',
+    	}}
+    >
+    	<div style={{ fontWeight: 'bold', fontSize: '16px' }}>Body Subtle</div>
+    	<div style={{ marginTop: '6px', fontFamily: 'monospace', fontSize: '14px' }}>#A5A5A5</div>
+    	<div style={{ marginTop: '4px', fontSize: '12px', opacity: 0.8 }}>bds.token.color.dark.text.bodySubtle</div>
+    </div>
+
+    <div 
+    	style={{
+    		background: bds.token.color.dark.text.caption,
+    		borderRadius: '8px',
+    		padding: '20px',
+    		color: 'white',
+    	}}
+    >
+    	<div style={{ fontWeight: 'bold', fontSize: '16px' }}>Caption</div>
+    	<div style={{ marginTop: '6px', fontFamily: 'monospace', fontSize: '14px' }}>#575757</div>
+    	<div style={{ marginTop: '4px', fontSize: '12px', opacity: 0.8 }}>bds.token.color.dark.text.caption</div>
+    </div>
+
+    <div 
+    	style={{
+    		background: bds.token.color.dark.background[1],
+    		borderRadius: '8px',
+    		padding: '20px',
+    		color: 'white',
+    	}}
+    >
+    	<div style={{ fontWeight: 'bold', fontSize: '16px' }}>Background</div>
+    	<div style={{ marginTop: '6px', fontFamily: 'monospace', fontSize: '14px' }}>#0A0A0A</div>
+    	<div style={{ marginTop: '4px', fontSize: '12px', opacity: 0.8 }}>bds.token.color.dark.background[1]</div>
+    </div>
+
+    <div 
+    	style={{
+    		background: bds.token.color.dark.stroke[1],
+    		borderRadius: '8px',
+    		padding: '20px',
+    		color: 'white',
+    	}}
+    >
+    	<div style={{ fontWeight: 'bold', fontSize: '16px' }}>Stroke</div>
+    	<div style={{ marginTop: '6px', fontFamily: 'monospace', fontSize: '14px' }}>#1A1A1A</div>
+    	<div style={{ marginTop: '4px', fontSize: '12px', opacity: 0.8 }}>bds.token.color.dark.stroke[1]</div>
+    </div>
+</div>
+
+#### 그레이스케일
+
+<div
+	style={{
+		display: 'grid',
+		gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))',
+		gap: '16px',
+		margin: '24px 0',
+	}}
+>
+    <div
+    	style={{
+    		background: bds.token.color.gray.gray005,
+    		borderRadius: '8px',
+    		padding: '20px',
+    		color: 'black',
+    	}}
+    >
+    	<div style={{ fontWeight: 'bold', fontSize: '16px' }}>Gray 005</div>
+    	<div style={{ marginTop: '6px', fontFamily: 'monospace', fontSize: '14px' }}>#fafafa</div>
+    	<div style={{ marginTop: '4px', fontSize: '12px', opacity: 0.8 }}>bds.token.color.gray.gray005</div>
+    </div>
+
+    <div
+    	style={{
+    		background: bds.token.color.gray.gray010,
+    		borderRadius: '8px',
+    		padding: '20px',
+    		color: 'black',
+    	}}
+    >
+    	<div style={{ fontWeight: 'bold', fontSize: '16px' }}>Gray 010</div>
+    	<div style={{ marginTop: '6px', fontFamily: 'monospace', fontSize: '14px' }}>#f2f2f2</div>
+    	<div style={{ marginTop: '4px', fontSize: '12px', opacity: 0.8 }}>bds.token.color.gray.gray010</div>
+    </div>
+
+    <div  
+    	style={{
+    		background: bds.token.color.gray.gray020,
+    		borderRadius: '8px',
+    		padding: '20px',
+    		color: 'black',
+    	}}
+    >
+    	<div style={{ fontWeight: 'bold', fontSize: '16px' }}>Gray 020</div>
+    	<div style={{ marginTop: '6px', fontFamily: 'monospace', fontSize: '14px' }}>#e6e6e6</div>
+    	<div style={{ marginTop: '4px', fontSize: '12px', opacity: 0.8 }}>bds.token.color.gray.gray020</div>
+    </div>
+    
+    <div
+    	style={{
+    		background: bds.token.color.gray.gray030,
+    		borderRadius: '8px',
+    		padding: '20px',
+    		color: 'black',
+    	}}
+    >
+    	<div style={{ fontWeight: 'bold', fontSize: '16px' }}>Gray 030</div>
+    	<div style={{ marginTop: '6px', fontFamily: 'monospace', fontSize: '14px' }}>#d4d4d4</div>
+    	<div style={{ marginTop: '4px', fontSize: '12px', opacity: 0.8 }}>bds.token.color.gray.gray030</div>
+    </div>
+    
+    <div
+    	style={{
+    		background: bds.token.color.gray.gray040,
+    		borderRadius: '8px',
+    		padding: '20px',
+    		color: 'black',
+    	}}
+    >
+    	<div style={{ fontWeight: 'bold', fontSize: '16px' }}>Gray 040</div>
+    	<div style={{ marginTop: '6px', fontFamily: 'monospace', fontSize: '14px' }}>#a5a5a5</div>
+    	<div style={{ marginTop: '4px', fontSize: '12px', opacity: 0.8 }}>bds.token.color.gray.gray040</div>
+    </div>
+
+    <div
+    	style={{
+    		background: bds.token.color.gray.gray050,
+    		borderRadius: '8px',
+    		padding: '20px',
+    		color: 'white',
+    	}}
+    >
+    	<div style={{ fontWeight: 'bold', fontSize: '16px' }}>Gray 050</div>
+    	<div style={{ marginTop: '6px', fontFamily: 'monospace', fontSize: '14px' }}>#767676</div>
+    	<div style={{ marginTop: '4px', fontSize: '12px', opacity: 0.8 }}>bds.token.color.gray.gray050</div>
+    </div>
+    
+    <div
+    	style={{
+    		background: bds.token.color.gray.gray060,
+    		borderRadius: '8px',
+    		padding: '20px',
+    		color: 'white',
+    	}}
+    >
+    	<div style={{ fontWeight: 'bold', fontSize: '16px' }}>Gray 060</div>
+    	<div style={{ marginTop: '6px', fontFamily: 'monospace', fontSize: '14px' }}>#575757</div>
+    	<div style={{ marginTop: '4px', fontSize: '12px', opacity: 0.8 }}>bds.token.color.gray.gray060</div>
+    </div>
+
+    <div
+    	style={{
+    		background: bds.token.color.gray.gray070,
+    		borderRadius: '8px',
+    		padding: '20px',
+    		color: 'white',
+    	}}
+    >
+    	<div style={{ fontWeight: 'bold', fontSize: '16px' }}>Gray 070</div>
+    	<div style={{ marginTop: '6px', fontFamily: 'monospace', fontSize: '14px' }}>#434343</div>
+    	<div style={{ marginTop: '4px', fontSize: '12px', opacity: 0.8 }}>bds.token.color.gray.gray070</div>
+    </div>
+
+    <div
+    	style={{
+    		background: bds.token.color.gray.gray080,
+    		borderRadius: '8px',
+    		padding: '20px',
+    		color: 'white',
+    	}}
+    >
+    	<div style={{ fontWeight: 'bold', fontSize: '16px' }}>Gray 080</div>
+    	<div style={{ marginTop: '6px', fontFamily: 'monospace', fontSize: '14px' }}>#292929</div>
+    	<div style={{ marginTop: '4px', fontSize: '12px', opacity: 0.8 }}>bds.token.color.gray.gray080</div>
+    </div>
+
+    <div
+    	style={{
+    		background: bds.token.color.gray.gray090,
+    		borderRadius: '8px',
+    		padding: '20px',
+    		color: 'white',
+    	}}
+    >
+    	<div style={{ fontWeight: 'bold', fontSize: '16px' }}>Gray 090</div>
+    	<div style={{ marginTop: '6px', fontFamily: 'monospace', fontSize: '14px' }}>#1A1A1A</div>
+    	<div style={{ marginTop: '4px', fontSize: '12px', opacity: 0.8 }}>bds.token.color.gray.gray090</div>
+    </div>
+
+    <div
+    	style={{
+    		background: bds.token.color.gray.gray100,
+    		borderRadius: '8px',
+    		padding: '20px',
+    		color: 'white',
+    	}}
+    >
+    	<div style={{ fontWeight: 'bold', fontSize: '16px' }}>Gray 100</div>
+    	<div style={{ marginTop: '6px', fontFamily: 'monospace', fontSize: '14px' }}>#0A0A0A</div>
+    	<div style={{ marginTop: '4px', fontSize: '12px', opacity: 0.8 }}>bds.token.color.gray.gray100</div>
+    </div>
+
+    <div
+    	style={{
+    		background: bds.token.color.black,
+    		borderRadius: '8px',
+    		padding: '20px',
+    		color: 'white',
+    	}}
+    >
+    	<div style={{ fontWeight: 'bold', fontSize: '16px' }}>Black</div>
+    	<div style={{ marginTop: '6px', fontFamily: 'monospace', fontSize: '14px' }}>#000000</div>
+    	<div style={{ marginTop: '4px', fontSize: '12px', opacity: 0.8 }}>bds.token.color.black</div>
+    </div>
+
+    <div
+    	style={{
+    		background: bds.token.color.white,
+    		borderRadius: '8px',
+    		padding: '20px',
+    		color: 'black',
+    	}}
+    >
+    	<div style={{ fontWeight: 'bold', fontSize: '16px' }}>White</div>
+    	<div style={{ marginTop: '6px', fontFamily: 'monospace', fontSize: '14px' }}>#ffffff</div>
+    	<div style={{ marginTop: '4px', fontSize: '12px', opacity: 0.8 }}>bds.token.color.white</div>
+    </div>
+</div>
+
+### 시멘틱 색상 시스템
+
+다양한 디자인 요구사항을 충족하기 위한 확장 컬러들이에요.   
+다른 시멘틱 컬러들은 bds.token.color.semantic 에서 확인할 수 있어요.
+
+<div
+	style={{
+		display: 'grid',
+		gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))',
+		gap: '16px',
+		margin: '24px 0',
+	}}
+>
+   <div
+    	style={{
+    		background: bds.color.background.base,
+    		borderRadius: '8px',
+    		padding: '20px',
+    		color: 'white',
+    	}}
+    >
+    	<div style={{ fontWeight: 'bold', fontSize: '16px' }}>Background Base</div>
+    	<div style={{ marginTop: '6px', fontFamily: 'monospace', fontSize: '14px' }}>#ffffff</div>
+    	<div style={{ marginTop: '4px', fontSize: '12px', opacity: 0.8 }}>bds.color.background.base</div>
+    </div>
+
+    <div
+    	style={{
+    		background: bds.color.button.base,
+    		borderRadius: '8px',
+    		padding: '20px',
+    		color: 'white',
+    	}}
+    >
+    	<div style={{ fontWeight: 'bold', fontSize: '16px' }}>Button Base</div>
+    	<div style={{ marginTop: '6px', fontFamily: 'monospace', fontSize: '14px' }}>#4CAF50</div>
+    	<div style={{ marginTop: '4px', fontSize: '12px', opacity: 0.8 }}>bds.color.button.base</div>
+    </div>
+
+    <div
+    	style={{
+    		background: bds.color.text.base,
+    		borderRadius: '8px',
+    		padding: '20px',
+    		color: 'black',
+    	}}
+    >
+    	<div style={{ fontWeight: 'bold', fontSize: '16px' }}>Text Base</div>
+    	<div style={{ marginTop: '6px', fontFamily: 'monospace', fontSize: '14px' }}>#4CAF50</div>
+    	<div style={{ marginTop: '4px', fontSize: '12px', opacity: 0.8 }}>bds.color.text.base</div>
+    </div>
+    
+</div>

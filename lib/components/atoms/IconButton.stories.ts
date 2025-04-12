@@ -2,7 +2,7 @@ import { IconButton } from '@mui/material';
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
-	title: 'Atoms/IconButton',
+	title: '컴포넌트/Atoms/IconButton',
 	component: IconButton,
 	parameters: {
 		layout: 'centered',

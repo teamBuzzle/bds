@@ -2,7 +2,7 @@ import { NavBar } from './NavBar';
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
-	title: 'Molecules/NavBar',
+	title: '컴포넌트/Molecules/NavBar',
 	component: NavBar,
 	parameters: {
 		layout: 'centered',

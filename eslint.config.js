@@ -26,6 +26,7 @@ export default [
 			'**/dist',
 			'**/storybook-static',
 			'**/.pnp.cjs',
+			'**/.husky',
 		],
 	},
 	...fixupConfigRules(

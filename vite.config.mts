@@ -23,7 +23,7 @@ export default defineConfig({
 				await mkdir(serverWrapperDir, { recursive: true });
 
 				// 컴포넌트 폴더 경로
-				const componentFolders = ['atoms', 'molecules', 'templates'];
+				const componentFolders = ['atoms', 'molecules'];
 
 				// 서버 컴포넌트 인덱스 파일 생성
 				let indexContent = `// 서버 컴포넌트용 래퍼\n\n`;
