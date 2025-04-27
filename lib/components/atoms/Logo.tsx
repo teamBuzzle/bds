@@ -1,4 +1,3 @@
-import type { FC } from 'react';
 import { Typography, Link, type LinkProps } from '@mui/material';
 import { bds } from '@/constants';
 
@@ -13,7 +12,16 @@ export interface Props extends LinkProps {
 	size?: keyof typeof sizes;
 }
 
-export const Logo: FC<Props> = ({ image, size = 'medium', ...props }) => {
+/**
+ * 로고 컴포넌트
+ *
+ * @param {boolean} [image] - 이미지 로고 사용 여부
+ * @param {keyof typeof sizes} [size='medium'] - 로고 크기
+ *   - 'small': 작은 크기
+ *   - 'medium': 중간 크기 (기본값)
+ *   - 'large': 큰 크기
+ */
+export const Logo = ({ image, size = 'medium', ...props }: Props) => {
 	const {
 		logo: { width, height },
 		text,
