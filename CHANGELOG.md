@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.23](https://github.com/teamBuzzle/bds/compare/v0.1.22...v0.1.23) (2025-04-27)
+
+### 🐛 Bug Fixes
+
+- **text:** text props 타입 추적 가능하도록 수정 ([e42c7fb](https://github.com/teamBuzzle/bds/commits/e42c7fb8b8c1a76ab8498c9975bf0b83bb8f298f))
+
 ### [0.1.22](https://github.com/teamBuzzle/bds/compare/v0.1.21...v0.1.22) (2025-04-12)
 
 ### 🐛 Bug Fixes
