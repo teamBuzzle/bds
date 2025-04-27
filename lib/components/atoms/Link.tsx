@@ -1,12 +1,13 @@
+import type { FC } from 'react';
 import { Link as MuiLink, type LinkProps } from '@mui/material';
 
-export interface Props extends LinkProps {
+export interface BDSLinkProps extends LinkProps {
 	href: string;
 	cta?: boolean;
 	disabled?: boolean;
 }
 
-type LinkComponent = React.ComponentType<Props>;
+type LinkComponent = FC<BDSLinkProps>;
 
 /**
  * 링크 컴포넌트
