@@ -1,4 +1,3 @@
-import type { FC } from 'react';
 import { Typography, type TypographyProps } from '@mui/material';
 import { bds } from '@/constants';
 
@@ -9,7 +8,7 @@ export interface Props extends TypographyProps {
 	color?: keyof typeof bds.color.text;
 }
 
-export const Text: FC<Props> = ({ gradient, fontWeight = 'regular', fontSize = 'body', color = 'base', ...props }) => {
+export const Text = ({ gradient, fontWeight = 'regular', fontSize = 'body', color = 'base', ...props }: Props) => {
 	return (
 		<Typography
 			className={gradient ? 'gradient-text' : undefined}
