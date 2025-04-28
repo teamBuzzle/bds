@@ -34,7 +34,7 @@ export interface GraphItem {
 	value: number;
 }
 
-export interface BarGraphProps {
+export interface BDSBarGraphProps {
 	data: GraphItem[];
 	grid: boolean;
 	width?: number;

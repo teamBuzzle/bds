@@ -1,6 +1,4 @@
-'use client';
-
-import { useState } from 'react';
+import { type ReactNode, useState } from 'react';
 import {
 	Table as MuiTable,
 	TableBody,
@@ -20,12 +18,23 @@ import {
 } from '@tanstack/react-table';
 import { bds } from '@/constants';
 
-interface Props<TData> {
+export interface BDSTableProps<TData> {
 	data: TData[];
 	columns: ColumnDef<TData>[];
 }
 
-export const Table = <TData,>({ data, columns }: Props<TData>) => {
+type TableComponent = <TData>(props: BDSTableProps<TData>) => ReactNode;
+
+/**
+ * 테이블 컴포넌트
+ *
+ * @param {TData[]} [data] - 테이블의 데이터
+ * @param {ColumnDef<TData>[]} [columns] - 테이블의 열 정의
+ *
+ * @link https://teambuzzle.github.io/bds/?path=/docs/bds-buzzle-design-system-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-molecules-table--docs BDS Table 문서
+ * @link https://tanstack.com/table/latest TanStack Table API
+ */
+export const Table: TableComponent = ({ data, columns }) => {
 	const [pageIndex, setPageIndex] = useState(0);
 	const [pageSize, setPageSize] = useState(5); // 기본 페이지 크기
 

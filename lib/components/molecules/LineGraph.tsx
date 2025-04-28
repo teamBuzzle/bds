@@ -1,9 +1,9 @@
-import { useEffect, useState, useRef, useMemo, useCallback } from 'react';
+import { type ComponentType, useEffect, useState, useRef, useMemo, useCallback } from 'react';
 import { Box } from '@mui/material';
 import { select, scaleLinear, min, max, line, area, axisBottom, axisLeft, type Selection } from 'd3';
 import { motion } from 'framer-motion';
 import { createPortal } from 'react-dom';
-import { bds } from '../../constants';
+import { bds } from '@/constants';
 
 interface DataPoint {
 	x: number;
@@ -15,7 +15,7 @@ interface TooltipType {
 	mouseX: number;
 	mouseY: number;
 }
-interface Props {
+export interface BDSLineGraphProps {
 	data: DataPoint[];
 	grid?: boolean;
 	lineColor?: string; // 선 색상
@@ -26,14 +26,30 @@ interface Props {
 
 const margin = { top: 20, right: 20, bottom: 30, left: 40 };
 
-export const LineGraph = ({
+type LineGraphComponent = ComponentType<BDSLineGraphProps>;
+
+/**
+ * 선 그래프 컴포넌트
+ *
+ * @param {DataPoint[]} [data] - 데이터 포인트 배열
+ * @param {boolean} [grid] - 그리드 표시 여부
+ * @param {string} [lineColor] - 선 색상
+ * @param {number} [lineWidth] - 선 두께
+ * @param {number} [width] - 그래프 너비
+ * @param {number} [height] - 그래프 높이
+ *
+ * @link https://teambuzzle.github.io/bds/?path=/docs/bds-buzzle-design-system-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-molecules-linegraph--docs BDS LineGraph 문서
+ * @link https://d3js.org/ D3.js API
+ * @link https://www.framer.com/motion/ Framer Motion API
+ */
+export const LineGraph: LineGraphComponent = ({
 	data,
 	grid = false,
 	lineColor = bds.token.color.dark.primary.normal,
 	lineWidth = 2,
 	width = 600,
 	height = 400,
-}: Props) => {
+}) => {
 	const svgRef = useRef<SVGSVGElement>(null);
 	const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 	const [tooltipData, setTooltipData] = useState<TooltipType | null>(null);

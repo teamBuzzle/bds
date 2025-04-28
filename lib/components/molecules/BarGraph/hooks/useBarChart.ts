@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { max, scaleBand, scaleLinear } from 'd3';
-import { GraphItem, HorizontalScales, LayoutType, Margin, sortedType, VerticalScales } from '../types';
+import type { GraphItem, HorizontalScales, LayoutType, Margin, sortedType, VerticalScales } from '../types';
 
 // 데이터 정렬과 D3 스케일 생성을 처리하며, 메모이제이션을 통해 성능을 최적화
 export const useBarChart = <T extends LayoutType>(

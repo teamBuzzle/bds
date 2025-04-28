@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import { GridLinesProps } from '../types';
+import type { GridLinesProps } from '../types';
 
 export const GridLines = memo(({ scales, layout, width, height, margin, color, visible }: GridLinesProps) => {
 	const { xScale, yScale } = scales;

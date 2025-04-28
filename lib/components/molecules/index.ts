@@ -1,3 +1,8 @@
-export { FaqItem } from './FaqItem';
-export { NavBar } from './NavBar';
-export { Table } from './Table';
+export { FaqItem, type BDSFaqItemProps } from './FaqItem';
+export { NavBar, type BDSNavBarProps } from './NavBar';
+export { Table, type BDSTableProps } from './Table';
+export { BarGraph } from './BarGraph';
+export type { BDSBarGraphProps } from './BarGraph/types';
+export { DonutGraph, type BDSDonutGraphProps } from './DonutGraph';
+export { PieGraph, type BDSPieGraphProps } from './PieGraph';
+export { LineGraph, type BDSLineGraphProps } from './LineGraph';

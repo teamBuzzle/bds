@@ -1,10 +1,10 @@
 import { nanoid } from 'nanoid';
-import { PieGraph } from './PieGraph';
+import { DonutGraph } from '.';
 import type { Meta, StoryObj } from '@storybook/react';
 
-const meta: Meta<typeof PieGraph> = {
-	title: '컴포넌트/Molecules/PieGraph',
-	component: PieGraph,
+const meta: Meta<typeof DonutGraph> = {
+	title: '컴포넌트/Molecules/DonutGraph',
+	component: DonutGraph,
 	parameters: {
 		layout: 'centered',
 		backgrounds: {
@@ -22,10 +22,10 @@ const meta: Meta<typeof PieGraph> = {
 		},
 	},
 	tags: ['autodocs'],
-} satisfies Meta<typeof PieGraph>;
+} satisfies Meta<typeof DonutGraph>;
 
 export default meta;
-type Story = StoryObj<typeof PieGraph>;
+type Story = StoryObj<typeof DonutGraph>;
 
 const data = [
 	{ id: nanoid(), label: '라벨1', value: 40, color: '#ff6384' },

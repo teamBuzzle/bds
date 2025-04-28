@@ -1,7 +1,7 @@
 import { memo } from 'react';
 import { motion } from 'framer-motion';
 import { BAR_CHART_CONFIG } from '../constants';
-import { VerticalBarRectProps } from '../types';
+import type { VerticalBarRectProps } from '../types';
 
 const MotionRect = motion.rect;
 

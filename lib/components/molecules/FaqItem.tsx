@@ -1,21 +1,35 @@
-import { type FC, useState } from 'react';
+import { type ComponentType, type MouseEventHandler, type MouseEvent, useState } from 'react';
 import { Box, Collapse } from '@mui/material';
 import { Text } from '@/components/atoms/Text';
 
-export interface Props {
+export interface BDSFaqItemProps {
 	title: string;
 	subtitle: string;
 	content: string;
 	selected?: boolean;
-	onClick?: () => void;
+	onClick?: MouseEventHandler<HTMLDivElement>;
 }
 
-export const FaqItem: FC<Props> = ({ title, subtitle, content, selected, onClick }) => {
+type FaqItemComponent = ComponentType<BDSFaqItemProps>;
+
+/**
+ * FAQ 항목 컴포넌트
+ *
+ * @param {string} title - 질문 제목
+ * @param {string} subtitle - 질문 부제목
+ * @param {string} content - 질문 내용
+ * @param {boolean} [selected] - 선택된 상태 여부
+ * @param {MouseEventHandler<HTMLDivElement>} [onClick] - 클릭 시 실행될 이벤트 핸들러
+ *
+ * @link https://teambuzzle.github.io/bds/?path=/docs/bds-buzzle-design-system-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-molecules-faqitem--docs BDS FaqItem 문서
+ * @link https://mui.com/material-ui/api/box/ MUI Box API
+ */
+export const FaqItem: FaqItemComponent = ({ title, subtitle, content, selected, onClick }) => {
 	const [isOpen, setIsOpen] = useState(false);
 
-	const handleClick = () => {
+	const handleClick = (event: MouseEvent<HTMLDivElement>) => {
 		setIsOpen(!isOpen);
-		onClick?.();
+		onClick?.(event);
 	};
 
 	return (

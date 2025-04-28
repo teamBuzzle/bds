@@ -1,7 +1,7 @@
-import { axisBottom, axisLeft, ScaleBand, ScaleLinear, Selection } from 'd3';
+import { axisBottom, axisLeft, type ScaleBand, type ScaleLinear, type Selection } from 'd3';
 import { bds } from '@/constants';
 import { BAR_CHART_CONFIG } from '../constants';
-import { LayoutType, Scales } from '../types';
+import type { LayoutType, Scales } from '../types';
 
 export const createAxis = (
 	svg: Selection<SVGSVGElement, unknown, null, undefined>,
