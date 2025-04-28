@@ -1,4 +1,4 @@
-export { Input } from './Input';
-export { Link } from './Link';
-export { Logo } from './Logo';
-export { Text } from './Text';
+export { Input, type BDSInputProps } from './Input';
+export { Link, type BDSLinkProps } from './Link';
+export { Logo, type BDSLogoProps } from './Logo';
+export { Text, type BDSTextProps } from './Text';

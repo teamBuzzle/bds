@@ -1,12 +1,15 @@
+import type { ComponentType } from 'react';
 import { Typography, type TypographyProps } from '@mui/material';
 import { bds } from '@/constants';
 
-export interface Props extends TypographyProps {
+export interface BDSTextProps extends TypographyProps {
 	gradient?: boolean;
 	fontWeight?: keyof typeof bds.token.typography.weight;
 	fontSize?: keyof typeof bds.token.typography.size;
 	color?: keyof typeof bds.color.text;
 }
+
+type TextComponent = ComponentType<BDSTextProps>;
 
 /**
  * 텍스트를 표시하는 기본 컴포넌트입니다.
@@ -34,8 +37,17 @@ export interface Props extends TypographyProps {
  *   - 'disabled': 비활성화 색상
  *   - 'error': 오류 색상
  *   - 'success': 성공 색상
+ *
+ * @link https://teambuzzle.github.io/bds/?path=/docs/bds-buzzle-design-system-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-atoms-text--docs BDS Text 문서
+ * @link https://mui.com/material-ui/api/typography/ MUI Typography API
  */
-export const Text = ({ gradient, fontWeight = 'regular', fontSize = 'body', color = 'base', ...props }: Props) => {
+export const Text: TextComponent = ({
+	gradient,
+	fontWeight = 'regular',
+	fontSize = 'body',
+	color = 'base',
+	...props
+}) => {
 	return (
 		<Typography
 			className={gradient ? 'gradient-text' : undefined}

@@ -1,3 +1,4 @@
+import type { ComponentType } from 'react';
 import { Typography, Link, type LinkProps } from '@mui/material';
 import { bds } from '@/constants';
 
@@ -7,10 +8,12 @@ const sizes = {
 	large: { logo: { width: 369, height: 120 }, text: bds.token.typography.size.title1 },
 } as const;
 
-export interface Props extends LinkProps {
+export interface BDSLogoProps extends LinkProps {
 	image?: boolean;
 	size?: keyof typeof sizes;
 }
+
+type LogoComponent = ComponentType<BDSLogoProps>;
 
 /**
  * 로고 컴포넌트
@@ -20,8 +23,11 @@ export interface Props extends LinkProps {
  *   - 'small': 작은 크기
  *   - 'medium': 중간 크기 (기본값)
  *   - 'large': 큰 크기
+ *
+ * @link https://teambuzzle.github.io/bds/?path=/docs/bds-buzzle-design-system-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-atoms-logo--docs BDS Logo 문서
+ * @link https://mui.com/material-ui/api/link/ MUI Link API
  */
-export const Logo = ({ image, size = 'medium', ...props }: Props) => {
+export const Logo: LogoComponent = ({ image, size = 'medium', ...props }) => {
 	const {
 		logo: { width, height },
 		text,
