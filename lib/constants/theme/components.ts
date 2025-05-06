@@ -199,4 +199,32 @@ export const components = {
 			},
 		},
 	},
+	MuiTabs: {
+		styleOverrides: {
+			root: {
+				borderBottom: '1px solid rgba(16, 16, 16, 0.1)',
+				'& .MuiTabs-indicator': {
+					backgroundColor: '#6174fb',
+					height: 3,
+					borderRadius: '2px',
+				},
+				'& .MuiTab-root': {
+					color: 'rgba(16, 16, 16, 0.4)',
+					fontFamily: "'Pretendard', Arial, sans-serif",
+					fontWeight: 700,
+					fontSize: '1.125rem',
+					textTransform: 'none',
+					padding: '16px 0',
+					'&.Mui-selected': {
+						color: '#6174fb',
+					},
+					'&:hover': {
+						color: '#6174fb',
+						opacity: 0.8,
+					},
+					transition: 'all 0.3s ease',
+				},
+			},
+		},
+	},
 };
