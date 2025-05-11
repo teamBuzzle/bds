@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.26](https://github.com/teamBuzzle/bds/compare/v0.1.25...v0.1.26) (2025-05-11)
+
+### 📝 Documentation
+
+- **atoms:** jsdoc 및 타입강화 ([552843a](https://github.com/teamBuzzle/bds/commits/552843a3daf1a1d52f72d46b06de793bbabb293d))
+- **molecues:** jsdoc 및 타입안정성 강화 ([7d0575b](https://github.com/teamBuzzle/bds/commits/7d0575b6fad06c559de6e09d7f1e58e3ecd8bd1e))
+
+### ✨ Features
+
+- **tab:** tab 디자인 오버라이드 ([fba0af4](https://github.com/teamBuzzle/bds/commits/fba0af42aa6f1825fbc2aa9e0c48a3451575d5c0))
+
 ### [0.1.25](https://github.com/teamBuzzle/bds/compare/v0.1.24...v0.1.25) (2025-04-27)
 
 ### 🐛 Bug Fixes
