@@ -15,10 +15,6 @@ const meta = {
 			description: '네비게이션 아이템 목록',
 			control: 'object',
 		},
-		onItemClick: {
-			description: '아이템 클릭 핸들러',
-			control: 'object',
-		},
 		sx: {
 			description: '스타일 오버라이드',
 			control: 'object',
@@ -46,8 +42,6 @@ export const Default: Story = {
 export const WithClickHandler: Story = {
 	args: {
 		items,
-		// eslint-disable-next-line no-alert
-		onItemClick: (href) => alert(`이동할 경로: ${href}`),
 	},
 };
 

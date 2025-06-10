@@ -17,7 +17,7 @@
       "script": "dev",
       "group": "build",
       "label": "프로젝트 실행",
-      "detail": "yarn dev"
+      "detail": "pnpm dev"
     },
     {
       "type": "npm",

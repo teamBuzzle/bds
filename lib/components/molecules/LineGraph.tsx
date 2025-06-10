@@ -1,7 +1,7 @@
 import { type ComponentType, useEffect, useState, useRef, useMemo, useCallback } from 'react';
 import { Box } from '@mui/material';
 import { select, scaleLinear, min, max, line, area, axisBottom, axisLeft, type Selection } from 'd3';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { createPortal } from 'react-dom';
 import { bds } from '@/constants';
 

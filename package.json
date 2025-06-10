@@ -29,22 +29,21 @@
 		}
 	},
 	"scripts": {
-		"build": "rm -rf dist && tsc -p tsconfig.node.json && VITE_CJS_TRACE=true vite build && yarn build:storybook",
+		"build": "rm -rf dist && tsc -p tsconfig.node.json && VITE_CJS_TRACE=true vite build && pnpm build:storybook",
 		"build:storybook": "NODE_ENV=production VITE_DISABLE_ESLINT=true NODE_OPTIONS=--no-warnings storybook build --quiet",
 		"dev": "storybook dev -p 3000 --no-open",
 		"storybook:build": "NODE_ENV=production VITE_DISABLE_ESLINT=true NODE_OPTIONS=--no-warnings storybook build --quiet",
-		"storybook:upgrade": "yarn dlx storybook@latest upgrade",
+		"storybook:upgrade": "pnpm dlx storybook@latest upgrade",
 		"lint": "eslint .",
 		"lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
 		"prettier": "prettier --write .",
 		"type-check": "tsc --noEmit",
 		"type-check:watch": "tsc --noEmit --watch",
-		"prepublishOnly": "yarn lint && yarn type-check && yarn build",
+		"prepublishOnly": "pnpm lint && pnpm type-check && pnpm build",
 		"release": "standard-version && git push --follow-tags && npm publish",
 		"release:major": "standard-version -- --release-as minor",
 		"prepare": "node .husky/install.mjs",
-		"preinstall": "npx only-allow yarn",
-		"sdks": "yarn dlx @yarnpkg/sdks vscode"
+		"preinstall": "npx only-allow pnpm"
 	},
 	"peerDependencies": {
 		"@emotion/react": "^11.13.5",
@@ -102,6 +101,7 @@
 		"husky": "^9.1.7",
 		"lint-staged": "^15.4.3",
 		"motion": "^12.4.1",
+		"nanoid": "^5.1.5",
 		"prettier": "^3.5.0",
 		"react": "^19.0.0",
 		"react-dom": "^19.0.0",
@@ -117,21 +117,20 @@
 	},
 	"lint-staged": {
 		"*.{js,jsx,ts,tsx}": [
-			"bash -c 'yarn prettier'",
-			"bash -c 'yarn lint'",
-			"bash -c 'yarn type-check'"
+			"bash -c 'pnpm prettier'",
+			"bash -c 'pnpm lint'",
+			"bash -c 'pnpm type-check'"
 		],
 		"*.{json,md}": [
-			"bash -c 'yarn prettier'"
+			"bash -c 'pnpm prettier'"
 		]
 	},
-	"packageManager": "yarn@4.8.1",
 	"engines": {
 		"node": "22.14.0"
 	},
 	"volta": {
 		"node": "22.14.0",
-		"yarn": "4.8.1"
+		"pnpm": "10.11.1"
 	},
 	"publishConfig": {
 		"access": "public"

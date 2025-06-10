@@ -20,7 +20,6 @@ export default [
 	{
 		ignores: [
 			'**/node_modules',
-			'**/.yarn',
 			'**/.vscode',
 			'**/.gitlab',
 			'**/dist',

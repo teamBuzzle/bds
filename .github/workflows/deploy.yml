@@ -24,13 +24,13 @@ jobs:
               uses: actions/setup-node@v3
               with:
                   node-version: '20.13.1'
-                  cache: 'yarn'
+                  cache: 'pnpm'
 
             - name: Install dependencies
-              run: yarn install --frozen-lockfile
+              run: pnpm install
 
             - name: Build Storybook
-              run: yarn storybook:build
+              run: pnpm storybook:build
 
             - name: Deploy Storybook
               uses: peaceiris/actions-gh-pages@v3
