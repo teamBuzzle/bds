@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.27](https://github.com/teamBuzzle/bds/compare/v0.1.26...v0.1.27) (2025-12-14)
+
+### 👷 Build System
+
+- **pnpm:** yarn to pnpm package manager ([ce2ea84](https://github.com/teamBuzzle/bds/commits/ce2ea84997aaf462798648919c09889027b4b357))
+
+### 🐛 Bug Fixes
+
+- external 옵션을 함수로 변경하여 @mui/material 하위 경로 외부화 ([3b0f1aa](https://github.com/teamBuzzle/bds/commits/3b0f1aa8947097487d956b71ca3321cbf54dd546))
+
 ### [0.1.26](https://github.com/teamBuzzle/bds/compare/v0.1.25...v0.1.26) (2025-05-11)
 
 ### 📝 Documentation
