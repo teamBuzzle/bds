@@ -69,7 +69,19 @@ export default serverComponents;
 			formats: ['es'],
 		},
 		rollupOptions: {
-			external: ['react', 'react-dom', '@emotion/react', '@emotion/styled', '@mui/material', 'motion'],
+			external: (id) => {
+				const externals = [
+					'react',
+					'react-dom',
+					'@emotion/react',
+					'@emotion/styled',
+					'@mui/material',
+					'motion',
+					'd3',
+					'@tanstack/react-table',
+				];
+				return externals.some((pkg) => id === pkg || id.startsWith(`${pkg}/`));
+			},
 			output: {
 				globals: {
 					react: 'React',
