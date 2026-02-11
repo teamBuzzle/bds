@@ -1,4 +1,4 @@
-import { Button } from '@mui/material';
+import { Button } from './Button';
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
@@ -33,6 +33,11 @@ const meta = {
 		},
 		disabled: {
 			description: '비활성화 여부',
+			control: 'boolean',
+			defaultValue: false,
+		},
+		gradient: {
+			description: '그라데이션 스타일 적용',
 			control: 'boolean',
 			defaultValue: false,
 		},
@@ -79,5 +84,14 @@ export const Large: Story = {
 		variant: 'contained',
 		children: '페이지로 이동하기',
 		size: 'large',
+	},
+};
+
+export const Gradient: Story = {
+	args: {
+		gradient: true,
+		children: '그라데이션 버튼',
+		size: 'large',
+		sx: { width: '200px' },
 	},
 };

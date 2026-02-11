@@ -39,7 +39,7 @@ export const FaqItem: FaqItemComponent = ({ title, subtitle, content, selected, 
 				sx={{
 					p: 2.5,
 					borderRadius: (theme) => theme.buzzle.borderRadius.card,
-					border: (theme) => (selected ? `1px solid ${theme.palette.buzzle.main}` : '1px solid #b0b0b0'),
+					border: (theme) => (selected ? `1px solid ${theme.palette.buzzle.main}` : '1px solid #575757'),
 					bgcolor: (theme) => (selected ? theme.palette.buzzle.main : 'background.paper'),
 					cursor: 'pointer',
 					transition: (theme) => theme.buzzle.transitions.hover,
@@ -59,7 +59,7 @@ export const FaqItem: FaqItemComponent = ({ title, subtitle, content, selected, 
 					variant="h6"
 					sx={{
 						mt: 1,
-						color: selected ? '#f9f9f9' : 'text.primary',
+						color: selected ? 'common.white' : 'text.primary',
 					}}
 				>
 					{title}

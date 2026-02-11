@@ -1,4 +1,5 @@
 import { colorSemantic, colorToken, type ColorToken } from './color';
+import { gradient, motion, breakpoints, darkCard } from './shared';
 import { typographySemantic, typographyToken, type TypographyToken } from './typography';
 import { valueSemantic, valueToken, type ValueToken } from './value';
 
@@ -13,6 +14,10 @@ export const bds = {
 		typography: typographyToken,
 		value: valueToken,
 	},
+	gradient,
+	motion,
+	breakpoints,
+	darkCard,
 };
 
 export type { ColorToken, TypographyToken, ValueToken };
