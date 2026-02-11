@@ -61,9 +61,17 @@ export const Input: InputComponent = ({ type, helperText, errorMessage, successM
 				'& input:-webkit-autofill, & input:-webkit-autofill:hover, & input:-webkit-autofill:focus, & input:-webkit-autofill:active':
 					{
 						WebkitBoxShadow: '0 0 0 1000px transparent inset !important',
-						WebkitTextFillColor: 'inherit !important',
+						WebkitTextFillColor: '#fff !important',
 						transition: 'background-color 5000s ease-in-out 0s',
+						caretColor: '#fff',
 					},
+				'& input:-webkit-autofill + fieldset > legend': {
+					maxWidth: '100%',
+				},
+				'& input:-webkit-autofill ~ label': {
+					transform: 'translate(14px, -9px) scale(0.75)',
+					color: 'primary.main',
+				},
 				...sx,
 			}}
 			{...props}
