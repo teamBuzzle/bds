@@ -24,7 +24,7 @@ const getInputType = (isPassword: boolean, isPasswordVisible: boolean, type: str
  * @link https://teambuzzle.github.io/bds/?path=/docs/bds-buzzle-design-system-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-atoms-input--docs BDS Input 문서
  * @link https://mui.com/material-ui/api/text-field/ MUI TextField API
  */
-export const Input: InputComponent = ({ type, helperText, errorMessage, successMessage, ...props }) => {
+export const Input: InputComponent = ({ type, helperText, errorMessage, successMessage, sx, ...props }) => {
 	const isPassword = useMemo(() => type === 'password', [type]);
 	const [isPasswordVisible, setIsPasswordVisible] = useState(isPassword);
 
@@ -56,6 +56,15 @@ export const Input: InputComponent = ({ type, helperText, errorMessage, successM
 						</IconButton>
 					),
 				},
+			}}
+			sx={{
+				'& input:-webkit-autofill, & input:-webkit-autofill:hover, & input:-webkit-autofill:focus, & input:-webkit-autofill:active':
+					{
+						WebkitBoxShadow: '0 0 0 1000px transparent inset !important',
+						WebkitTextFillColor: 'inherit !important',
+						transition: 'background-color 5000s ease-in-out 0s',
+					},
+				...sx,
 			}}
 			{...props}
 		/>
