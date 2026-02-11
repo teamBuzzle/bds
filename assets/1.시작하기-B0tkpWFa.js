@@ -1,4 +1,4 @@
-import{j as n}from"./jsx-runtime-D_zvdyIk.js";import{useMDXComponents as r}from"./index-3lSaTjIr.js";import{M as i}from"./index-Dq90B4qP.js";import"./index-D68E0uiN.js";import"./index-CgfFrydU.js";import"./_commonjsHelpers-CqkleIqs.js";import"./iframe-6eVOldKv.js";import"./index-CRHvrZ4v.js";import"./index-DBlixYoz.js";import"./index-B2KKL2uI.js";import"./index-CXQShRbs.js";import"./index-DrFu-skq.js";import"./createTheme-CN4DXWZy.js";function s(t){const e={a:"a",blockquote:"blockquote",br:"br",code:"code",h1:"h1",h2:"h2",li:"li",p:"p",pre:"pre",strong:"strong",ul:"ul",...r(),...t.components};return n.jsxs(n.Fragment,{children:[n.jsx(i,{title:"시작하기"}),`
+import{j as n}from"./jsx-runtime-D_zvdyIk.js";import{useMDXComponents as r}from"./index-3lSaTjIr.js";import{M as i}from"./index-CG-JAUed.js";import"./index-D68E0uiN.js";import"./index-CgfFrydU.js";import"./_commonjsHelpers-CqkleIqs.js";import"./iframe-BeJ8LDgB.js";import"./index-4mn5IdKs.js";import"./index-DBlixYoz.js";import"./index-B2KKL2uI.js";import"./index-CXQShRbs.js";import"./index-DrFu-skq.js";import"./createTheme-CN4DXWZy.js";function s(t){const e={a:"a",blockquote:"blockquote",br:"br",code:"code",h1:"h1",h2:"h2",li:"li",p:"p",pre:"pre",strong:"strong",ul:"ul",...r(),...t.components};return n.jsxs(n.Fragment,{children:[n.jsx(i,{title:"시작하기"}),`
 `,n.jsx(e.h1,{id:"bds-buzzle-design-system",children:"BDS (Buzzle Design System)"}),`
 `,n.jsxs(e.blockquote,{children:[`
 `,n.jsxs(e.p,{children:["⚠️ ",n.jsx(e.strong,{children:"주의사항"}),": BDS는 사이드 프로젝트로 개발 중인 실험적 디자인 시스템 이에요.",n.jsx(e.br,{}),`
@@ -100,4 +100,4 @@ export const App = () => {
 `,n.jsx(e.h2,{id:"라이선스",children:"라이선스"}),`
 `,n.jsxs(e.p,{children:["MIT 라이선스 - 상업용 및 개인 프로젝트 모두 자유롭게 사용 가능",n.jsx(e.br,{}),`
 `,"MUI 라이센스 - ",n.jsx(e.a,{href:"https://github.com/mui/material-ui/blob/master/LICENSE",rel:"nofollow",children:"https://github.com/mui/material-ui/blob/master/LICENSE"})]})]})}function g(t={}){const{wrapper:e}={...r(),...t.components};return e?n.jsx(e,{...t,children:n.jsx(s,{...t})}):s(t)}export{g as default};
-//# sourceMappingURL=1.시작하기-Btf-rchz.js.map
+//# sourceMappingURL=1.시작하기-B0tkpWFa.js.map
