@@ -1,0 +1,2 @@
+import{b as n}from"./createSimplePaletteValueFilter-BFYkdot2.js";import{r as m}from"./DefaultPropsProvider-Bo6nkiJm.js";import{u as p}from"./extendSxProp-DuE9bGZQ.js";const i=n();function u(s){const{theme:e,name:o,props:t}=s;return!e||!e.components||!e.components[o]||!e.components[o].defaultProps?t:m(e.components[o].defaultProps,t)}function l({props:s,name:e,defaultTheme:o,themeId:t}){let r=p(o);return t&&(r=r[t]||r),u({theme:r,name:e,props:s})}export{i as s,l as u};
+//# sourceMappingURL=useThemeProps-CTxHbmAC.js.map
