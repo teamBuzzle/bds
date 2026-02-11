@@ -1,4 +1,4 @@
-import{j as n}from"./jsx-runtime-D_zvdyIk.js";import{useMDXComponents as l}from"./index-3lSaTjIr.js";import{M as r}from"./index-CG-JAUed.js";import"./index-D68E0uiN.js";import"./index-CgfFrydU.js";import"./_commonjsHelpers-CqkleIqs.js";import"./iframe-BeJ8LDgB.js";import"./index-4mn5IdKs.js";import"./index-DBlixYoz.js";import"./index-B2KKL2uI.js";import"./index-CXQShRbs.js";import"./index-DrFu-skq.js";import"./createTheme-CN4DXWZy.js";function i(s){const e={a:"a",br:"br",code:"code",h1:"h1",h2:"h2",h3:"h3",li:"li",ol:"ol",p:"p",pre:"pre",strong:"strong",ul:"ul",...l(),...s.components};return n.jsxs(n.Fragment,{children:[n.jsx(r,{title:"기여하기"}),`
+import{j as n}from"./jsx-runtime-D_zvdyIk.js";import{useMDXComponents as l}from"./index-3lSaTjIr.js";import{M as r}from"./index-BXdhsDgP.js";import"./index-D68E0uiN.js";import"./index-CgfFrydU.js";import"./_commonjsHelpers-CqkleIqs.js";import"./iframe-BMA9Sk2X.js";import"./index-DrKZMjrQ.js";import"./index-DBlixYoz.js";import"./index-B2KKL2uI.js";import"./index-CXQShRbs.js";import"./index-DrFu-skq.js";import"./createTheme-CN4DXWZy.js";function i(s){const e={a:"a",br:"br",code:"code",h1:"h1",h2:"h2",h3:"h3",li:"li",ol:"ol",p:"p",pre:"pre",strong:"strong",ul:"ul",...l(),...s.components};return n.jsxs(n.Fragment,{children:[n.jsx(r,{title:"기여하기"}),`
 `,n.jsx(e.h1,{id:"기여하기",children:"기여하기"}),`
 `,n.jsxs(e.p,{children:["BDS(Buzzle Design System)는 오픈소스 프로젝트로, 모든 형태의 기여를 환영해요.",n.jsx(e.br,{}),`
 `,"이 페이지에서는 BDS 프로젝트에 기여하는 방법에 대해 설명해요."]}),`
@@ -261,4 +261,4 @@ export { MyComponent } from './MyComponent';
 `]}),`
 `,n.jsx(e.h2,{id:"감사의-말",children:"감사의 말"}),`
 `,n.jsx(e.p,{children:"BDS 프로젝트에 기여해 주셔서 감사합니다! 여러분의 기여가 더 나은 디자인 시스템을 만드는 데 큰 도움이 됩니다."})]})}function f(s={}){const{wrapper:e}={...l(),...s.components};return e?n.jsx(e,{...s,children:n.jsx(i,{...s})}):i(s)}export{f as default};
-//# sourceMappingURL=3.기여하기-BORvHh3S.js.map
+//# sourceMappingURL=3.기여하기-8TTU4AT2.js.map
