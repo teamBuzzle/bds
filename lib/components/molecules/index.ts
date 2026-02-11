@@ -6,3 +6,6 @@ export type { BDSBarGraphProps } from './BarGraph/types';
 export { DonutGraph, type BDSDonutGraphProps } from './DonutGraph';
 export { PieGraph, type BDSPieGraphProps } from './PieGraph';
 export { LineGraph, type BDSLineGraphProps } from './LineGraph';
+export { PageHero, type BDSPageHeroProps } from './PageHero';
+export { FeatureSection, type BDSFeatureSectionProps } from './FeatureSection';
+export { CategoryFilter, type BDSCategoryFilterProps } from './CategoryFilter';

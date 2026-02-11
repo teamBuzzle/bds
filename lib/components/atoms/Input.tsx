@@ -41,8 +41,8 @@ export const Input: InputComponent = ({ type, helperText, errorMessage, successM
 				formHelperText: {
 					color: (() => {
 						if (errorMessage) return 'error.main';
-						if (successMessage) return '#4CAF50';
-						return '#727272';
+						if (successMessage) return 'success.main';
+						return 'text.secondary';
 					})(),
 				},
 				input: {
