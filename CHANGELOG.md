@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.1](https://github.com/teamBuzzle/bds/compare/v0.1.28...v0.2.1) (2026-02-11)
+
+### ✨ Features
+
+- 디자인 시스템 강화 - 새 컴포넌트, 토큰, MUI re-export ([6ce5bb3](https://github.com/teamBuzzle/bds/commits/6ce5bb37f8837091734b47a572c364998cfde50a))
+
+### 🎫 Chores
+
+- bump version to 0.2.0 ([2e414a3](https://github.com/teamBuzzle/bds/commits/2e414a3173c3f5279629c05c452709762e6d2025))
+
+### 🐛 Bug Fixes
+
+- **ci:** add pnpm setup step to github actions workflow ([1a6ed7f](https://github.com/teamBuzzle/bds/commits/1a6ed7f4ad1cf71d6baf704f13770443656800b6))
+- **input:** prevent browser autofill from changing background color ([cb51cc5](https://github.com/teamBuzzle/bds/commits/cb51cc58c7013c334943abb830827e01d5c0b95d))
+
 ### [0.1.28](https://github.com/teamBuzzle/bds/compare/v0.1.27...v0.1.28) (2025-12-14)
 
 ### [0.1.27](https://github.com/teamBuzzle/bds/compare/v0.1.26...v0.1.27) (2025-12-14)
