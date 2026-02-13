@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.2](https://github.com/teamBuzzle/bds/compare/v0.2.1...v0.2.2) (2026-02-13)
+
+### 🐛 Bug Fixes
+
+- **input:** white text color and label shrink on autofill ([0803f8f](https://github.com/teamBuzzle/bds/commits/0803f8f174f6ab9e08e43c1f413c8d5154b4b34f))
+
 ### [0.2.1](https://github.com/teamBuzzle/bds/compare/v0.1.28...v0.2.1) (2026-02-11)
 
 ### ✨ Features
