@@ -40,7 +40,7 @@
 		"type-check": "tsc --noEmit",
 		"type-check:watch": "tsc --noEmit --watch",
 		"prepublishOnly": "pnpm lint && pnpm type-check && pnpm build",
-		"release": "standard-version && git push --follow-tags && npm publish",
+		"release": "standard-version && git push --follow-tags && pnpm login && pnpm publish",
 		"release:major": "standard-version -- --release-as minor",
 		"prepare": "node .husky/install.mjs",
 		"preinstall": "npx only-allow pnpm"
