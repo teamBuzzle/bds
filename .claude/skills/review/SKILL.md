@@ -55,6 +55,30 @@ CURRENT_SHA=$(gh pr view <number> --json headRefOid --jq '.headRefOid')
 - `LAST_REVIEWED_SHA == CURRENT_SHA` → 마지막 리뷰 이후 변경 없음 → **해당 PR 리뷰 스킵**, 결과 테이블에 `SKIPPED (변경 없음)` 표시. Step 9로 이동.
 - `LAST_REVIEWED_SHA` 없음 (첫 리뷰) 또는 SHA가 다름 → Step 2로 진행.
 
+### 1.6. PR 스킬 준수 여부 점검
+
+리뷰 시작 전 PR이 `pr` 스킬 표준에 맞게 만들어졌는지 확인한다. 위반 시 작성자에게 `pr` 스킬 사용을 권장하는 일반 코멘트(이슈 코멘트, 라인 X)를 1회 남긴다. 이미 동일 안내 코멘트가 있으면 중복 등록하지 않는다.
+
+```bash
+gh pr view <number> --json labels,assignees,reviewRequests,body --jq '{labels:[.labels[].name], assignees:[.assignees[].login], reviewers:[.reviewRequests[].login], body}'
+```
+
+**위반 판정 (하나라도 해당):**
+
+- `type:*` 라벨이 정확히 1개가 아님 (없거나 2개 이상)
+- `mode:*` 라벨이 정확히 1개가 아님
+- assignee가 비어있음 (작성자 self-assign 미적용)
+- reviewer가 비어있음 (리뷰 요청 누락)
+- 본문이 PR 템플릿(Summary / Impact / Checks / Review Focus 섹션)을 따르지 않음
+
+**안내 코멘트 예시 (이슈 코멘트로 등록):**
+
+```bash
+gh api repos/{owner}/{repo}/issues/<number>/comments -X POST -f body="이 PR은 \`/pr\` 스킬을 사용해서 만든 흔적이 없어 보입니다. 다음 항목이 누락/이상합니다: <목록>. 다음부터는 PR 생성 시 \`/pr\` 스킬을 사용해 주세요. 이번 PR은 \`gh pr edit\` 또는 GitHub UI에서 라벨/assignee/리뷰어/본문 템플릿을 보정 부탁드립니다."
+```
+
+체크 결과는 결과 테이블의 `pr-skill` 컬럼에 `OK` / `WARN(N개 누락)` 으로 표기.
+
 ### 1.7. 프로젝트 룰 로드
 
 해당 레포의 `.claude/rules/**/*.mdc` (또는 `*.md`)를 **리뷰 시작 전에 반드시 읽는다**. 룰이 있으면 리뷰 판단 기준에 함께 적용한다.
@@ -301,6 +325,49 @@ GitHub PR 스레드의 "Resolve conversation"은 해당 코멘트가 실제로 �
 3. 내가 안 단 스레드 → **절대 resolve하지 않는다** (판단권 없음)
 4. 작성자가 이미 스스로 resolve한 스레드(`isResolved == true` + 마지막 resolver가 작성자) → 내가 코멘트 주인이면 재분석해서 실제 해결 여부 확인, 아니면 스킵
 
+### 8.7. 병합 (Merge) 조건
+
+**원칙: 검증한 사람이 배포 트리거를 건다.** 리뷰어가 직접 병합하는 것을 표준으로 삼는다. 단 모든 조건을 만족할 때만 가능하다.
+
+**병합 허용 조건 (모두 만족해야 함):**
+
+1. **이번 리뷰 결과가 `APPROVE`** — REQUEST_CHANGES면 절대 금지
+2. **모든 리뷰 스레드가 resolved** — 내 것뿐 아니라 다른 리뷰어/작성자가 단 스레드 전부 `isResolved == true`
+3. **CI 전부 통과** — `gh pr checks <number>` 결과 fail/pending 0개
+4. **PR이 mergeable 상태** — `gh pr view <n> --json mergeable,mergeStateStatus` 가 `MERGEABLE` + `CLEAN`/`HAS_HOOKS`
+5. **다른 리뷰어가 모두 approve** (있는 경우) — 추가 리뷰어가 지정돼 있는데 아직 approve 안 했으면 대기
+6. **approve 이후 새 커밋 없음** — approve 시점 SHA == 현재 headRefOid. 다르면 재리뷰 필요
+7. **본인 PR 아님** — 자기 PR은 절대 self-merge 금지 (§1 자기 PR 리뷰 금지 규칙과 동일)
+
+**조건 확인 명령:**
+
+```bash
+PR=<number>
+APPROVED=$(gh api repos/{owner}/{repo}/pulls/$PR/reviews --jq "[.[] | select(.user.login==\"$(gh api user --jq .login)\" and .state==\"APPROVED\")] | last | .commit_id")
+HEAD=$(gh pr view $PR --json headRefOid --jq .headRefOid)
+CHECKS=$(gh pr checks $PR --json state --jq '[.[] | select(.state!="SUCCESS" and .state!="NEUTRAL" and .state!="SKIPPED")] | length')
+MERGEABLE=$(gh pr view $PR --json mergeable,mergeStateStatus --jq "[.mergeable, .mergeStateStatus] | @tsv")
+UNRESOLVED=$(gh api graphql -f query='query($o:String!,$r:String!,$n:Int!){repository(owner:$o,name:$r){pullRequest(number:$n){reviewThreads(first:100){nodes{isResolved}}}}}' -F o={owner} -F r={repo} -F n=$PR --jq '[.data.repository.pullRequest.reviewThreads.nodes[] | select(.isResolved==false)] | length')
+
+# 모든 조건 만족 시
+if [ "$APPROVED" = "$HEAD" ] && [ "$CHECKS" = "0" ] && [ "$UNRESOLVED" = "0" ]; then
+  gh pr merge $PR --squash --delete-branch
+fi
+```
+
+**병합 방식:** 기본 `--squash`(commit history 단순화). 레포 정책이 다르면 따른다 (`--merge` / `--rebase`).
+
+**금지:**
+
+- ❌ 조건 하나라도 불충족 시 병합 — 절대 금지
+- ❌ 본인 PR self-merge — 권한 있어도 금지
+- ❌ approve 없이 작성자 권유로 merge — "확인 안 한 사람이 배포 트리거 당김" 문제
+- ❌ 리뷰 진행 중인데 merge — 다른 리뷰어 의견 차단
+
+**예외:** 사용자가 명시적으로 "merge 하지 마"라고 한 경우(예: 기능 플래그 대기, 일정 조율) 조건 만족해도 merge 보류하고 결과 테이블에 `MERGE_HELD (사유)` 표기.
+
+병합한 PR은 결과 테이블의 `Merged` 컬럼에 `✓` 로 표기.
+
 ### 8.5. 오래된 리뷰 스레드 자동 정리 (outdated resolve)
 
 코드 변경으로 더 이상 유효하지 않은 **내 이전 리뷰 코멘트**를 자동 resolve 한다. 다른 사람의 스레드는 건드리지 않는다.
@@ -349,9 +416,9 @@ Resolve한 스레드 수를 결과 보고에 포함한다.
 리뷰 완료 후 요약 테이블을 출력한다:
 
 ```
-| PR | 결과 | P1 | P5 | Replied | Resolved | 링크 |
-|---|---|---|---|---|---|---|
-| #N (작성자) | APPROVE / REQUEST_CHANGES / SKIPPED | N건 | N건 | N건 | N개 | 리뷰 링크 |
+| PR | 결과 | pr-skill | P1 | P5 | Replied | Resolved | Merged | 링크 |
+|---|---|---|---|---|---|---|---|---|
+| #N (작성자) | APPROVE / REQUEST_CHANGES / SKIPPED | OK / WARN(N) | N건 | N건 | N건 | N개 | ✓ / – / HELD | 리뷰 링크 |
 ```
 
 - `SKIPPED`는 "마지막 리뷰 이후 변경 없음" 또는 "본인 PR" 케이스
@@ -365,7 +432,8 @@ Resolve한 스레드 수를 결과 보고에 포함한다.
 - **NEVER 내가 안 단 스레드를 resolve하지 않는다** — resolve 판단권은 코멘트 주인의 몫. 자동 resolve는 내가 단 스레드 + outdated(§8.5) 한정
 - **NEVER 리뷰어로 지정되지 않은 PR은 리뷰하지 않는다** — PR `reviewRequests`에 현재 사용자가 포함된 경우에만 리뷰. 아니면 스킵.
 - **NEVER 자기 PR은 리뷰하지 않는다** — PR `author.login`이 현재 사용자와 같으면 명시 지정되었더라도 스킵. 셀프 approve/request_changes 금지.
-- **NEVER 병합(merge)하지 않는다** — 이 스킬은 오직 **리뷰만** 수행한다. `gh pr merge`, `gh api ... /merge`, GitHub UI merge 버튼 클릭 유도 등 어떤 형태로도 PR을 병합하지 않는다. APPROVE 판정이어도 병합은 작성자/권한자가 직접 수행한다. 사용자가 명시적으로 병합을 요청해도 이 스킬 범위를 벗어나므로 별도 작업으로 분리한다.
+- **MERGE 조건부 허용** — 다음 모든 조건을 만족할 때만 리뷰어가 직접 `gh pr merge` 한다(§8.7): ①이번 리뷰 APPROVE, ②모든 스레드 resolved, ③CI 전부 SUCCESS, ④mergeable=MERGEABLE, ⑤다른 리뷰어 전원 approve, ⑥approve 이후 새 커밋 없음, ⑦본인 PR 아님. 하나라도 불충족이면 절대 merge 금지. 사용자가 "merge 하지 마"라고 명시한 경우 보류.
+- **ALWAYS PR 스킬 준수 점검** — 리뷰 시작 전 `/pr` 스킬 표준(`type:*`/`mode:*` 라벨 각 1개, assignee, reviewer, 본문 템플릿) 점검(§1.6). 누락 시 작성자에게 일반 코멘트로 `/pr` 스킬 사용 권장 메시지를 1회 등록(중복 방지). 결과 테이블 `pr-skill` 컬럼에 OK/WARN 표기.
 - **NEVER** CRITICAL/HIGH/MEDIUM/LOW 등급 사용 — 반드시 P1~P5만 사용
 - **NEVER** 억지로 문제를 만들어내지 않는다 — 문제 없으면 P5만 달고 APPROVE
 - **ALWAYS** P5 칭찬 코멘트를 포함한다
