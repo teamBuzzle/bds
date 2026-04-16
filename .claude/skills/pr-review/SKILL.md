@@ -1,6 +1,6 @@
 ---
-name: review
-description: Pn 규칙(P1-P5) 기반 GitHub PR 라인별 코드 리뷰. Use when the user says "리뷰", "review", "코드 리뷰", "PR 리뷰", or wants to review pull requests.
+name: pr-review
+description: Pn 규칙(P1-P5) 기반 GitHub PR 라인별 코드 리뷰. Use when the user says "pr-review", "리뷰", "review", "코드 리뷰", "PR 리뷰", or wants to review pull requests.
 ---
 
 Pn 규칙 기반 GitHub PR 라인별 리뷰를 수행한다.
