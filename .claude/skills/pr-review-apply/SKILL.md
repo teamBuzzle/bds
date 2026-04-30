@@ -206,6 +206,60 @@ gh api repos/{owner}/{repo}/pulls/comments/<comment_id>/reactions -X POST -f con
 
 resolve는 **하지 않는다** — 리뷰어가 답글 확인 후 동의/재반박 결정.
 
+### 5.1. 의견 충돌 종결 프로토콜 (작성자 우선)
+
+리뷰어 재반박에 답글 왕복이 길어지면 무한 토론 대신 **회차 한도에서 작성자 입장으로 종결**한다.
+
+**라운드 한도**
+
+§2의 `reviewThreads.comments`로 발언자별 코멘트 수를 센다.
+
+- **나(작성자)의 답글 ≤ 2회**
+- **리뷰어 발언 ≤ 2회** (정책 — `pr-review` §8.3.1과 미러)
+
+내 답글이 2회에 도달했는데 리뷰어가 또 답글을 보내왔다면, 그 내용을 **새 근거 평가**만 한 뒤 종결한다.
+
+**REBUT_FINAL 처리**
+
+리뷰어 마지막 답글 평가:
+
+| 결과                                  | 처리                                  |
+| ------------------------------------- | ------------------------------------- |
+| 새 코드 인용·룰·외부 문서가 있고 타당 | 분류 변경: **반영(APPLY)**, §4로 진행 |
+| 같은 주장의 반복이거나 새 근거 부족   | **반박 종결(REBUT_FINAL)** 답글 1회   |
+
+REBUT_FINAL 답글 형식:
+
+```
+앞서 드린 답글의 근거에서 추가로 보강할 자료는 없습니다. 이번 PR은 현재 구현을 유지하고 머지하겠습니다. 추가 논의는 별도 이슈로 이어가면 감사하겠습니다.
+
+(선택) **후속**
+- <별도 이슈/PR 링크 또는 "별도 이슈 발행 예정">
+```
+
+- 한글, 존댓말, 차분한 톤
+- 이모지: `eyes` 1개
+- **resolve는 하지 않는다** — 리뷰어가 `pr-review` §8.3.1에 따라 종결 답글 후 resolve 처리
+
+**예외 — BLOCKED (작성자 우선 적용 금지)**
+
+리뷰어 코멘트가 다음에 해당하면 REBUT_FINAL로 마무리하지 말고 사용자(인간)에게 보고하고 중단:
+
+- 라인 코멘트가 `[P1]` 접두사 (실제 버그·기능 회귀)
+- 본문에 `SQL injection`, `XSS`, `secret`, `token`, `auth`, `데이터 손실`, `data loss`, `breaking change`, `compliance`, `법적` 등 키워드 포함
+- 빌드/CI 실패 우려 명시 (예: "이렇게 두면 빌드 실패")
+
+BLOCKED 시 §9 auto-merge 활성화도 **스킵**한다. 결과 테이블에 `BLOCKED (P1 합의 실패)` 표기.
+
+**처리 흐름 요약**
+
+```
+새 근거 있고 타당 → 반영(APPLY) §4
+새 근거 없음 + 내 답글 < 2회 → 반박(REBUT) §5 (근거 보강)
+새 근거 없음 + 내 답글 ≥ 2회 + P2/P3 → REBUT_FINAL 답글 1회, auto-merge 유지
+P1/보안/CI 우려 → BLOCKED, 사용자 보고, auto-merge 스킵
+```
+
 ### 6. 보류(HOLD) 처리
 
 코드 수정 없음. 답글에 필요한 정보 명시.
@@ -272,6 +326,7 @@ gh pr merge $PR --auto --squash --delete-branch
 
 - 이번 실행에 APPLY가 1건 이상 있었거나, 이미 auto-merge 대기 상태가 아닌 경우에만 활성화
 - PR이 draft면 활성화하지 않음 (draft 해제 후 수동으로)
+- **BLOCKED 스레드가 1건도 없을 때만 활성화** (§5.1 예외 — P1·보안·데이터 손실·CI 실패 우려)
 - 본인 PR이므로 `author == ME` 이미 §1에서 검증됨
 
 **레포 정책:**
@@ -283,24 +338,104 @@ gh pr merge $PR --auto --squash --delete-branch
 
 - 레포 브랜치 보호 규칙에서 auto-merge 비활성화됨 → `Auto-merge is not enabled for this repository` 에러 → 리뷰어에게 수동 머지 요청 알림
 - PR이 draft 상태 → 결과 보고에 `AUTO_MERGE_SKIPPED (draft)` 표기
+- BLOCKED 스레드 존재 → 결과 보고에 `AUTO_MERGE_SKIPPED (BLOCKED)` 표기, 사용자에게 합의 실패 항목 보고
 
 **금지:**
 
 - ❌ `gh pr merge $PR --squash` (즉시 병합, `--auto` 없이) — 작성자 self-merge 금지
 - ❌ 조건 미달인데 강제 병합 시도
 
+### 9.5. 회고록 작성 (CLAUDE.local.md)
+
+반영(APPLY)된 리뷰 코멘트는 같은 실수를 반복하지 않도록 **현재 레포의 `CLAUDE.local.md`에 회고록을 누적 작성**한다.
+
+**대상 파일**
+
+```bash
+REPO_ROOT=$(git rev-parse --show-toplevel)
+LOCAL_MD="$REPO_ROOT/CLAUDE.local.md"
+[ -f "$LOCAL_MD" ] || touch "$LOCAL_MD"
+```
+
+워크스페이스 루트가 아닌 **개별 레포 루트**의 `CLAUDE.local.md`를 사용한다 (예: `buzzle-editor/CLAUDE.local.md`).
+
+**기록 대상**
+
+- **반영(APPLY)** 으로 분류된 모든 코멘트 → 필수
+- **BLOCKED** 항목 → 필수 (`사용자 판단 대기` 표기)
+- **REBUT / REBUT_FINAL / HOLD** → 선택 (같은 지적 재발 시 근거 빨리 찾기 위함)
+
+**기록 형식 (append, 새 PR마다 새 섹션)**
+
+```markdown
+## 리뷰 회고 — YYYY-MM-DD PR #<번호> (<제목>)
+
+### [P<n>] <파일:라인 또는 짧은 주제>
+
+**받은 지적**
+
+> <리뷰 코멘트 핵심 1~2문장>
+
+**원인**
+<왜 이런 코드를 썼는지 — 룰 미숙지·패턴 부재·검토 부족 등 솔직하게>
+
+**적용한 변경**
+<무엇을 어떻게 바꿨는지 + 커밋 SHA>
+
+**다음부터**
+<체크 가능한 행동 1~2개>
+```
+
+**작성 원칙**
+
+- **솔직한 원인** — "단순 실수" 같은 면피성 표현 금지. 구체적 인지 실패 지점을 적는다 (예: "`predictability.mdc` 룰을 안 읽음", "기존 패턴 grep 안 함", "unknown 처리 룰을 모름")
+- **체크 가능한 다음 액션** — "조심하겠다" 류 다짐 금지. 행동으로 (예: "PR 작업 전 `.claude/rules/*.mdc` 1회 읽기", "새 컴포넌트 시작 전 `grep -r \"useQuery\" src/components` 실행")
+- **append-only** — 기존 회고 수정·삭제 금지. 새 PR마다 끝에 추가
+- **PR 브랜치에 커밋하지 않는다** — `.gitignore`에 `CLAUDE.local.md` 포함 여부 확인. 누락 시 1회 안내: "개인 메모이므로 `.gitignore`에 `CLAUDE.local.md` 추가를 권장합니다." (스킬은 자동으로 add 하지 않는다)
+- **용량 관리** — 50KB 초과 시 사용자에게 알리고 오래된 회고를 별도 파일(`docs/review-retro/<year>-<quarter>.md` 등)로 옮기도록 제안 (자동 이동 안 함)
+
+**예시**
+
+```markdown
+## 리뷰 회고 — 2026-04-30 PR #234 (feat: 사용자 프로필 카드)
+
+### [P2] src/components/ProfileCard.tsx:45
+
+**받은 지적**
+
+> `useEffect` 안에서 `fetch` 직접 호출 — `useQuery` 훅 패턴이 이 레포 표준
+
+**원인**
+`.claude/rules/data-fetching.mdc`를 읽지 않고 작업. 다른 컴포넌트에서 어떻게 fetch 하는지 grep 안 함.
+
+**적용한 변경**
+`useQuery(["profile", id], fetchProfile)` 로 교체 (커밋 a1b2c3d). 캐싱·refetch 정책도 표준 옵션 적용.
+
+**다음부터**
+
+- 데이터 페칭 코드 작성 전 `.claude/rules/data-fetching.mdc` 읽기
+- 새 컴포넌트 시작 전 `grep -r "useQuery" src/components` 로 기존 패턴 1개 확인
+```
+
+**스킵 조건**
+
+- APPLY와 BLOCKED 모두 0건이면 회고 스킵 가능
+- `git rev-parse --show-toplevel` 실패(워크스페이스 루트 등 Git 리포 아님) → 스킵하고 사용자에게 "개별 레포로 이동 후 다시 실행" 안내
+
+회고 작성 결과(추가 엔트리 수, `.gitignore` 안내 발생 여부)는 §10 결과 보고에 포함한다.
+
 ### 10. 결과 보고
 
 ```
-| 스레드 | 분류 | 원인 커밋 | 답글 | 이모지 | resolve |
-|---|---|---|---|---|---|
-| #N (작성자) | APPLY/REBUT/HOLD | abc1234 / – | ✓ | +1, rocket | ✓ / – |
+| 스레드 | 분류 | 원인 커밋 | 답글 | 이모지 | resolve | retro |
+|---|---|---|---|---|---|---|
+| #N (작성자) | APPLY/REBUT/HOLD/REBUT_FINAL/BLOCKED | abc1234 / – | ✓ | +1, rocket | – (작성자 안 함) | ✓ / – |
 ```
 
 요약 라인:
 
 ```
-PR #N | APPLY=N REBUT=N HOLD=N | rebase: ✓ | force-push: ✓ | re-request: ✓
+PR #N | APPLY=N REBUT=N HOLD=N REBUT_FINAL=N BLOCKED=N | rebase: ✓ | force-push: ✓ | re-request: ✓ | retro: ✓ (N entries) | auto-merge: ✓ / SKIPPED(<reason>)
 ```
 
 ## Important Rules
@@ -318,3 +453,5 @@ PR #N | APPLY=N REBUT=N HOLD=N | rebase: ✓ | force-push: ✓ | re-request: ✓
 - **NEVER 작성자가 resolve** — 예외 없음. 오타·포맷·린트 같은 단순 변경이라도 resolve는 리뷰어만. 작성자는 답글 + 커밋 SHA 인용까지만
 - **NEVER 직접 merge** — `gh pr merge --squash` 류 즉시 병합 금지. 병합은 리뷰어의 resolve + 조건 만족으로 트리거되는 auto-merge로만 이뤄진다
 - **ALWAYS auto-merge 활성화** — APPLY가 1건 이상이면 §9 `gh pr merge --auto --squash --delete-branch` 로 예약. draft PR이면 스킵. 레포가 auto-merge 비활성이면 경고 출력
+- **ALWAYS 의견 충돌 종결 프로토콜** — 같은 스레드에서 내 답글이 2회에 도달했는데 합의 안 되면 REBUT_FINAL 답글 1회로 마무리(§5.1). resolve는 여전히 안 함(리뷰어 몫). P1·보안·데이터 손실·CI 실패 우려는 `BLOCKED`으로 사용자에게 보고하고 §9 auto-merge 활성화도 스킵
+- **ALWAYS APPLY/BLOCKED는 CLAUDE.local.md 회고록에 기록** — 같은 실수 반복 방지(§9.5). 솔직한 원인 + 체크 가능한 다음 액션 필수. `.gitignore`에 `CLAUDE.local.md` 누락 시 1회 안내. Git 리포가 아니면(워크스페이스 루트) 스킵
